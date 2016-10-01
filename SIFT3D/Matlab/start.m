@@ -33,7 +33,7 @@ for frame = 1 : (frameCount - diffStep)
     videoDiff(:,:,frame) = video(:,:,frame) - video(:,:,frame+diffStep);
 end
 
-[feature, descriptor, gss, dogss] = sift3D(abs(videoDiff));
+[feature, descriptor, gss, dogss] = sift3D(video);
 
 frame  = videoDiff(:,:,1);frame = uint8(abs(frame));imshow(frame);
 
