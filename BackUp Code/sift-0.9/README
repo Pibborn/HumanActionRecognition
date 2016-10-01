@@ -1,0 +1,40 @@
+                        A SIFT IMPLEMENTATION
+                            Andrea Vedaldi
+                         vedaldi@cs.ucla.edu
+
+This is a MATLAB/C implementation of the SIFT detector and descriptor
+[1]. See the documentation in 'doc/' to get started.
+
+CREDITS
+  The SIFT algorithm [1] has been patented by Dr. Lowe. Some of the
+  images in 'data/' are from [2,3].
+
+COMPLING AND TESTING
+  From MATLAB prompt
+  > sift_compile
+  > sift_demo
+  > sift_demo2
+  From shell propmt (Linux, Mac OS X)
+  > make
+
+ABOUT THE SOURCE CODE
+  We use the follwing convention to name files:
+  *.m *.c:       M and MEX files
+  sift*mx.c:     `Private' MEX files 
+  sift_*.m:      Service scripts (compiling, demos)
+
+CHANGES
+  0.9   Fixed a bug for which some of the keypoint detected where
+        dropped.
+
+REFERENCES
+
+[1] D. G. Lowe, "Distinctive image features from scale-invariant
+    keypoints," IJCV, vol. 2, no. 60, pp. 91 110, 2004.
+
+[2] K. Mikolajczyk, T. Tuytelaars, C. Schmid, A. Zisserman, J. Matas,
+    F. Schaffalitzky, T. Kadir, and L. Van Gool, "A comparison of affine
+    region detectors," IJCV, vol. 1, no. 60, pp. 63 86, 2004.
+
+[3] C. Hormann, "Landscape of the week 2," 2006.
+
