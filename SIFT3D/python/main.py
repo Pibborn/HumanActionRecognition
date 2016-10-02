@@ -16,4 +16,5 @@ def main():
         for feature in siftFeatures:
             myFirstWriter.writerow(feature)
 
-main()
+if __name__ == "__main__":
+    main()
