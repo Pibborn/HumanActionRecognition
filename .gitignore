@@ -1,0 +1,17 @@
+# Python compiled sources
+*.pyc
+
+# OS generated files
+.DS_Store
+
+# Video files
+*.avi
+
+# Data files 
+*.csv
+
+# Temp files
+*~
+
+# IDE settings folder
+*.idea/
