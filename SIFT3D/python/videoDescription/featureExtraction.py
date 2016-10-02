@@ -13,8 +13,20 @@ class FeatureExtractor:
 
 
 def siftExtraction(videoPath):
-    logging.error("siftExtraction: This function is not implemented yet.")
-
+    scaleSpace = getScaleSpace(videoPath)
+    keypointList = getKeypoints(scaleSpace)
+    keypointList = pruneKeypoints(keypointList)
+    return keypointList
 
 def surfExtraction(videoPath):
     logging.error("surfExtraction: This function is not implemented yet.")
+
+def getScaleSpace(videoPath):
+    logging.error("getScaleSpace: This function is not implemented yet.")
+
+def getKeypoints(scaleSpace):
+    logging.error("getKeypoints: This function is not implemented yet.")
+
+def pruneKeypoints(keypointList):
+    logging.error("pruneKeypoints: This function is not implemented yet.")
+    return []
