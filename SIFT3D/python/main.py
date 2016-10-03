@@ -4,11 +4,8 @@ import csv
 import logging
 logging.basicConfig(level=Constants.LOGGING_LEVEL)
 
-
-def main():
+def main(videoPath):
     myFirstExtractor = FeatureExtractor(siftExtraction)
-    videoName = 'daria_bend.avi'
-    videoPath = Constants.VIDEO_DIR + videoName
     logging.info("Extracting sift features from " + videoPath)
     siftFeatures = myFirstExtractor.extract(videoPath)
     with open(Constants.CSV_DIR + videoName + "_siftfeatures.csv", 'wb') as csvFile:
@@ -17,4 +14,6 @@ def main():
             myFirstWriter.writerow(feature)
 
 if __name__ == "__main__":
-    main()
+    videoName = 'daria_bend.avi'
+    videoPath = Constants.VIDEO_DIR + videoName
+    main(videoPath)
