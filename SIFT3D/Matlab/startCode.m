@@ -5,10 +5,14 @@
 % Maria-Luisa Sapino ~ mlsapino@di.unito.it ~ http://www.di.unito.it/~mlsapino/
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+function uniqueReturnValue = startCode(uniqueArg)
 %% Clearing the Workspace
 close all;
 clear;
 clc;
+
+%% Setting up a dummy value so that the function runs successfully
+uniqueReturnValue = 0
 
 % mex -setup C++
 
@@ -26,7 +30,7 @@ r = 10;                       % Curvature Ratio Threshold
 frameCount = 1;
 verbose = 1;
 
-videoFileName = 'C:\Users\ygarg\Dropbox (ASU)\KTH Results\sift3D\Dataset\Weismann\daria_bend.avi';
+videoFileName = '/Users/mattia/videos/daria_bend.avi';
 
 readerObj = VideoReader(videoFileName);
 
@@ -54,16 +58,16 @@ spaceTime = 0;
 pruneTime = 0;
 for octave = 2 : gss.O
     fprintf('Octave - %d\n',octave);
-    
+
     tic;
     keyPoints = getKeyPoints(dogss.octave{octave},octave, threshP*thresh);
     spaceTime = spaceTime + toc;
-    
+
     tic;
     % tFeatures = refineKeyPoints(keyPoints, dogss.octave{octave},dogss.smin,thresh, r);
     tFeatures = refineKeyPoints3DHessian(keyPoints, dogss.octave{octave},dogss.smin,thresh, r);
     pruneTime = pruneTime + toc;
-    
+
     features = [features; tFeatures];
 end
 
@@ -71,7 +75,7 @@ for feature = 1 : size(features,1)
     % Using in general case
     features(feature,13) = gss.octave{features(feature,1)}(features(feature,3),features(feature,4),features(feature,5),features(feature,2));
     features(feature,14) = dogss.octave{features(feature,1)}(features(feature,3),features(feature,4),features(feature,5),features(feature,2));
-    
+
 end
 
 [~,I] = sort(features(:,14),'descend');
@@ -88,14 +92,14 @@ finalFeatures = [];
 descriptors = [];
 descriptorTime = 0;
 for feature = 1 : featureCount
-    
+
     o = features(feature,1);
     s = features(feature,2);
     x = features(feature,3);
     y = features(feature,4);
     t = features(feature,5);
     fprintf(1,'Feature : %d of %d, Location (%d, %d, %d)\n', feature, featureCount, x, y, t);
-    
+
     tic;
     % Create a 3DSIFT descriptor at the given location
     [keys, reRun] = Create_Descriptor(gss.octave{o}(:, :, :, s),1, 1, x, y, t);
