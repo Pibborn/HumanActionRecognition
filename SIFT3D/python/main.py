@@ -4,6 +4,10 @@ import csv
 import logging
 logging.basicConfig(level=Constants.LOGGING_LEVEL)
 
+def testMatlab(videoPath):
+    matlabExtractor = FeatureExtractor(siftMatlabExtraction)
+    matlabExtractor.extract(videoPath)
+
 def main(videoPath):
     myFirstExtractor = FeatureExtractor(siftExtraction)
     logging.info("Extracting sift features from " + videoPath)
@@ -16,4 +20,4 @@ def main(videoPath):
 if __name__ == "__main__":
     videoName = 'daria_bend.avi'
     videoPath = Constants.VIDEO_DIR + videoName
-    main(videoPath)
+    testMatlab(videoPath)

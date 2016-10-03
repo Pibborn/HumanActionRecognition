@@ -1,4 +1,6 @@
 import logging
+from pymatbridge import Matlab
+from SIFT3D.python.settings import Constants
 
 
 class FeatureExtractor:
@@ -11,6 +13,10 @@ class FeatureExtractor:
     def extract(self):
         logging.error("The default extract() method was called. This should never happen.")
 
+def siftMatlabExtraction(videoPath):
+    logging.info("siftMatlabExtraction was called")
+    mlab = Matlab(executable=Constants.MATLAB_EXECUTABLE)
+    mlab.start()
 
 def siftExtraction(videoPath):
     scaleSpace = getScaleSpace(videoPath)
