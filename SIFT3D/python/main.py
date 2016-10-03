@@ -1,5 +1,5 @@
-from videoDescription.featureExtraction import *
-from settings import Constants
+from SIFT3D.python.videoDescription.featureExtraction import *
+from SIFT3D.python.settings import Constants
 import csv
 import logging
 logging.basicConfig(level=Constants.LOGGING_LEVEL)
