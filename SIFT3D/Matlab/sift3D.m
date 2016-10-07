@@ -37,7 +37,7 @@ end
 tic;
 gss   = imgaussian(I, O, S, omin, smin, smax, sigma0, sigman, verb);
 time = toc;
-
+save('gss.mat','gss');
 if verb > 0
     fprintf('Gaussian Computation Time: %d seconds\n', time);
 end
@@ -48,7 +48,7 @@ end
 tic;
 dogss = diffgss(gss);
 time = toc;
-
+save('dogss.mat','dogss');
 if verb > 0
     fprintf('DoG Computation Time: %d seconds\n', time);
 end
@@ -73,7 +73,7 @@ for o = 1 : gss.O
         fprintf('Feature Pruning Time : %s',time );
     end
 end
-
+csvwrite('refinedFeatures.csv',features);
 featureCount = size(features,1);
 finalFeatures = [];
 descriptors = [];
@@ -96,7 +96,8 @@ for feature = 1 : featureCount
     end
     descriptorTime = descriptorTime + toc;
 end
-
+csvwrite('finalFeatures.csv',finalFeatures);
+csvwrite('finalDescriptors.csv',descriptors);
 end
 
 function dss = diffgss(ss)
