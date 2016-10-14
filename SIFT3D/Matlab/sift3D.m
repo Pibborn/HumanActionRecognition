@@ -67,6 +67,7 @@ for o = 1 : gss.O
         fprintf('Feature Extraction Time : %s',time );
     end
     tic;
+    % pruning via edge pruning, keeping only corners
     features = [features; siftRefineMex(idx, dogss.octave{o}, thresh, r)];
     time = toc;
     if verb > 1

@@ -3,7 +3,7 @@ clear;
 clc;
 
 %% DEFINING VIDEO PATH
-videoPath = 'C:\Users\ygarg\Dropbox (ASU)\sift3D\Dataset\Weismann\';
+videoPath = '~/videos/';
 videoName = 'daria_bend.avi';
 
 %% READING VIDEO

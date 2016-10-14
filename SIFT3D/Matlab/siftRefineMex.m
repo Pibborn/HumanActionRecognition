@@ -11,11 +11,11 @@ fCount       = size(idx, 1);
 [X, Y, T, S] = size(I);
 maxIteration = 5;
 for f = 1 : fCount
-    o = idx(f, 1);
-    s = idx(f, 2);
-    x = idx(f, 3);
-    y = idx(f, 4);
-    t = idx(f, 5);
+    o = idx(f, 1); % octave
+    s = idx(f, 2); % scale
+    x = idx(f, 3); % height
+    y = idx(f, 4); % width
+    t = idx(f, 5); % frame/time
     pixelValue = I(x, y, t, s);
     
     dx = 0; dy = 0; dt = 0;
@@ -103,7 +103,11 @@ for f = 1 : fCount
        yn >= 1 && yn <= Y &&...
        tn >= 1 && tn <= T &&...
        sn >= 1 && sn <= S
+        % these are the features that will be printed
         nidx = [nidx; [o, ceil(sn), ceil(xn), ceil(yn), ceil(tn), idx(f,6), val, score]];
+        % idx(f, 6): maximum or minimum
+        % val: contrast
+        % score: curvature ratio
     end
 end
 
