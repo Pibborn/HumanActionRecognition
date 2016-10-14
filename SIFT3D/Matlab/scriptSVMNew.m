@@ -1,16 +1,14 @@
 clear;
 clc;
 
-basePath = 'C:\Users\ygarg\Dropbox (ASU)\KTH Results\sift3D\Results\Weizmann\';
-vocabPath = 'C:\Users\ygarg\Dropbox (ASU)\KTH Results\sift3D\Results\Weizmann\Vocabulary\';
+% point to resultPath in scriptVocabGenerator
+vocabPath = 'C:\Users\reeyash\Dropbox (ASU)\MPEG\code\sift3D\SIFT3D Results\vocab_gHist\';
 vocabs = [50, 100, 250, 500, 750, 1000, 1250, 1500];
-vocabType = '_SIFT3Des.csv';
+vocabType = '_Random3Des_5.csv';
 
-trainInd = csvread(strcat(basePath,'trainInd.csv'));
-testInd  = csvread(strcat(basePath,'testInd.csv'));
-labels   = csvread(strcat(basePath,'labels.csv'));
-
-% labels   = csvread('C:\Users\reeyash\Dropbox (ASU)\MPEG\code\sift3D\SIFT3D Results\labels.csv');
+trainInd = csvread('C:\Users\reeyash\Dropbox (ASU)\MPEG\code\sift3D\SIFT3D Results\trainInd.csv');
+testInd  = csvread('C:\Users\reeyash\Dropbox (ASU)\MPEG\code\sift3D\SIFT3D Results\testInd.csv');
+labels   = csvread('C:\Users\reeyash\Dropbox (ASU)\MPEG\code\sift3D\SIFT3D Results\labels.csv');
 
 NumofClass = 10;
 
@@ -22,14 +20,7 @@ for v = 1 : 8
     for i = 1 : 10
         fprintf('(Iteration : %d\n', i);
         trainData = data(trainInd(:,i),:);
-        
-        subTrainData = bsxfun(@minus,trainData,min(trainData));
-        trainData = bsxfun(@rdivide,subTrainData,max(trainData)-min(trainData));
-        
         testData = data(testInd(:,i),:);
-        
-        subTestData = bsxfun(@minus,testData,min(testData));
-        testData = bsxfun(@rdivide,subTestData,max(testData)-min(testData));
         
         trainLbl = labels(trainInd(:,i));
         testLbl = labels(testInd(:,i));
