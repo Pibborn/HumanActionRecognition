@@ -1,3 +1,5 @@
+function uniqueReturnValue = start(uniqueArg)
+
 close all;
 clear;
 clc;
@@ -40,3 +42,5 @@ end
 frame  = videoDiff(:,:,1);frame = uint8(abs(frame));imshow(frame);
 
 frame = videoDiff(:,:,12);frame(85,60) = 255;imshow(uint8(frame));
+
+uniqueReturnValue = 1;

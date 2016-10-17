@@ -17,8 +17,8 @@ def siftMatlabExtraction(videoPath):
     logging.info("siftMatlabExtraction: was called")
     mlab = Matlab(executable=Constants.MATLAB_EXECUTABLE)
     mlab.start()
-    logging.info("siftMatlabExtraction: running " + Constants.MATLAB_CODE_DIR + "startCode.m")
-    result = mlab.run_func(Constants.MATLAB_CODE_DIR +'startCode.m', {'uniqueArg' : 0})
+    logging.info("siftMatlabExtraction: running " + Constants.MATLAB_CODE_DIR + "start.m")
+    result = mlab.run_func(Constants.MATLAB_CODE_DIR +'start.m', {'uniqueArg' : 0})
     logging.info("siftMatlabExtraction: result is " + str(result))
 
 def siftExtraction(videoPath):
