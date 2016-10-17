@@ -1,10 +1,13 @@
 clear;
 clc;
 
+%% Load parameters
+LoadParams;
+
+% relevant parameters loaded: descriptorPath
+
 % point to the folder that has descriptors csv
-descriptorPath = 'C:\Users\ygarg\Dropbox (ASU)\KTH Results\sift3D\Results\Weizmann\Descriptor\3H\Final\';
-resultPath = 'C:\Users\ygarg\Dropbox (ASU)\KTH Results\sift3D\Results\Weizmann\Vocabulary\';
-descriptorFiles = dir(strcat(descriptorPath,'\*.csv'));
+descriptorFiles = dir(strcat(descriptorPath,'*.csv'));
 
 nFiles = ceil(size(descriptorFiles,1)/2);
 

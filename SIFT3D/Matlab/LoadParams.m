@@ -22,3 +22,28 @@ if (UseHistogramOri)
 else
     OriSigma = 1.0;
 end
+
+%% Various path parameters. Change as needed to run on your machine.
+
+baseDataPath = '~/Documents/uni/tesi/ActionRecognition/SIFT3D/data/';
+
+% Relevant to start.m
+% Full video path will be videoPath + videoName. 
+videoPath = strcat(baseDataPath,'videos/');
+videoName = 'daria_shortest.avi';
+
+% Relevant to scriptVocabGenerator.m
+% the .csv files containing descriptors. all .csvs in this folder will be
+% loaded.
+descriptorPath = strcat(baseDataPath,'descriptors/yash-sample/');
+% this is where the vocabulary generation will output its .csv files to.
+resultPath = strcat(baseDataPath,'results/');
+
+% Relevant to scriptSVMNew.m
+% Should be the same as resultPath above.
+vocabPath = strcat(baseDataPath, 'results/');
+
+% Relevant to sift3D.m
+outFeaturesPath = strcat(baseDataPath, 'features/',videoName,'_finalFeatures.csv');
+outDescriptorsPath = strcat(baseDataPath, 'descriptors/', videoName, '_finalDescriptors.csv');
+outRefinedFeaturesPath = strcat(baseDataPath, 'features/',videoName,'_refinedFeatures.csv');

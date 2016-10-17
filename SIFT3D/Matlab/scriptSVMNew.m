@@ -2,7 +2,7 @@ clear;
 clc;
 
 % point to resultPath in scriptVocabGenerator
-vocabPath = 'C:\Users\reeyash\Dropbox (ASU)\MPEG\code\sift3D\SIFT3D Results\vocab_gHist\';
+vocabPath = '~/Documents/uni/tesi/ActionRecognition/SIFT3D/data/results/';
 vocabs = [50, 100, 250, 500, 750, 1000, 1250, 1500];
 vocabType = '_Random3Des_5.csv';
 

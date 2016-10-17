@@ -2,12 +2,14 @@ close all;
 clear;
 clc;
 
-%% DEFINING VIDEO PATH
-videoPath = '~/videos/';
-videoName = 'daria_bend.avi';
+%% LOAD PARAMETERS
+LoadParams;
+
+% relevant loaded parameters: videoPath, videoName
 
 %% READING VIDEO
 fprintf('Reading Video %s.\n',videoName);
+strcat(videoPath, videoName)
 videoObj = VideoReader(strcat(videoPath, videoName));
 
 height = videoObj.Height;

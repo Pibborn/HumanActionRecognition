@@ -3,6 +3,10 @@ function [features, descriptors, gss, dogss] = sift3D(video)
 features = [];
 descriptors = [];
 
+%% Load Parameters
+LoadParams;
+
+% relevant parameters loaded: outFeaturesPath, outDescriptorsPath
 %% Intensity Video : Normalized 0-1 Video.
 I = (video - min(video(:)))/...
     (max(video(:)) - min(video(:)));
@@ -74,7 +78,7 @@ for o = 1 : gss.O
         fprintf('Feature Pruning Time : %s',time );
     end
 end
-csvwrite('refinedFeatures.csv',features);
+csvwrite(outRefinedFeaturesPath,features);
 featureCount = size(features,1);
 finalFeatures = [];
 descriptors = [];
@@ -97,8 +101,8 @@ for feature = 1 : featureCount
     end
     descriptorTime = descriptorTime + toc;
 end
-csvwrite('finalFeatures.csv',finalFeatures);
-csvwrite('finalDescriptors.csv',descriptors);
+csvwrite(outFeaturesPath,finalFeatures);
+csvwrite(outDescriptorsPath,descriptors);
 end
 
 function dss = diffgss(ss)
