@@ -13,13 +13,21 @@ class FeatureExtractor:
     def extract(self):
         logging.error("The default extract() method was called. This should never happen.")
 
-def siftMatlabExtraction(videoPath):
-    logging.info("siftMatlabExtraction: was called")
+def startMatlab():
+    logging.info("startMatlab: was called")
     mlab = Matlab(executable=Constants.MATLAB_EXECUTABLE)
     mlab.start()
+    return mlab
+
+def siftMatlabExtraction(videoPath, videoName, mlab):
+    logging.info("siftMatlabExtraction: was called for video at path " + videoPath + videoName)
     logging.info("siftMatlabExtraction: running " + Constants.MATLAB_CODE_DIR + "start.m")
-    result = mlab.run_func(Constants.MATLAB_CODE_DIR +'start.m', {'uniqueArg' : 0})
+    result = mlab.run_func(Constants.MATLAB_CODE_DIR +'start.m', videoPath, videoName)
     logging.info("siftMatlabExtraction: result is " + str(result))
+
+def stopMatlab(mlab):
+    mlab.stop()
+
 
 def siftExtraction(videoPath):
     scaleSpace = getScaleSpace(videoPath)

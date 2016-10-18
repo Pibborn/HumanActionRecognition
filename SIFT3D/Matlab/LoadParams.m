@@ -24,13 +24,12 @@ else
 end
 
 %% Various path parameters. Change as needed to run on your machine.
+% global videoName variable, setup from start.m arguments. This should not
+% be changed, as it is needed to properly set the name of the .csv files
+% below.
+global videoName;
 
 baseDataPath = '~/Documents/uni/tesi/ActionRecognition/SIFT3D/data/';
-
-% Relevant to start.m
-% Full video path will be videoPath + videoName. 
-videoPath = strcat(baseDataPath,'videos/');
-videoName = 'daria_shortest.avi';
 
 % Relevant to scriptVocabGenerator.m
 % the .csv files containing descriptors. all .csvs in this folder will be
@@ -44,6 +43,7 @@ resultPath = strcat(baseDataPath,'results/');
 vocabPath = strcat(baseDataPath, 'results/');
 
 % Relevant to sift3D.m
+% videoName is set from arguments in start.m
 outFeaturesPath = strcat(baseDataPath, 'features/',videoName,'_finalFeatures.csv');
 outDescriptorsPath = strcat(baseDataPath, 'descriptors/', videoName, '_finalDescriptors.csv');
 outRefinedFeaturesPath = strcat(baseDataPath, 'features/',videoName,'_refinedFeatures.csv');
