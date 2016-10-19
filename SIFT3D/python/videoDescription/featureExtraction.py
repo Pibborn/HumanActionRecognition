@@ -1,6 +1,6 @@
 import logging
 from pymatbridge import Matlab
-from SIFT3D.python.settings import Constants
+from settings import Constants
 
 
 class FeatureExtractor:

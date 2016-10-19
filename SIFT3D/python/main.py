@@ -1,5 +1,5 @@
-from SIFT3D.python.videoDescription.featureExtraction import *
-from SIFT3D.python.settings import Constants
+from videoDescription.featureExtraction import *
+from settings import Constants
 import csv
 import sys
 import logging
