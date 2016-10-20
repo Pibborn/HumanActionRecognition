@@ -1,5 +1,7 @@
 function success = start(argVideoPath, argVideoName)
 
+success = 1;
+
 %% LOAD PARAMETERS
 % videoPath and videoName are global parameters because they need to be
 % shared with the LoadParams script, which needs it to properly set the
@@ -40,12 +42,6 @@ diffStep = 10;
 
 [feature, descriptor, gss, dogss] = sift3D(video);
 
-frame  = videoDiff(:,:,1);frame = uint8(abs(frame));imshow(frame);
+%frame  = videoDiff(:,:,1);frame = uint8(abs(frame));imshow(frame);
 
-frame = videoDiff(:,:,12);frame(85,60) = 255;imshow(uint8(frame));
-
-success = 1;
-
-close all;
-clear;
-clc;
+%frame = videoDiff(:,:,12);frame(85,60) = 255;imshow(uint8(frame));
