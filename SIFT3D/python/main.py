@@ -6,6 +6,15 @@ import logging
 import glob
 logging.basicConfig(level=Constants.LOGGING_LEVEL)
 
+def parseArguments(args):
+    videoList = []
+    if len(args) == 1:
+        # in this case, the script has not been ran from shell, so it has to be glob-bed.
+        videoList = glob.glob(args[0])
+    else:
+        videoList = args
+    return videoList
+
 def testMatlab(fullVideoPath, mlabInstance):
     matlabExtractor = FeatureExtractor(siftMatlabExtraction)
     videoName = fullVideoPath.split('/')[-1:] # take the part of the string after the last /
@@ -25,7 +34,9 @@ def main(videoPath):
             myFirstWriter.writerow(feature)
 
 if __name__ == "__main__":
-    videoList = glob.glob(sys.argv[1]) # needed to parse arguments that contain wildcards, such as '*.avi'
+    print(sys.argv[1:])
+    videoList = parseArguments(sys.argv[1:])
+    logging.info("List of videos features will be extracted from: " + str(videoList))
     mlabInstance = startMatlab()
     for videoPath in videoList:
         print(videoPath)
