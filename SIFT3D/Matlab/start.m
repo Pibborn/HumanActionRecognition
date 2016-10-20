@@ -1,7 +1,5 @@
 function success = start(argVideoPath, argVideoName)
 
-success = 1;
-
 %% LOAD PARAMETERS
 % videoPath and videoName are global parameters because they need to be
 % shared with the LoadParams script, which needs it to properly set the
@@ -45,3 +43,8 @@ diffStep = 10;
 %frame  = videoDiff(:,:,1);frame = uint8(abs(frame));imshow(frame);
 
 %frame = videoDiff(:,:,12);frame(85,60) = 255;imshow(uint8(frame));
+
+clear;
+close all;
+
+success = 1;
