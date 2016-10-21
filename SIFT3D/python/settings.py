@@ -14,3 +14,9 @@ class Constants:
     DESCRIPTORS_DIR = DATA_DIR + "descriptors/"
     RESULT_DIR = DATA_DIR + "results/"
     LOGGING_LEVEL = logging.INFO
+    BOXING_LABEL = 0
+    RUNNING_LABEL = 1
+    JOGGING_LABEL = 2
+    WALKING_LABEL = 3
+    HANDCLAPPING_LABEL = 4
+    HANDWAVING_LABEL = 5
