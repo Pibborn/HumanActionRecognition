@@ -20,3 +20,4 @@ class Constants:
     WALKING_LABEL = 3
     HANDCLAPPING_LABEL = 4
     HANDWAVING_LABEL = 5
+    SHOW_PLOTS = True

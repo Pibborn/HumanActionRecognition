@@ -99,7 +99,8 @@ def descriptor_matching():
     logging.info("Loaded " + str(len(X)) + " descriptors.")
     # if this fails, then something went wrong with the loading and labeling
     assert len(X) == len(y)
-    pca_plot(X, y)
+    if Constants.SHOW_PLOTS == True:
+        pca_plot(X, y)
     model = svm_matching(X, y)
     yeah, noes = majority_voting(model)
     logging.info("By majority voting: " +str(yeah)+ " correct predictions, "+str(noes)+" wrong predictions.")
