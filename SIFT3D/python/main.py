@@ -12,16 +12,21 @@ def parseArguments(args):
         # in this case, the script has not been ran from shell, so it has to be glob-bed.
         videoList = glob.glob(args[0])
     else:
+        # if
         videoList = args
     return videoList
 
+def splitFullVideoPath(fullVideoPath):
+    videoName = fullVideoPath.split('/')[-1:]  # take the part of the string after the last /
+    videoName = "".join(videoName)  # make it a string again
+    videoPath = fullVideoPath.split('/')[:-1]  # take the part of the string before the last /
+    videoPath = "/".join(videoPath) + "/"  # make it a string again, and take care in putting the /-s in again
+    # the matlab side will concat the full path, but it requires them to be passed as separate arguments
+    return videoName, videoPath
+
 def testMatlab(fullVideoPath, mlabInstance):
     matlabExtractor = FeatureExtractor(siftMatlabExtraction)
-    videoName = fullVideoPath.split('/')[-1:] # take the part of the string after the last /
-    videoName = "".join(videoName) # make it a string again
-    videoPath =  fullVideoPath.split('/')[:-1] # take the part of the string before the last /
-    videoPath = "/".join(videoPath) + "/" # make it a string again, and take care in putting the /-s in again
-    # the matlab side will concat the full path, but it requires them to be passed as separate arguments
+    videoName, videoPath = splitFullVideoPath(fullVideoPath)
     matlabExtractor.extract(videoPath, videoName, mlabInstance)
 
 def main(videoPath):
