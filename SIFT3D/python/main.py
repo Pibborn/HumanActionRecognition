@@ -42,12 +42,13 @@ if __name__ == "__main__":
     print(sys.argv[1:])
     videoList = parseArguments(sys.argv[1:])
     logging.info("List of videos features will be extracted from: " + str(videoList))
-    mlabInstance = startMatlab()
     for videoPath in videoList:
+        mlabInstance = startMatlab()
         print(videoPath)
         try:
             testMatlab(videoPath, mlabInstance)
         except Exception:
             continue
-    stopMatlab(mlabInstance)
+        stopMatlab(mlabInstance)
+
 
