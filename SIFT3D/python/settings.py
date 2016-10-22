@@ -21,3 +21,4 @@ class Constants:
     HANDCLAPPING_LABEL = 4
     HANDWAVING_LABEL = 5
     SHOW_PLOTS = True
+    TAKE_TOP_200 = True

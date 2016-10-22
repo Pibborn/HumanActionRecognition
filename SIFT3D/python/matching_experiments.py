@@ -6,7 +6,7 @@ import collections
 from SIFT3D.python.settings import Constants
 import logging
 logging.basicConfig(level=Constants.LOGGING_LEVEL)
-from sklearn import svm
+from sklearn import svm, neighbors
 from sklearn.model_selection import train_test_split
 from sklearn.decomposition import PCA
 import matplotlib.pyplot as plt
@@ -30,14 +30,23 @@ def infer_label(file_name):
 def load_samples_from_file(file_name, X, y):
     csvReader = csv.reader(open(file_name, "r"))
     xi = list(csvReader)
-    yi = infer_label(file_name)
-    # len(xi) is the number of descriptors we found in a file: they all have the same label
-    for i in range(0, len(xi)):
-        y.append(yi)
     # xi looks like this: [[0,1,2],[4,5,6],[7,8,9]] where [0,1,2] is data from the first descriptor
     # we don't want multiple list levels in X, so we do as follows
     for i in range(0, len(xi)):
         X.append(xi[i])
+        # only take the top 200 descriptors; this can be changed in the settings file
+        if Constants.TAKE_TOP_200 == True and i == 199:
+            break
+    yi = infer_label(file_name)
+    if Constants.TAKE_TOP_200 == True:
+        # if we want to only take the top 200 descriptors, we also must take care not to get out of bounds
+        # as some short videos might have less than 200 descriptors
+        times = min(len(xi), 200)
+    else:
+        # len(xi) is the number of descriptors we found in a file: they all have the same label
+        times = len(xi)
+    for i in range(0, times):
+        y.append(yi)
     return X, y
 
 def pca_plot(X, y):
@@ -52,17 +61,18 @@ def pca_plot(X, y):
     plt.show()
 
 
-def svm_matching(X, y):
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.05)
+def create_model(X, y):
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
     logging.info("Training the model")
-    model = svm.SVC().fit(X_train, y_train)
+    #model = svm.SVC().fit(X_train, y_train)
+    model = neighbors.KNeighborsClassifier(15).fit(X_train, y_train)
     accuracy = model.score(X_test, y_test)
     logging.info("Achieved " + str(accuracy) + " score.")
     return model
 
 # TODO: refactor this
 def majority_voting(model):
-    os.chdir(Constants.DESCRIPTORS_DIR + "test/")
+    os.chdir(Constants.DESCRIPTORS_DIR + "yash-sample-21ott/test")
     yeah = 0
     noes = 0
     for file in glob.glob("*.csv"):
@@ -77,6 +87,8 @@ def majority_voting(model):
         # the predicted label for the whole video
         # is the one that is predicted the most times for single descriptors from that video
         max_counts = max(np.bincount(y_predicted))
+        print(np.bincount(y_predicted))
+        print(actual_label)
         # casting to list has to be done because numpy arrays and lists are handled differently
         predicted_label = list(np.bincount(y_predicted)).index(max_counts)
         if predicted_label == actual_label:
@@ -91,17 +103,19 @@ def descriptor_matching():
     X = []
     # y: matrix of labels. The .csv files don't have these, so we infer them from the file name.
     y = []
-    os.chdir(Constants.DESCRIPTORS_DIR + "train/")
+    os.chdir(Constants.DESCRIPTORS_DIR + "yash-sample-21ott/train/")
     for file in glob.glob("*.csv"):
         X, y = load_samples_from_file(file, X, y)
     X = np.array(X).astype(np.float32) # scikit-learn requires this
     y = np.array(y).astype(np.int32)
     logging.info("Loaded " + str(len(X)) + " descriptors.")
     # if this fails, then something went wrong with the loading and labeling
+    print(X.shape)
+    print(y.shape)
     assert len(X) == len(y)
     if Constants.SHOW_PLOTS == True:
         pca_plot(X, y)
-    model = svm_matching(X, y)
+    model = create_model(X, y)
     yeah, noes = majority_voting(model)
     logging.info("By majority voting: " +str(yeah)+ " correct predictions, "+str(noes)+" wrong predictions.")
 
