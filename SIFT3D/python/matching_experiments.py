@@ -25,7 +25,7 @@ def load_samples_from_file(file_name, X, y):
     yi = infer_label(file_name)
     if Constants.TAKE_TOP_200 == True:
         # if we want to only take the top 200 descriptors, we also must take care not to get out of bounds
-        # as some short videos might have less than 200 descriptors
+        # on yi in the next for loop, as some short videos might have less than 200 descriptors
         times = min(len(xi), 200)
     else:
         # len(xi) is the number of descriptors we found in a file: they all have the same label
