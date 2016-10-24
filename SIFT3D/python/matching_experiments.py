@@ -25,6 +25,25 @@ def infer_label(file_name):
         return Constants.HANDCLAPPING_LABEL
     if "handwaving" in file_name:
         return Constants.HANDWAVING_LABEL
+    if "bend" in file_name:
+        return Constants.BEND_LABEL
+    if "jack" in file_name:
+        return Constants.JACK_LABEL
+    # it is important that this check comes before the 'jump' one
+    if "pjump" in file_name:
+        return Constants.PJUMP_LABEL
+    if "jump" in file_name:
+        return Constants.JUMP_LABEL
+    if "run" in file_name:
+        return Constants.WEISSMAN_RUN_LABEL
+    if "side" in file_name:
+        return Constants.SIDE_LABEL
+    if "skip" in file_name:
+        return Constants.SKIP_LABEL
+    if "walk" in file_name:
+        return Constants.WEISSMAN_WALK_LABEL
+    if "wave" in file_name:
+        return Constants.WEISSMAN_WAVE_LABEL
     return -1
 
 def load_samples_from_file(file_name, X, y):
@@ -72,7 +91,7 @@ def create_model(X, y):
 
 # TODO: refactor this
 def majority_voting(model):
-    os.chdir(Constants.DESCRIPTORS_DIR + "yash-sample-21ott/test")
+    os.chdir(Constants.DESCRIPTORS_DIR + "weissman-yash/test")
     yeah = 0
     noes = 0
     for file in glob.glob("*.csv"):
@@ -103,7 +122,7 @@ def descriptor_matching():
     X = []
     # y: matrix of labels. The .csv files don't have these, so we infer them from the file name.
     y = []
-    os.chdir(Constants.DESCRIPTORS_DIR + "yash-sample-21ott/train/")
+    os.chdir(Constants.DESCRIPTORS_DIR + "weissman-yash/train/")
     for file in glob.glob("*.csv"):
         X, y = load_samples_from_file(file, X, y)
     X = np.array(X).astype(np.float32) # scikit-learn requires this
