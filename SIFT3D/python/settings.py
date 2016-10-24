@@ -14,6 +14,7 @@ class Constants:
     DESCRIPTORS_DIR = DATA_DIR + "descriptors/"
     RESULT_DIR = DATA_DIR + "results/"
     LOGGING_LEVEL = logging.INFO
+    KTH_DATASET_DIR = DESCRIPTORS_DIR + "kth-yash/train/"
     BOXING_LABEL = 0
     RUNNING_LABEL = 1
     JOGGING_LABEL = 2
@@ -22,6 +23,7 @@ class Constants:
     HANDWAVING_LABEL = 5
     SHOW_PLOTS = False
     TAKE_TOP_200 = True
+    WEISSMAN_DATASET_DIR = DESCRIPTORS_DIR + "weissman-yash/train/"
     WEISSMAN_WAVE_LABEL = 0
     WEISSMAN_WALK_LABEL = 1
     SKIP_LABEL = 2

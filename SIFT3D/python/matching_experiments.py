@@ -91,7 +91,8 @@ def create_model(X, y):
 
 # TODO: refactor this
 def majority_voting(model):
-    os.chdir(Constants.DESCRIPTORS_DIR + "weissman-yash/test")
+    os.chdir(os.getcwd() + "/../test/")
+    logging.info("Using " + os.getcwd() + " as folder for the testing videos.")
     yeah = 0
     noes = 0
     for file in glob.glob("*.csv"):
@@ -116,27 +117,44 @@ def majority_voting(model):
             noes += 1
     return yeah, noes
 
-def descriptor_matching():
-    logging.info("Loading descriptors from " + Constants.DESCRIPTORS_DIR)
+def load_descriptors(dataset_string_id):
+    if dataset_string_id == "weissman":
+        os.chdir(Constants.WEISSMAN_DATASET_DIR)
+    else:
+        if dataset_string_id == "kth":
+            os.chdir(Constants.KTH_DATASET_DIR)
+        else:
+            logging.error("Invalid dataset_string_id. ")
+            return -1
+    logging.info("Loading descriptors from " + os.getcwd())
     # X: matrix of sample data. At this time, each row is a SIFT3D descriptor.
     X = []
     # y: matrix of labels. The .csv files don't have these, so we infer them from the file name.
     y = []
-    os.chdir(Constants.DESCRIPTORS_DIR + "weissman-yash/train/")
     for file in glob.glob("*.csv"):
         X, y = load_samples_from_file(file, X, y)
     X = np.array(X).astype(np.float32) # scikit-learn requires this
     y = np.array(y).astype(np.int32)
     logging.info("Loaded " + str(len(X)) + " descriptors.")
     # if this fails, then something went wrong with the loading and labeling
-    print(X.shape)
-    print(y.shape)
     assert len(X) == len(y)
     if Constants.SHOW_PLOTS == True:
         pca_plot(X, y)
+    return X, y
+
+def weissman_experiment():
+    logging.info("Starting a matching experiment on the Weissman dataset.")
+    X, y = load_descriptors("weissman")
     model = create_model(X, y)
     yeah, noes = majority_voting(model)
-    logging.info("By majority voting: " +str(yeah)+ " correct predictions, "+str(noes)+" wrong predictions.")
+    logging.info("By majority voting: " + str(yeah) + " correct predictions, " + str(noes) + " wrong predictions.")
+
+def kth_experiment():
+    logging.info("Starting a matching experiment on the KTH dataset.")
+    X, y = load_descriptors("kth")
+    model = create_model(X, y)
+    yeah, noes = majority_voting(model)
+    logging.info("By majority voting: " + str(yeah) + " correct predictions, " + str(noes) + " wrong predictions.")
 
 if __name__ == "__main__":
-    descriptor_matching()
+    weissman_experiment()
