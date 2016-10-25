@@ -14,7 +14,7 @@ class Constants:
     DESCRIPTORS_DIR = DATA_DIR + "descriptors/"
     RESULT_DIR = DATA_DIR + "results/"
     LOGGING_LEVEL = logging.INFO
-    KTH_DATASET_DIR = DESCRIPTORS_DIR + "kth-yash/train/"
+    KTH_DATASET_DIR = DESCRIPTORS_DIR + "kth-yash/"
     BOXING_LABEL = 0
     RUNNING_LABEL = 1
     JOGGING_LABEL = 2

@@ -1,3 +1,5 @@
+from SIFT3D.python.settings import Constants
+
 def infer_label(file_name):
     file_name = file_name
     if "boxing" in file_name:
