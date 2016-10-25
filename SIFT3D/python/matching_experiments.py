@@ -136,7 +136,7 @@ def weissman_experiment_multiple(times):
         total_yeahs += yeah
         total_noes += noes
     logging.info("After "+str(times)+" Weissman experiments:")
-    logging.info(""+ str(total_yeahs) + "correct predictions")
+    logging.info(""+ str(total_yeahs) + " correct predictions")
     logging.info(""+ str(total_noes) + " wrong predictions")
     logging.info(""+ str(total_yeahs/times) + " accuracy")
 
@@ -154,4 +154,4 @@ def kth_experiment_multiple(times):
 
 if __name__ == "__main__":
     #kth_experiment_multiple(50)
-    weissman_experiment_multiple(1)
+    weissman_experiment_multiple(50)

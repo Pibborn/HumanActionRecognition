@@ -31,6 +31,8 @@ def infer_label(file_name):
         return Constants.SKIP_LABEL
     if "walk" in file_name:
         return Constants.WEISSMAN_WALK_LABEL
-    if "wave" in file_name:
-        return Constants.WEISSMAN_WAVE_LABEL
+    if "wave1" in file_name:
+        return Constants.WEISSMAN_WAVE1_LABEL
+    if "wave2" in file_name:
+        return Constants.WEISSMAN_WAVE2_LABEL
     return -1
