@@ -34,7 +34,7 @@ magnif   =  3.0;
 % Parese input
 compute_descriptor      = 0;
 discard_boundary_points = 1;
-verb = 1;
+verb = 0;
 if verb > 0
     fprintf('Computing Scale Space\n');
 end
@@ -90,7 +90,9 @@ for feature = 1 : NumMaxFeatures
     x = features(feature,3);
     y = features(feature,4);
     t = features(feature,5);
-    fprintf(1,'Feature : %d of %d, Location (%d, %d, %d)\n', feature, featureCount, x, y, t);
+    if verb > 1
+        fprintf(1,'Feature : %d of %d, Location (%d, %d, %d)\n', feature, featureCount, x, y, t);
+    end
     
     tic;
     % Create a 3DSIFT descriptor at the given location
