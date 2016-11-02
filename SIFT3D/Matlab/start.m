@@ -25,7 +25,7 @@ frameCount = 0;
 
 while hasFrame(videoObj)
     frameCount = frameCount + 1;
-    fprintf('Reading Frame %d\n', frameCount);
+    %fprintf('Reading Frame %d\n', frameCount);
     frame = readFrame(videoObj);
     grayFrame = rgb2gray(frame);
     video(:, :, frameCount) = grayFrame;
