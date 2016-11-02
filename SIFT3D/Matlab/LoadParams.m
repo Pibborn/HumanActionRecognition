@@ -23,6 +23,8 @@ else
     OriSigma = 1.0;
 end
 
+NumMaxFeatures = 200; % maximum number of features for a video
+
 %% Various path parameters. Change as needed to run on your machine.
 % global videoName variable, setup from start.m arguments. This should not
 % be changed, as it is needed to properly set the name of the .csv files
