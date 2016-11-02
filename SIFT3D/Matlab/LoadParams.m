@@ -1,5 +1,5 @@
 TwoPeak_Flag = 1;  % Allow 3DSIFT to throw out points, Default: 1
-IndexSize = 2;  % Min: 1  Default: 2 
+IndexSize = 3;  % Min: 1  Default: 2 
 
 Display_flag = 0;  % Display a sphere which can be rotated (Rotate 3D button) to view gradient directions
 Tessellation_flag = 1;  % Keep this as 1
