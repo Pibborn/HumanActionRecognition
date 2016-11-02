@@ -41,7 +41,7 @@ def main(videoPath):
 if __name__ == "__main__":
     print(sys.argv[1:])
     videoList = parseArguments(sys.argv[1:])
-    logging.info("List of videos features will be extracted from: " + str(videoList))
+    logging.info("Number of videos features will be extracted from: " + str(len(videoList)))
     for videoPath in videoList:
         mlabInstance = startMatlab()
         print(videoPath)
