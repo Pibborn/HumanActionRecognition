@@ -3,6 +3,7 @@ from settings import Constants
 import csv
 import sys
 import logging
+from multiprocessing import Process, cpu_count
 import glob
 logging.basicConfig(level=Constants.LOGGING_LEVEL)
 
@@ -24,13 +25,24 @@ def splitFullVideoPath(fullVideoPath):
     # the matlab side will concat the full path, but it requires them to be passed as separate arguments
     return videoName, videoPath
 
-def testMatlab(fullVideoPath, mlabInstance):
+def extractFromVideo(fullVideoPath, mlabInstance):
     matlabExtractor = FeatureExtractor(siftMatlabExtraction)
     videoName, videoPath = splitFullVideoPath(fullVideoPath)
     matlabExtractor.extract(videoPath, videoName, mlabInstance)
 
+def extractFromList(videoList, mlabInstance):
+    matlabExtractor = FeatureExtractor(siftMatlabExtraction)
+    for video in videoList:
+        videoName, videoPath = splitFullVideoPath(video)
+        matlabExtractor.extract(videoPath, videoName, mlabInstance)
+
+def parallelExtraction(videoList):
+    mlabInstance = startMatlab()
+    matlabParallelExtractor = FeatureExtractor(parallelSiftMatlabExtraction)
+    matlabParallelExtractor.extract(videoList, mlabInstance)
+
 def main(videoPath):
-    myFirstExtractor = FeatureExtractor(siftExtraction)
+    myFirstExtractor = FeatureExtractor(parallelSiftMatlabExtraction)
     logging.info("Extracting sift features from " + videoPath)
     siftFeatures = myFirstExtractor.extract(videoPath)
     with open(Constants.CSV_DIR + videoName + "_siftfeatures.csv", 'wb') as csvFile:
@@ -39,16 +51,8 @@ def main(videoPath):
             myFirstWriter.writerow(feature)
 
 if __name__ == "__main__":
-    print(sys.argv[1:])
     videoList = parseArguments(sys.argv[1:])
     logging.info("Number of videos features will be extracted from: " + str(len(videoList)))
-    for videoPath in videoList:
-        mlabInstance = startMatlab()
-        print(videoPath)
-        try:
-            testMatlab(videoPath, mlabInstance)
-        except Exception:
-            continue
-        stopMatlab(mlabInstance)
+    parallelExtraction(videoList)
 
 

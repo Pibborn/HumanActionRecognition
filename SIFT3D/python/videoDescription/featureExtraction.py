@@ -25,6 +25,12 @@ def siftMatlabExtraction(videoPath, videoName, mlab):
     result = mlab.run_func(Constants.MATLAB_CODE_DIR +'start.m', videoPath, videoName)
     logging.info("siftMatlabExtraction: result is " + str(result))
 
+def parallelSiftMatlabExtraction(videoList, mlab):
+    logging.info("parallelSiftMatlabExtraction: was called for a list of videos " + str(len(videoList)) + " long")
+    logging.info("parallelSiftMatlabExtraction: running " + Constants.MATLAB_CODE_DIR + "start_parallel.m")
+    result = mlab.run_func(Constants.MATLAB_CODE_DIR + 'start_parallel.m', videoList)
+    logging.info("parallelSiftMatlabExtraction: result is " + str(result))
+
 def stopMatlab(mlab):
     mlab.stop()
 
