@@ -24,6 +24,7 @@ else
 end
 
 NumMaxFeatures = 200; % maximum number of features for a video
+NumProcessors = 12; % number of processors available on your machine
 
 %% Various path parameters. Change as needed to run on your machine.
 % global videoName variable, setup from start.m arguments. This should not
