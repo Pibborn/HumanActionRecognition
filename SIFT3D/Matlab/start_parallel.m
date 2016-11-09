@@ -1,8 +1,15 @@
-function [ returnValue ] = start_parallel(video_list)
-% start_parallel: an utility function that calls start.m to have
-%                some kind of parallelism for feature extraction
-LoadParams;
-% set up video arguments for parallel execution
+% start_parallel: an utility script that calls start.m to have
+%                 some kind of parallelism for feature extraction
+
+% set up the list of videos
+LoadParams; % loads videoDir 
+video_list = dir(strcat(videoPath, '*.avi'));
+video_list = {video_list.name};
+
+% add videoDir to the MATLAB path, or the videos in video_list will not be recognized
+addpath(videoPath)
+
+% set up video_list for parallel execution
 % "zero-pad" the video_list argument
 zero_pad_times = NumProcessors - mod(size(video_list, 2), NumProcessors);
 if zero_pad_times ~= 0
@@ -40,6 +47,3 @@ parfor i=1:NumProcessors
         end
     end
 end
-returnValue = 1;
-end
-

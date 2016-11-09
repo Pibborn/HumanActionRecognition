@@ -23,6 +23,7 @@ else
     OriSigma = 1.0;
 end
 
+NumProcessors = 4;
 NumMaxFeatures = 200; % maximum number of features for a video
 NumProcessors = 12; % number of processors available on your machine
 
@@ -50,3 +51,7 @@ vocabPath = strcat(baseDataPath, 'results/');
 outFeaturesPath = strcat(baseDataPath, 'features/',videoName,'_finalFeatures.csv');
 outDescriptorsPath = strcat(baseDataPath, 'descriptors/', videoName, '_finalDescriptors.csv');
 outRefinedFeaturesPath = strcat(baseDataPath, 'features/',videoName,'_refinedFeatures.csv');
+
+% Relevant to start_parallel.m
+% Path of the videos you desire to extract features from
+videoPath = strcat(baseDataPath, 'videos/kth-full/')
