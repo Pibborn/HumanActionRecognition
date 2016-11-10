@@ -83,7 +83,8 @@ featureCount = size(features,1);
 finalFeatures = [];
 descriptors = [];
 descriptorTime = 0;
-for feature = 1 : NumMaxFeatures
+featureCount = min(featureCount, NumMaxFeatures)
+for feature = 1 : featureCount
     
     o = features(feature,1);
     s = features(feature,2);

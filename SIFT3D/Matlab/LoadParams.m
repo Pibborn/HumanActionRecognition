@@ -23,7 +23,7 @@ else
     OriSigma = 1.0;
 end
 
-NumProcessors = 4;
+NumProcessors = 12;
 NumMaxFeatures = 200; % maximum number of features for a video
 NumProcessors = 12; % number of processors available on your machine
 
@@ -33,7 +33,7 @@ NumProcessors = 12; % number of processors available on your machine
 % below.
 global videoName;
 
-baseDataPath = '~/Documents/uni/tesi/ActionRecognition/SIFT3D/data/';
+baseDataPath = '/home/cerrato/ActionRecognition/SIFT3D/data/';
 
 % Relevant to scriptVocabGenerator.m
 % the .csv files containing descriptors. all .csvs in this folder will be
@@ -54,4 +54,4 @@ outRefinedFeaturesPath = strcat(baseDataPath, 'features/',videoName,'_refinedFea
 
 % Relevant to start_parallel.m
 % Path of the videos you desire to extract features from
-videoPath = strcat(baseDataPath, 'videos/kth-full/')
+videoPath = strcat(baseDataPath, 'videos/kth-again/');

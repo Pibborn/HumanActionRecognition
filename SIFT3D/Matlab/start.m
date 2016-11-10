@@ -11,7 +11,7 @@ videoName = argVideoName;
 LoadParams;
 
 %% READING VIDEO
-fullVideoPath = strcat(videoPath, videoName)
+fullVideoPath = strcat(videoPath, videoName);
 fprintf('Reading Video %s.\n',videoName);
 videoObj = VideoReader(fullVideoPath);
 
