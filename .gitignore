@@ -8,7 +8,7 @@
 *.avi
 
 # Data files 
-# *.csv
+*.csv
 
 # Temp files
 *~
