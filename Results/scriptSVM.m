@@ -1,16 +1,16 @@
 % ----------------------------------------------------------------------- %
-% STAR : Spatio-Temporal Action Recognition Framework                     %
+% STAR : Spatio-Temporal Action Recognition Framework                     
 % ----------------------------------------------------------------------- %
-% AUTHOR(S)           : CONTACT                                           %
+% AUTHOR(S)           : CONTACT                                           
 % ----------------------------------------------------------------------- %
-% K. Selcuk Candan    : N.A.                                              %
-% Maria-Luisa Sapino  : N.A.                                              %
-% Mattia Cerrato      : mattia.cerrato@edu.unito.it                       %
-% Yash Garg           : ygarg@asu.edu                                     %
+% K. Selcuk Candan    : N.A.                                              
+% Maria-Luisa Sapino  : N.A.                                              
+% Mattia Cerrato      : mattia.cerrato@edu.unito.it                       
+% Yash Garg           : ygarg@asu.edu                                     
 % ----------------------------------------------------------------------- %
-% EXPERIMENT TYPE     : SVM Classification                                %
+% EXPERIMENT TYPE     : SVM Classification                                
 % ----------------------------------------------------------------------- %
-% THEORY                                                                  %
+% THEORY                                                                  
 % ----------------------------------------------------------------------- %
 % + SVM classification is implemented using one-vs-all classifiers
 %   and trained and tested using Leave-One-Out strategy. 
@@ -20,13 +20,13 @@
 % + SVM was trained separately for both, linear and polynomial kernel with 
 %   degree 2.
 % ----------------------------------------------------------------------- %
-% INITIALINING FLAGS                                                      %
+% INITIALINING FLAGS                                                      
 % ----------------------------------------------------------------------- %
 % Normalize the Histograms
 % normChk : 0 : Do Not Normalize
 % normChk : 1 : Do Normalize
 % ----------------------------------------------------------------------- %
-% INITIALINING PATHS                                                      %
+% INITIALINING PATHS                                                      
 % ----------------------------------------------------------------------- %
 % dataPath  : Points to the folder containing the trainInd, testInd and
 %             labels files.
