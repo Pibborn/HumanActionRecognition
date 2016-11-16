@@ -1,0 +1,26 @@
+MEX {
+	global:
+		mexFunction;
+		emlrtMexFcnProperties;
+		Create_Descriptor;
+		asr_s32;
+		b_emlrt_marshallIn;
+		disp;
+		e_emlrt_marshallIn;
+		emlrt_marshallIn;
+		emlrt_marshallOut;
+		emxEnsureCapacity;
+		emxFree_boolean_T;
+		emxFree_int32_T;
+		emxFree_real_T;
+		emxInit_boolean_T;
+		emxInit_int32_T;
+		emxInit_real_T;
+		emxInit_real_T1;
+		emxInit_real_T2;
+		Create_Descriptor_initialize;
+		Create_Descriptor_terminate;
+		Create_Descriptor_atexit;
+	local:
+		*;
+};

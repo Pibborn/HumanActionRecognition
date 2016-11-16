@@ -1,0 +1,15 @@
+MEX {
+	global:
+		mexFunction;
+		emlrtMexFcnProperties;
+		getKeyPoints;
+		emxEnsureCapacity;
+		emxFree_real_T;
+		emxInit_real_T;
+		emxInit_real_T1;
+		getKeyPoints_initialize;
+		getKeyPoints_terminate;
+		getKeyPoints_atexit;
+	local:
+		*;
+};

@@ -1,0 +1,796 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Code Generation Report</title>
+<link rel="stylesheet" type="text/css" href="file:///C:\\Program Files\\MATLAB\\R2015b\\toolbox\\coder\\coder\\resources\\eml_report.css" />
+<link rel="stylesheet" type="text/css" href="file:///C:\\Program Files\\MATLAB\\R2015b\\toolbox\\coder\\coder\\resources\\jQuery\\ui.resizable.css" />
+<link rel="stylesheet" type="text/css" href="file:///C:\\Users\\ygarg\\Dropbox (ASU)\\sift3D\\Parallel\\codegen\\mex\\Create_Descriptor\\html\\index.css" />
+
+<script type="text/javascript" src="file:///C:\\Program Files\\MATLAB\\R2015b\\toolbox\\coder\\coder\\resources\\jQuery\\jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="file:///C:\\Program Files\\MATLAB\\R2015b\\toolbox\\coder\\coder\\resources\\jQuery\\jquery-ui-1.7.custom.min.js"></script>
+<script type="text/javascript" src="file:///C:\\Program Files\\MATLAB\\R2015b\\toolbox\\coder\\coder\\resources\\jQuery\\jquery.tablesorter.mod.js"></script>
+<script type="text/javascript" src="file:///C:\\Program Files\\MATLAB\\R2015b\\toolbox\\coder\\coder\\resources\\jQuery\\jquery.hotkeys-0.7.8.js"></script>
+<script type="text/javascript" src="file:///C:\\Program Files\\MATLAB\\R2015b\\toolbox\\coder\\coder\\resources\\eml_report_interactions.js"></script>
+<script type="text/javascript" src="file:///C:\\Program Files\\MATLAB\\R2015b\\toolbox\\coder\\coder\\resources\\eml_report_layout.js"></script>
+<script type="text/javascript" src="file:///C:\\Program Files\\MATLAB\\R2015b\\toolbox\\rtw\\rtw\\+coder\\+report\\resources\\rtwshrink.js"></script>
+<script type="text/javascript">
+var localizedMessages = {
+    callSelectPrompt: "Select a function call:",
+    callSelectSource: "Calls from this function",
+    callSelectTarget: "Calls to this function",
+    infoForExpression: "Information for the selected expression:",
+    infoForVarType: "Information for the selected variable:",
+    infoForVarConst: "Information for the selected compile-time constant:",
+    infoForVarNone: "This variable does not have information associated with it.",
+    infoForFilter: "Matched {0}/{1} functions, {2}/{3} methods",
+    autoExtrinsicCall: "Only supported within the MATLAB environment."
+};
+var keyBindings = {
+        selectMCodeTab: "Ctrl+m",
+    selectCallStackTab: "Ctrl+k",
+        selectCCodeTab: "Ctrl+c",
+       selectReportTab: "Ctrl+r",
+     selectCenterPanel: "Ctrl+w",
+      selectSummaryTab: "Ctrl+s",
+     selectMessagesTab: "Ctrl+a",
+    selectWatchListTab: "Ctrl+v",
+     selectBuildLogTab: "Ctrl+t"
+};
+var functionInfoTable = {
+ MATLABcode1: "Create_Descriptor1_mcode.html",
+ fpath1: "C:/Users/ygarg/Dropbox (ASU)/sift3D/Parallel/Create_Descriptor.m",
+ lines1: [1, 1, 90],
+ watch1: "Create_Descriptor1_watch.html",
+ title1: "Function: <span class='functionname'><a title='C:&nbsp;\\Users\\ygarg\\Dropbox&nbsp;(ASU)\\sift3D\\Parallel\\Create_Descriptor.m' class='functionlink' href=\"matlab: open('C:\\Users\\ygarg\\Dropbox (ASU)\\sift3D\\Parallel\\Create_Descriptor.m')\">Create_Descriptor</a></span>",
+ tcall1: [  ],
+ scall1: [ [ "From line 74 to sphere_tri", "272#srcline1" ], [ "From line 75 to buildOriHists", "369#srcline1" ], , [ "From line 87 to MakeKeypoint", "507#srcline2" ] ],
+ MATLABcode163: "mesh_find_vertex163_mcode.html",
+ fpath163: "C:/Users/ygarg/Dropbox (ASU)/sift3D/Parallel/mesh_refine_tri4.m",
+ lines163: [153, 157, 179],
+ watch163: "mesh_find_vertex163_watch.html",
+ title163: "Function: <span class='functionname'><a title='C:&nbsp;\\Users\\ygarg\\Dropbox&nbsp;(ASU)\\sift3D\\Parallel\\mesh_refine_tri4.m' class='functionlink' href=\"matlab: open('C:\\Users\\ygarg\\Dropbox (ASU)\\sift3D\\Parallel\\mesh_refine_tri4.m')\">mesh_refine_tri4 &gt; mesh_find_vertex</a></span>",
+ tcall163: [ [ "From mesh_refine_tri4 line 113", "164#F163N18:B150" ], [ "From mesh_refine_tri4 line 114", "164#F163N18:B159" ], [ "From mesh_refine_tri4 line 115", "164#F163N18:B168" ] ],
+ scall163: [  ],
+ MATLABcode164: "mesh_refine_tri4164_mcode.html",
+ fpath164: "C:/Users/ygarg/Dropbox (ASU)/sift3D/Parallel/mesh_refine_tri4.m",
+ lines164: [1, 1, 157],
+ watch164: "mesh_refine_tri4164_watch.html",
+ title164: "Function: <span class='functionname'><a title='C:&nbsp;\\Users\\ygarg\\Dropbox&nbsp;(ASU)\\sift3D\\Parallel\\mesh_refine_tri4.m' class='functionlink' href=\"matlab: open('C:\\Users\\ygarg\\Dropbox (ASU)\\sift3D\\Parallel\\mesh_refine_tri4.m')\">mesh_refine_tri4</a></span>",
+ tcall164: [ [ "From sphere_tri line 206", "272#F164N17:B504" ] ],
+ scall164: [ [ "From line 113 to mesh_refine_tri4 > mesh_find_vertex", "163#srcline157" ], [ "From line 114 to mesh_refine_tri4 > mesh_find_vertex", "163#srcline157" ], [ "From line 115 to mesh_refine_tri4 > mesh_find_vertex", "163#srcline157" ] ],
+ MATLABcode215: "sphere_project215_mcode.html",
+ fpath215: "C:/Users/ygarg/Dropbox (ASU)/sift3D/Parallel/sphere_project.m",
+ lines215: [1, 1, 70],
+ watch215: "sphere_project215_watch.html",
+ title215: "Function: <span class='functionname'><a title='C:&nbsp;\\Users\\ygarg\\Dropbox&nbsp;(ASU)\\sift3D\\Parallel\\sphere_project.m' class='functionlink' href=\"matlab: open('C:\\Users\\ygarg\\Dropbox (ASU)\\sift3D\\Parallel\\sphere_project.m')\">sphere_project</a></span>",
+ tcall215: [ [ "From sphere_tri line 208", "272#F215N19:B511" ] ],
+ scall215: [  ],
+ MATLABcode272: "sphere_tri272_mcode.html",
+ fpath272: "C:/Users/ygarg/Dropbox (ASU)/sift3D/Parallel/sphere_tri.m",
+ lines272: [1, 1, 234],
+ watch272: "sphere_tri272_watch.html",
+ title272: "Function: <span class='functionname'><a title='C:&nbsp;\\Users\\ygarg\\Dropbox&nbsp;(ASU)\\sift3D\\Parallel\\sphere_tri.m' class='functionlink' href=\"matlab: open('C:\\Users\\ygarg\\Dropbox (ASU)\\sift3D\\Parallel\\sphere_tri.m')\">sphere_tri</a></span>",
+ tcall272: [ [ "From Create_Descriptor line 74", "1#F272N20:B130" ], [ "From KeySample line 45", "464#F272N20:B82" ] ],
+ scall272: [ [ "From line 206 to mesh_refine_tri4", "164#srcline1" ], [ "From line 208 to sphere_project", "215#srcline1" ] ],
+ MATLABcode285: "GetGradOri_vector285_mcode.html",
+ fpath285: "C:/Users/ygarg/Dropbox (ASU)/sift3D/Parallel/GetGradOri_vector.m",
+ lines285: [1, 1, 64],
+ watch285: "GetGradOri_vector285_watch.html",
+ title285: "Function: <span class='functionname'><a title='C:&nbsp;\\Users\\ygarg\\Dropbox&nbsp;(ASU)\\sift3D\\Parallel\\GetGradOri_vector.m' class='functionlink' href=\"matlab: open('C:\\Users\\ygarg\\Dropbox (ASU)\\sift3D\\Parallel\\GetGradOri_vector.m')\">GetGradOri_vector</a></span>",
+ tcall285: [ [ "From buildOriHists line 59", "369#F285N4:B184" ], [ "From AddSample line 52", "463#F285N4:B153" ] ],
+ scall285: [  ],
+ MATLABcode369: "buildOriHists369_mcode.html",
+ fpath369: "C:/Users/ygarg/Dropbox (ASU)/sift3D/Parallel/buildOriHists.m",
+ lines369: [1, 1, 76],
+ watch369: "buildOriHists369_watch.html",
+ title369: "Function: <span class='functionname'><a title='C:&nbsp;\\Users\\ygarg\\Dropbox&nbsp;(ASU)\\sift3D\\Parallel\\buildOriHists.m' class='functionlink' href=\"matlab: open('C:\\Users\\ygarg\\Dropbox (ASU)\\sift3D\\Parallel\\buildOriHists.m')\">buildOriHists</a></span>",
+ tcall369: [ [ "From Create_Descriptor line 75", "1#F369N11:B139" ] ],
+ scall369: [ [ "From line 59 to GetGradOri_vector", "285#srcline1" ] ],
+ MATLABcode462: "PlaceInIndex462_mcode.html",
+ fpath462: "C:/Users/ygarg/Dropbox (ASU)/sift3D/Parallel/PlaceInIndex.m",
+ lines462: [1, 1, 56],
+ watch462: "PlaceInIndex462_watch.html",
+ title462: "Function: <span class='functionname'><a title='C:&nbsp;\\Users\\ygarg\\Dropbox&nbsp;(ASU)\\sift3D\\Parallel\\PlaceInIndex.m' class='functionlink' href=\"matlab: open('C:\\Users\\ygarg\\Dropbox (ASU)\\sift3D\\Parallel\\PlaceInIndex.m')\">PlaceInIndex</a></span>",
+ tcall462: [ [ "From AddSample line 55", "463#F462N10:B168" ] ],
+ scall462: [  ],
+ MATLABcode463: "AddSample463_mcode.html",
+ fpath463: "C:/Users/ygarg/Dropbox (ASU)/sift3D/Parallel/AddSample.m",
+ lines463: [1, 1, 59],
+ watch463: "AddSample463_watch.html",
+ title463: "Function: <span class='functionname'><a title='C:&nbsp;\\Users\\ygarg\\Dropbox&nbsp;(ASU)\\sift3D\\Parallel\\AddSample.m' class='functionlink' href=\"matlab: open('C:\\Users\\ygarg\\Dropbox (ASU)\\sift3D\\Parallel\\AddSample.m')\">AddSample</a></span>",
+ tcall463: [ [ "From KeySample line 102", "464#F463N2:B393" ] ],
+ scall463: [ [ "From line 52 to GetGradOri_vector", "285#srcline1" ], [ "From line 55 to PlaceInIndex", "462#srcline1" ] ],
+ MATLABcode464: "KeySample464_mcode.html",
+ fpath464: "C:/Users/ygarg/Dropbox (ASU)/sift3D/Parallel/KeySample.m",
+ lines464: [1, 1, 107],
+ watch464: "KeySample464_watch.html",
+ title464: "Function: <span class='functionname'><a title='C:&nbsp;\\Users\\ygarg\\Dropbox&nbsp;(ASU)\\sift3D\\Parallel\\KeySample.m' class='functionlink' href=\"matlab: open('C:\\Users\\ygarg\\Dropbox (ASU)\\sift3D\\Parallel\\KeySample.m')\">KeySample</a></span>",
+ tcall464: [ [ "From KeySampleVec line 45", "465#F464N5:B82" ] ],
+ scall464: [ [ "From line 45 to sphere_tri", "272#srcline1" ], , [ "From line 102 to AddSample", "463#srcline1" ] ],
+ MATLABcode465: "KeySampleVec465_mcode.html",
+ fpath465: "C:/Users/ygarg/Dropbox (ASU)/sift3D/Parallel/KeySampleVec.m",
+ lines465: [1, 1, 72],
+ watch465: "KeySampleVec465_watch.html",
+ title465: "Function: <span class='functionname'><a title='C:&nbsp;\\Users\\ygarg\\Dropbox&nbsp;(ASU)\\sift3D\\Parallel\\KeySampleVec.m' class='functionlink' href=\"matlab: open('C:\\Users\\ygarg\\Dropbox (ASU)\\sift3D\\Parallel\\KeySampleVec.m')\">KeySampleVec</a></span>",
+ tcall465: [ [ "From MakeKeypoint > MakeKeypointSample line 109", "506#F465N6:B228" ] ],
+ scall465: [ [ "From line 45 to KeySample", "464#srcline1" ] ],
+ MATLABcode490: "NormalizeVec490_mcode.html",
+ fpath490: "C:/Users/ygarg/Dropbox (ASU)/sift3D/Parallel/NormalizeVec.m",
+ lines490: [1, 1, 8],
+ watch490: "NormalizeVec490_watch.html",
+ title490: "Function: <span class='functionname'><a title='C:&nbsp;\\Users\\ygarg\\Dropbox&nbsp;(ASU)\\sift3D\\Parallel\\NormalizeVec.m' class='functionlink' href=\"matlab: open('C:\\Users\\ygarg\\Dropbox (ASU)\\sift3D\\Parallel\\NormalizeVec.m')\">NormalizeVec</a></span>",
+ tcall490: [ [ "From MakeKeypoint > MakeKeypointSample line 112", "506#F490N9:B241" ], [ "From MakeKeypoint > MakeKeypointSample line 121", "506#F490N9:B276" ] ],
+ scall490: [  ],
+ MATLABcode506: "MakeKeypointSample506_mcode.html",
+ fpath506: "C:/Users/ygarg/Dropbox (ASU)/sift3D/Parallel/MakeKeypoint.m",
+ lines506: [60, 62, 134],
+ watch506: "MakeKeypointSample506_watch.html",
+ title506: "Function: <span class='functionname'><a title='C:&nbsp;\\Users\\ygarg\\Dropbox&nbsp;(ASU)\\sift3D\\Parallel\\MakeKeypoint.m' class='functionlink' href=\"matlab: open('C:\\Users\\ygarg\\Dropbox (ASU)\\sift3D\\Parallel\\MakeKeypoint.m')\">MakeKeypoint &gt; MakeKeypointSample</a></span>",
+ tcall506: [ [ "From MakeKeypoint line 51", "507#F506N8:B136" ] ],
+ scall506: [ [ "From line 109 to KeySampleVec", "465#srcline1" ], [ "From line 112 to NormalizeVec", "490#srcline1" ], [ "From line 121 to NormalizeVec", "490#srcline1" ],  ],
+ MATLABcode507: "MakeKeypoint507_mcode.html",
+ fpath507: "C:/Users/ygarg/Dropbox (ASU)/sift3D/Parallel/MakeKeypoint.m",
+ lines507: [1, 2, 62],
+ watch507: "MakeKeypoint507_watch.html",
+ title507: "Function: <span class='functionname'><a title='C:&nbsp;\\Users\\ygarg\\Dropbox&nbsp;(ASU)\\sift3D\\Parallel\\MakeKeypoint.m' class='functionlink' href=\"matlab: open('C:\\Users\\ygarg\\Dropbox (ASU)\\sift3D\\Parallel\\MakeKeypoint.m')\">MakeKeypoint</a></span>",
+ tcall507: [ [ "From Create_Descriptor line 87", "1#F507N7:B216" ] ],
+ scall507: [ [ "From line 51 to MakeKeypoint > MakeKeypointSample", "506#srcline62" ] ],
+ rootFcnID: "1",
+ firstPage: "1",
+ htmlRoot: "C:/Users/ygarg/Dropbox%20(ASU)/sift3D/Parallel/codegen/mex/Create_Descriptor/html/"
+};
+var scriptInfoTable = {
+ fpath1: "C:/Users/ygarg/Dropbox (ASU)/sift3D/Parallel/Create_Descriptor.m",
+ fpath2: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/isBuiltInNumeric.m",
+ fpath3: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/elmat/ismatrix.m",
+ fpath4: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/scalarEg.m",
+ fpath5: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/fixedpoint/isnumerictype.m",
+ fpath6: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/fixedpoint/isfimath.m",
+ fpath7: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/fixedpoint/isfi.m",
+ fpath8: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/elmat/intmax.m",
+ fpath9: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/elmat/intmin.m",
+ fpath10: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/eml/eml_int_forloop_overflow_check.m",
+ fpath11: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/scalexpAllocNoCheck.m",
+ fpath12: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/scalexpAlloc.m",
+ fpath13: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/ops/power.m",
+ fpath14: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/applyScalarFunction.m",
+ fpath15: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/elmat/isnan.m",
+ fpath16: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/+scalar/floor.m",
+ fpath17: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/applyScalarFunctionInPlace.m",
+ fpath18: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/elfun/floor.m",
+ fpath19: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/error.m",
+ fpath20: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/ops/mpower.m",
+ fpath21: "C:/Program Files/MATLAB/R2015b/toolbox/shared/coder/coder/+coder/+internal/narginchk.m",
+ fpath22: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/charmax.m",
+ fpath23: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/assertSupportedString.m",
+ fpath24: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/ops/colon.m",
+ fpath25: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/isaUint.m",
+ fpath26: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/unsignedClass.m",
+ fpath27: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/indexPlus.m",
+ fpath28: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/strfun/char.m",
+ fpath29: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/strfun/eml_string_transform.m",
+ fpath30: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/strfun/lower.m",
+ fpath31: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/scalexpCompatible.m",
+ fpath32: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/div.m",
+ fpath33: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/ops/rdivide.m",
+ fpath34: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/assertValidSizeArg.m",
+ fpath35: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/elmat/isinf.m",
+ fpath36: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/isIntegerClass.m",
+ fpath37: "C:/Program Files/MATLAB/R2015b/toolbox/shared/coder/coder/+coder/+internal/indexIntRelop.m",
+ fpath38: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/floatModel.m",
+ fpath39: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/minOrMax.m",
+ fpath40: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/datafun/max.m",
+ fpath41: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/elmat/repmat.m",
+ fpath42: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/prodsize.m",
+ fpath43: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/indexShapeCheck.m",
+ fpath44: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/elmat/find.m",
+ fpath45: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/iofun/fprintf.m",
+ fpath46: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/elmat/private/eml_isequal_core.m",
+ fpath47: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/elmat/isequal.m",
+ fpath48: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/lang/error.m",
+ fpath49: "C:/Users/ygarg/Dropbox (ASU)/sift3D/Parallel/mesh_refine_tri4.m",
+ fpath50: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/useParforConst.m",
+ fpath51: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/+scalar/atan2.m",
+ fpath52: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/elfun/atan2.m",
+ fpath53: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/isDomainError.m",
+ fpath54: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/+scalar/sqrt.m",
+ fpath55: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/elfun/sqrt.m",
+ fpath56: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/ops/eml_mtimes_helper.m",
+ fpath57: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/+scalar/sin.m",
+ fpath58: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/elfun/sin.m",
+ fpath59: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/+scalar/cos.m",
+ fpath60: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/elfun/cos.m",
+ fpath61: "C:/Users/ygarg/Dropbox (ASU)/sift3D/Parallel/sphere_project.m",
+ fpath62: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/length.m",
+ fpath63: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/constNonSingletonDim.m",
+ fpath64: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/datafun/private/process_sumprod_inputs.m",
+ fpath65: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/datafun/private/combine_vector_elements.m",
+ fpath66: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/datafun/mean.m",
+ fpath67: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/+blas/inline.m",
+ fpath68: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/+blas/use_refblas.m",
+ fpath69: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/+blas/threshold.m",
+ fpath70: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/+blas/xdot.m",
+ fpath71: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/indexMinus.m",
+ fpath72: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/indexTimes.m",
+ fpath73: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/+refblas/xdotx.m",
+ fpath74: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/+refblas/xdot.m",
+ fpath75: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/+blas/int.m",
+ fpath76: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/+blas/size_ptr.m",
+ fpath77: "C:/Program Files/MATLAB/R2015b/toolbox/coder/coder/+coder/+internal/c_cast.p",
+ fpath78: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/+blas/xdotc.m",
+ fpath79: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/specfun/dot.m",
+ fpath80: "C:/Users/ygarg/Dropbox (ASU)/sift3D/Parallel/sphere_tri.m",
+ fpath81: "C:/Users/ygarg/Dropbox (ASU)/sift3D/Parallel/GetGradOri_vector.m",
+ fpath82: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/+blas/xgemm.m",
+ fpath83: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/+refblas/xgemm.m",
+ fpath84: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/nonSingletonDim.m",
+ fpath85: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/strcmp.m",
+ fpath86: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/strfun/strcmpi.m",
+ fpath87: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/assertValidDim.m",
+ fpath88: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/sortIdx.m",
+ fpath89: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/sort.m",
+ fpath90: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/datafun/sort.m",
+ fpath91: "C:/Users/ygarg/Dropbox (ASU)/sift3D/Parallel/buildOriHists.m",
+ fpath92: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/ops/mrdivide.p",
+ fpath93: "C:/Program Files/MATLAB/R2015b/toolbox/shared/coder/coder/+coder/+internal/is64BitInteger.m",
+ fpath94: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/+scalar/exp.m",
+ fpath95: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/elfun/exp.m",
+ fpath96: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/datafun/private/sumprod.m",
+ fpath97: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/datafun/sum.m",
+ fpath98: "C:/Users/ygarg/Dropbox (ASU)/sift3D/Parallel/PlaceInIndex.m",
+ fpath99: "C:/Users/ygarg/Dropbox (ASU)/sift3D/Parallel/AddSample.m",
+ fpath100: "C:/Users/ygarg/Dropbox (ASU)/sift3D/Parallel/KeySample.m",
+ fpath101: "C:/Users/ygarg/Dropbox (ASU)/sift3D/Parallel/KeySampleVec.m",
+ fpath102: "C:/Users/ygarg/Dropbox (ASU)/sift3D/Parallel/NormalizeVec.m",
+ fpath103: "C:/Program Files/MATLAB/R2015b/toolbox/eml/eml/+coder/+internal/relop.m",
+ fpath104: "C:/Program Files/MATLAB/R2015b/toolbox/eml/lib/matlab/datafun/min.m",
+ fpath105: "C:/Users/ygarg/Dropbox (ASU)/sift3D/Parallel/MakeKeypoint.m"
+};
+</script>
+</head>
+<body>
+
+<div class="west">
+<ul class="ui-tabs-nav">
+<li class="ui-tabs-nav-item ui-tabs-selected"><span class="tab-link" id="MATLABcode"><span>MATLAB code</span></span></li>
+<li class="ui-tabs-nav-item"><span class="tab-link" id="callstack"><span>Call stack</span></span></li>
+<li class="ui-tabs-nav-item"><span class="tab-link" id="ccode"><span>C code</span></span></li>
+</ul>
+<div id="MATLABcodebody" class="ui-tabs-panel">
+<!-- Begin Filter -->
+<div class="grayline methodset" onclick="filterClick(event);">
+<a class="collapsed">Filter</a>
+</div>
+<div id="filterbody" class="hidden">
+<table class="myfunc-filter-tbl">
+<tr>
+<td title="Use this filter to display only functions and methods that contain variables or expressions with the specified attributes." colspan="2" class="checkbox">
+<div class="myfunc-filterby-chk"><input type="checkbox" class="filterenable" />
+<div class="filter-enable-lbl">Filter functions and methods</div></div></td></tr><tr>
+<td class="label"><div class="myfunc-filterby-lbl">Filter by:</div></td>
+<td class="select">
+<div class="filters">
+<select class="myfunc-filterby">
+<option id="size">Size</option>
+<option id="complex">Complexity</option>
+<option id="class">Class</option>
+</select>
+</div>
+</td>
+</tr>
+
+<tr>
+<td class="label"><div class="myfunc-filterstr-lbl">Filter:</div></td>
+<td class="input"><div>
+
+<div class="size">
+<select class="myfunc-filter size">
+<option value="1 163 164 215 272 285 369 462 463 464 465 490 506 507">1 x 1</option>
+<option value="163 164">1 x 1 *</option>
+<option value="164 215 272 285 369 462 463">1 x 3</option>
+<option value="163 164">1 x 3 *</option>
+<option value="1 464 465 506 507">1 x 640</option>
+<option value="1 369">1 x 80</option>
+<option value="272">12 x 3</option>
+<option value="164">12 x 3 *</option>
+<option value="462 463 464 465">2 x 2 x 2 x 80</option>
+<option value="272">20 x 3</option>
+<option value="164">20 x 3 *</option>
+<option value="464">3 x 1</option>
+<option value="465 490 506">640 x 1</option>
+<option value="369 462">80 x 1 *</option>
+<option value="1 164 272 369 462 463 464">80 x 3 *</option>
+<option value="272"><b>:</b>80 x 3</option>
+<option value="163 215"><b>:</b>? x 1</option>
+<option value="1 163 164 215 272 369 462 463 464"><b>:</b>? x 3</option>
+<option value="1 285 369 463 464 465 506 507"><b>:</b>? x <b>:</b>? x <b>:</b>?</option>
+</select>
+</div>
+
+<div class="complex">
+<select class="myfunc-filter complex">
+<option value="">Complex values</option>
+<option value="1 163 164 215 272 285 369 462 463 464 465 490 506 507">Real values</option>
+</select>
+</div>
+<!-- Begin Class Filter -->
+<div class="class">
+<select class="myfunc-filter class">
+<option value="272">char</option>
+<option value="1 163 164 215 272 285 369 462 463 464 465 490 506 507">double</option>
+<option value="1 285 369 462 463 464 506">int16</option>
+<option value="1 272 369 462 463 464 465 506 507">struct</option>
+</select>
+</div>
+<!-- End Class Filter -->
+</div>
+</td>
+</tr>
+</table>
+<div class="myfunc-count"></div>
+</div>
+<!-- End Filter -->
+<div class="grayline methodset" onmouseover="callTreeMouseOver(event);" onmouseout="callTreeMouseOut(event);" onclick="functionSetClick(event);">
+<a class="expanded">Functions</a>
+</div>
+<!-- Begin Function Tree -->
+<div id="functiontreebody">
+<div class="functionwrapper" onmouseover="callTreeMouseOver(event);" onmouseout="callTreeMouseOut(event);" onclick="functionTreeClick(event);">
+<ol class="tree">
+<!-- Begin Function Tree Roots -->
+<li class="leaf  passed"><a href="#" class="fcn " id="F463N2:F1">AddSample</a></li>
+<li class="leaf  passed"><a href="#" class="fcn " id="F1N3:F2">Create_Descriptor</a></li>
+<li class="leaf  passed"><a href="#" class="fcn " id="F285N4:F3">GetGradOri_vector</a></li>
+<li class="leaf  passed"><a href="#" class="fcn " id="F464N5:F4">KeySample</a></li>
+<li class="leaf  passed"><a href="#" class="fcn " id="F465N6:F5">KeySampleVec</a></li>
+<li class="leaf  passed"><a href="#" class="fcn " id="F507N7:F6">MakeKeypoint</a></li>
+<li class="leaf  passed"><a href="#" class="fcn " id="F506N8:F7">MakeKeypoint &gt; MakeKeypointSample</a></li>
+<li class="leaf  passed"><a href="#" class="fcn " id="F490N9:F8">NormalizeVec</a></li>
+<li class="leaf  passed"><a href="#" class="fcn " id="F462N10:F9">PlaceInIndex</a></li>
+<li class="leaf  passed"><a href="#" class="fcn " id="F369N11:F10">buildOriHists</a></li>
+<li class="leaf  passed"><a href="#" class="fcn " id="F164N17:F11">mesh_refine_tri4</a></li>
+<li class="leaf  passed"><a href="#" class="fcn " id="F163N18:F12">mesh_refine_tri4 &gt; mesh_find_vertex</a></li>
+<li class="leaf  passed"><a href="#" class="fcn " id="F215N19:F13">sphere_project</a></li>
+<li class="leaf  passed"><a href="#" class="fcn " id="F272N20:F14">sphere_tri</a></li>
+<!-- End Function Tree Roots -->
+</ol>
+<!-- Function Tree Nodes -->
+<div class="functiontreenodes hidden">
+</div>
+<!-- End Function Tree Nodes -->
+</div>
+</div>
+<!-- End Function Tree -->
+</div>
+<!-- Begin Call Tree -->
+<div id="callstackbody" class="ui-tabs-panel hidden">
+<div class="treewrapper" onmouseover="callTreeMouseOver(event);" onmouseout="callTreeMouseOut(event);" onclick="callTreeClick(event);">
+<ol class="tree">
+<!-- Call Tree Root -->
+<li class="node collapsed passed"><a href="#" class="fcn " id="F1N3:L1">Create_Descriptor</a>
+<ul>
+<li class="node collapsed passed"><a href="#" class="fcn " id="F272N20:L2">sphere_tri</a></li>
+<li class="node collapsed passed"><a href="#" class="fcn " id="F369N11:L3">buildOriHists</a></li>
+<li class="node collapsed passed"><a href="#" class="fcn " id="F507N7:L4">MakeKeypoint</a></li>
+</ul>
+</li>
+</ol>
+<!-- Call Tree Nodes -->
+<div class="callstacknodes hidden">
+<ol class="callstacknode" id="callstacknode1">
+
+<li class="node collapsed passed"><a href="#" class="fcn " id="F1N3:l1">Create_Descriptor</a>
+<ul>
+<li class="node collapsed passed"><a href="#" class="fcn " id="F272N20:l2">sphere_tri</a></li>
+<li class="node collapsed passed"><a href="#" class="fcn " id="F369N11:l3">buildOriHists</a></li>
+<li class="node collapsed passed"><a href="#" class="fcn " id="F507N7:l4">MakeKeypoint</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode163">
+
+<li class="leaf passed"><a href="#" class="fcn " id="F163N18:l5">mesh_refine_tri4 &gt; mesh_find_vertex</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode164">
+
+<li class="node collapsed passed"><a href="#" class="fcn " id="F164N17:l6">mesh_refine_tri4</a>
+<ul>
+<li class="leaf passed"><a href="#" class="fcn " id="F163N18:l7">mesh_refine_tri4 &gt; mesh_find_vertex</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode215">
+
+<li class="leaf passed"><a href="#" class="fcn " id="F215N19:l8">sphere_project</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode272">
+
+<li class="node collapsed passed"><a href="#" class="fcn " id="F272N20:l9">sphere_tri</a>
+<ul>
+<li class="node collapsed passed"><a href="#" class="fcn " id="F164N17:l10">mesh_refine_tri4</a></li>
+<li class="leaf passed"><a href="#" class="fcn " id="F215N19:l11">sphere_project</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode285">
+
+<li class="leaf passed"><a href="#" class="fcn " id="F285N4:l12">GetGradOri_vector</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode369">
+
+<li class="node collapsed passed"><a href="#" class="fcn " id="F369N11:l13">buildOriHists</a>
+<ul>
+<li class="leaf passed"><a href="#" class="fcn " id="F285N4:l14">GetGradOri_vector</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode462">
+
+<li class="leaf passed"><a href="#" class="fcn " id="F462N10:l15">PlaceInIndex</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode463">
+
+<li class="node collapsed passed"><a href="#" class="fcn " id="F463N2:l16">AddSample</a>
+<ul>
+<li class="leaf passed"><a href="#" class="fcn " id="F285N4:l17">GetGradOri_vector</a></li>
+<li class="leaf passed"><a href="#" class="fcn " id="F462N10:l18">PlaceInIndex</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode464">
+
+<li class="node collapsed passed"><a href="#" class="fcn " id="F464N5:l19">KeySample</a>
+<ul>
+<li class="node collapsed passed"><a href="#" class="fcn " id="F272N20:l20">sphere_tri</a></li>
+<li class="node collapsed passed"><a href="#" class="fcn " id="F463N2:l21">AddSample</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode465">
+
+<li class="node collapsed passed"><a href="#" class="fcn " id="F465N6:l22">KeySampleVec</a>
+<ul>
+<li class="node collapsed passed"><a href="#" class="fcn " id="F464N5:l23">KeySample</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode490">
+
+<li class="leaf passed"><a href="#" class="fcn " id="F490N9:l24">NormalizeVec</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode506">
+
+<li class="node collapsed passed"><a href="#" class="fcn " id="F506N8:l25">MakeKeypoint &gt; MakeKeypointSample</a>
+<ul>
+<li class="node collapsed passed"><a href="#" class="fcn " id="F465N6:l26">KeySampleVec</a></li>
+<li class="leaf passed"><a href="#" class="fcn " id="F490N9:l27">NormalizeVec</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode507">
+
+<li class="node collapsed passed"><a href="#" class="fcn " id="F507N7:l28">MakeKeypoint</a>
+<ul>
+<li class="node collapsed passed"><a href="#" class="fcn " id="F506N8:l29">MakeKeypoint &gt; MakeKeypointSample</a></li>
+</ul>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<!-- End Call Tree -->
+<!-- Begin C Code -->
+<div id="ccodebody" class="ui-tabs-panel hidden">
+<div class="grayline methodset" onclick="ccodeClick(event,1);">
+<a class="expanded">Target Source Files</a>
+</div>
+<!-- Begin C Code List -->
+<div id="ccodelistbody1" class="visible">
+<table class="myfunc-list" cellspacing="0" cellpadding="0" onclick="cFileClickWithMexWarning(event);">
+<tbody>
+<tr class="ccode" id="Create_Descriptor_c.html"><td class="ccode"><a href="#">Create_Descriptor.c</a></td></tr>
+<tr class="ccode" id="Create_Descriptor_h.html"><td class="ccode"><a href="#">Create_Descriptor.h</a></td></tr>
+<tr class="ccode" id="Create_Descriptor_data_c.html"><td class="ccode"><a href="#">Create_Descriptor_data.c</a></td></tr>
+<tr class="ccode" id="Create_Descriptor_data_h.html"><td class="ccode"><a href="#">Create_Descriptor_data.h</a></td></tr>
+<tr class="ccode" id="Create_Descriptor_emxutil_c.html"><td class="ccode"><a href="#">Create_Descriptor_emxutil.c</a></td></tr>
+<tr class="ccode" id="Create_Descriptor_emxutil_h.html"><td class="ccode"><a href="#">Create_Descriptor_emxutil.h</a></td></tr>
+<tr class="ccode" id="Create_Descriptor_initialize_c.html"><td class="ccode"><a href="#">Create_Descriptor_initialize.c</a></td></tr>
+<tr class="ccode" id="Create_Descriptor_initialize_h.html"><td class="ccode"><a href="#">Create_Descriptor_initialize.h</a></td></tr>
+<tr class="ccode" id="Create_Descriptor_mexutil_c.html"><td class="ccode"><a href="#">Create_Descriptor_mexutil.c</a></td></tr>
+<tr class="ccode" id="Create_Descriptor_mexutil_h.html"><td class="ccode"><a href="#">Create_Descriptor_mexutil.h</a></td></tr>
+<tr class="ccode" id="Create_Descriptor_terminate_c.html"><td class="ccode"><a href="#">Create_Descriptor_terminate.c</a></td></tr>
+<tr class="ccode" id="Create_Descriptor_terminate_h.html"><td class="ccode"><a href="#">Create_Descriptor_terminate.h</a></td></tr>
+<tr class="ccode" id="Create_Descriptor_types_h.html"><td class="ccode"><a href="#">Create_Descriptor_types.h</a></td></tr>
+<tr class="ccode" id="GetGradOri_vector_c.html"><td class="ccode"><a href="#">GetGradOri_vector.c</a></td></tr>
+<tr class="ccode" id="GetGradOri_vector_h.html"><td class="ccode"><a href="#">GetGradOri_vector.h</a></td></tr>
+<tr class="ccode" id="MakeKeypoint_c.html"><td class="ccode"><a href="#">MakeKeypoint.c</a></td></tr>
+<tr class="ccode" id="MakeKeypoint_h.html"><td class="ccode"><a href="#">MakeKeypoint.h</a></td></tr>
+<tr class="ccode" id="NormalizeVec_c.html"><td class="ccode"><a href="#">NormalizeVec.c</a></td></tr>
+<tr class="ccode" id="NormalizeVec_h.html"><td class="ccode"><a href="#">NormalizeVec.h</a></td></tr>
+<tr class="ccode" id="PlaceInIndex_c.html"><td class="ccode"><a href="#">PlaceInIndex.c</a></td></tr>
+<tr class="ccode" id="PlaceInIndex_h.html"><td class="ccode"><a href="#">PlaceInIndex.h</a></td></tr>
+<tr class="ccode" id="atan2_c.html"><td class="ccode"><a href="#">atan2.c</a></td></tr>
+<tr class="ccode" id="atan2_h.html"><td class="ccode"><a href="#">atan2.h</a></td></tr>
+<tr class="ccode" id="buildOriHists_c.html"><td class="ccode"><a href="#">buildOriHists.c</a></td></tr>
+<tr class="ccode" id="buildOriHists_h.html"><td class="ccode"><a href="#">buildOriHists.h</a></td></tr>
+<tr class="ccode" id="cos_c.html"><td class="ccode"><a href="#">cos.c</a></td></tr>
+<tr class="ccode" id="cos_h.html"><td class="ccode"><a href="#">cos.h</a></td></tr>
+<tr class="ccode" id="dot_c.html"><td class="ccode"><a href="#">dot.c</a></td></tr>
+<tr class="ccode" id="dot_h.html"><td class="ccode"><a href="#">dot.h</a></td></tr>
+<tr class="ccode" id="eml_int_forloop_overflow_check_c.html"><td class="ccode"><a href="#">eml_int_forloop_overflow_check.c</a></td></tr>
+<tr class="ccode" id="eml_int_forloop_overflow_check_h.html"><td class="ccode"><a href="#">eml_int_forloop_overflow_check.h</a></td></tr>
+<tr class="ccode" id="error_c.html"><td class="ccode"><a href="#">error.c</a></td></tr>
+<tr class="ccode" id="error_h.html"><td class="ccode"><a href="#">error.h</a></td></tr>
+<tr class="ccode" id="fprintf_c.html"><td class="ccode"><a href="#">fprintf.c</a></td></tr>
+<tr class="ccode" id="fprintf_h.html"><td class="ccode"><a href="#">fprintf.h</a></td></tr>
+<tr class="ccode" id="mesh_refine_tri4_c.html"><td class="ccode"><a href="#">mesh_refine_tri4.c</a></td></tr>
+<tr class="ccode" id="mesh_refine_tri4_h.html"><td class="ccode"><a href="#">mesh_refine_tri4.h</a></td></tr>
+<tr class="ccode" id="mpower_c.html"><td class="ccode"><a href="#">mpower.c</a></td></tr>
+<tr class="ccode" id="mpower_h.html"><td class="ccode"><a href="#">mpower.h</a></td></tr>
+<tr class="ccode" id="power_c.html"><td class="ccode"><a href="#">power.c</a></td></tr>
+<tr class="ccode" id="power_h.html"><td class="ccode"><a href="#">power.h</a></td></tr>
+<tr class="ccode" id="rt_nonfinite_h.html"><td class="ccode"><a href="#">rt_nonfinite.h</a></td></tr>
+<tr class="ccode" id="rtwtypes_h.html"><td class="ccode"><a href="#">rtwtypes.h</a></td></tr>
+<tr class="ccode" id="scalexpAlloc_c.html"><td class="ccode"><a href="#">scalexpAlloc.c</a></td></tr>
+<tr class="ccode" id="scalexpAlloc_h.html"><td class="ccode"><a href="#">scalexpAlloc.h</a></td></tr>
+<tr class="ccode" id="sin_c.html"><td class="ccode"><a href="#">sin.c</a></td></tr>
+<tr class="ccode" id="sin_h.html"><td class="ccode"><a href="#">sin.h</a></td></tr>
+<tr class="ccode" id="sort1_c.html"><td class="ccode"><a href="#">sort1.c</a></td></tr>
+<tr class="ccode" id="sort1_h.html"><td class="ccode"><a href="#">sort1.h</a></td></tr>
+<tr class="ccode" id="sortIdx_c.html"><td class="ccode"><a href="#">sortIdx.c</a></td></tr>
+<tr class="ccode" id="sortIdx_h.html"><td class="ccode"><a href="#">sortIdx.h</a></td></tr>
+<tr class="ccode" id="sphere_tri_c.html"><td class="ccode"><a href="#">sphere_tri.c</a></td></tr>
+<tr class="ccode" id="sphere_tri_h.html"><td class="ccode"><a href="#">sphere_tri.h</a></td></tr>
+</tbody>
+</table>
+</div>
+<!-- End C Code List -->
+<div class="grayline methodset" onclick="ccodeClick(event,3);">
+<a class="collapsed">Interface Source Files</a>
+</div>
+<!-- Begin C Code List -->
+<div id="ccodelistbody3" class="hidden">
+<table class="myfunc-list" cellspacing="0" cellpadding="0" onclick="cFileClickWithMexWarning(event);">
+<tbody>
+<tr class="ccode" id="_coder_Create_Descriptor_api_c.html"><td class="ccode"><a href="#">_coder_Create_Descriptor_api.c</a></td></tr>
+<tr class="ccode" id="_coder_Create_Descriptor_api_h.html"><td class="ccode"><a href="#">_coder_Create_Descriptor_api.h</a></td></tr>
+<tr class="ccode" id="_coder_Create_Descriptor_info_c.html"><td class="ccode"><a href="#">_coder_Create_Descriptor_info.c</a></td></tr>
+<tr class="ccode" id="_coder_Create_Descriptor_info_h.html"><td class="ccode"><a href="#">_coder_Create_Descriptor_info.h</a></td></tr>
+<tr class="ccode" id="_coder_Create_Descriptor_mex_c.html"><td class="ccode"><a href="#">_coder_Create_Descriptor_mex.c</a></td></tr>
+<tr class="ccode" id="_coder_Create_Descriptor_mex_h.html"><td class="ccode"><a href="#">_coder_Create_Descriptor_mex.h</a></td></tr>
+</tbody>
+</table>
+</div>
+<!-- End C Code List -->
+</div>
+<!-- End C Code -->
+</div>
+<!-- Tooltips -->
+<div class="aux hidden">
+<div class="tooltips">
+<div class="tooltip" id="TT1"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>struct</td></tr></table></div>
+<div class="tooltip" id="TT2"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT3"><table class="tooltip"><tr><th>Size</th><td>1 x 640</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT4"><table class="tooltip"><tr><th>Size</th><td><b>:</b>? x <b>:</b>? x <b>:</b>?</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT5"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>int16</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT6"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>struct</td></tr></table></div>
+<div class="tooltip" id="TT7"><table class="tooltip"><tr><th>Size</th><td><b>:</b>? x 3</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT8"><table class="tooltip"><tr><th>Size</th><td>80 x 3 *</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT9"><table class="tooltip"><tr><th>Size</th><td>1 x 80</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT10"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>logical</td></tr></table></div>
+<div class="tooltip" id="TT11"><table class="tooltip"><tr><th>Size</th><td>1 x 3 *</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT12"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT13"><table class="tooltip"><tr><th>Size</th><td>3 x 1 *</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT14"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>mxArray</td></tr></table></div>
+<div class="tooltip" id="TT15"><table class="tooltip"><tr><th>Size</th><td>1 x 82</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT16"><table class="tooltip"><tr><th>Size</th><td>1 x 2</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT17"><table class="tooltip"><tr><th>Size</th><td>1 x 23</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT18"><table class="tooltip"><tr><th>Size</th><td>1 x 5</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT19"><table class="tooltip"><tr><th>Size</th><td>1 x 6</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT20"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT21"><table class="tooltip"><tr><th>Size</th><td>1 x 14</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT22"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT23"><table class="tooltip"><tr><th>Size</th><td>1 x 0</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT24"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT25"><table class="tooltip"><tr><th>Size</th><td>1 x 31</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT26"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>int8</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT27"><table class="tooltip"><tr><th>Size</th><td>1 x 4</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT28"><table class="tooltip"><tr><th>Size</th><td>1 x 3</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT29"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT30"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>uint8</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT31"><table class="tooltip"><tr><th>Size</th><td>1 x 128</td></tr><tr><th>Class</th><td>int8</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT32"><table class="tooltip"><tr><th>Size</th><td>1 x 128</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT33"><table class="tooltip"><tr><th>Size</th><td>1 x <b>:</b>?</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT34"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>int32</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT35"><table class="tooltip"><tr><th>Size</th><td>1 x 2</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT36"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT37"><table class="tooltip"><tr><th>Size</th><td>1 x 3</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT38"><table class="tooltip"><tr><th>Size</th><td><b>:</b>? x 1</td></tr><tr><th>Class</th><td>logical</td></tr></table></div>
+<div class="tooltip" id="TT39"><table class="tooltip"><tr><th>Size</th><td>1 x 2</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT40"><table class="tooltip"><tr><th>Size</th><td>1 x 15</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT41"><table class="tooltip"><tr><th>Size</th><td>2 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT42"><table class="tooltip"><tr><th>Size</th><td>1 x 7</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT43"><table class="tooltip"><tr><th>Size</th><td>0 x 1</td></tr><tr><th>Class</th><td>logical</td></tr></table></div>
+<div class="tooltip" id="TT44"><table class="tooltip"><tr><th>Size</th><td>0 x 0</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT45"><table class="tooltip"><tr><th>Size</th><td>0 x 0</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT46"><table class="tooltip"><tr><th>Size</th><td>0 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT47"><table class="tooltip"><tr><th>Size</th><td>1 x 0</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT48"><table class="tooltip"><tr><th>Size</th><td><b>:</b>? x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT49"><table class="tooltip"><tr><th>Size</th><td>1 x <b>:</b>?</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT50"><table class="tooltip"><tr><th>Size</th><td><b>:</b>? x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT51"><table class="tooltip"><tr><th>Size</th><td>1 x 0</td></tr><tr><th>Class</th><td>struct</td></tr></table></div>
+<div class="tooltip" id="TT52"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>struct</td></tr></table></div>
+<div class="tooltip" id="TT53"><table class="tooltip"><tr><th>Size</th><td>1 x 3</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT54"><table class="tooltip"><tr><th>Size</th><td>0 x 0</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT55"><table class="tooltip"><tr><th>Size</th><td>1 x 19</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT56"><table class="tooltip"><tr><th>Size</th><td>1 x 20</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT57"><table class="tooltip"><tr><th>Size</th><td>1 x 1 *</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT58"><table class="tooltip"><tr><th>Size</th><td>12 x 3 *</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT59"><table class="tooltip"><tr><th>Size</th><td>20 x 3 *</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT60"><table class="tooltip"><tr><th>Size</th><td>60 x 3 *</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT61"><table class="tooltip"><tr><th>Size</th><td>1 x 3</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT62"><table class="tooltip"><tr><th>Size</th><td>3 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT63"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT64"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT65"><table class="tooltip"><tr><th>Size</th><td>1 x 2</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT66"><table class="tooltip"><tr><th>Size</th><td>1 x 30</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT67"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT68"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT69"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT70"><table class="tooltip"><tr><th>Size</th><td><b>:</b>? x <b>:</b>?</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT71"><table class="tooltip"><tr><th>Size</th><td>3 x 3 *</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT72"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT73"><table class="tooltip"><tr><th>Size</th><td>1 x 9</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT74"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>coder.opaque</td></tr></table></div>
+<div class="tooltip" id="TT75"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>struct</td></tr></table></div>
+<div class="tooltip" id="TT76"><table class="tooltip"><tr><th>Size</th><td>12 x 3</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT77"><table class="tooltip"><tr><th>Size</th><td>20 x 3</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT78"><table class="tooltip"><tr><th>Size</th><td><b>:</b>80 x 3</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT79"><table class="tooltip"><tr><th>Size</th><td>3 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT80"><table class="tooltip"><tr><th>Size</th><td>80 x 1 *</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT81"><table class="tooltip"><tr><th>Size</th><td><b>:</b>80 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT82"><table class="tooltip"><tr><th>Size</th><td><b>:</b>80 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT83"><table class="tooltip"><tr><th>Size</th><td>4 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT84"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT85"><table class="tooltip"><tr><th>Size</th><td>4 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT86"><table class="tooltip"><tr><th>Size</th><td><b>:</b>1 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT87"><table class="tooltip"><tr><th>Size</th><td><b>:</b>1 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT88"><table class="tooltip"><tr><th>Size</th><td>256 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT89"><table class="tooltip"><tr><th>Size</th><td>256 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT90"><table class="tooltip"><tr><th>Size</th><td>80 x 1 *</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT91"><table class="tooltip"><tr><th>Size</th><td>80 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT92"><table class="tooltip"><tr><th>Size</th><td>80 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT93"><table class="tooltip"><tr><th>Size</th><td>1 x 80</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT94"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT95"><table class="tooltip"><tr><th>Size</th><td>2 x 2 x 2 x 80</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT96"><table class="tooltip"><tr><th>Size</th><td>1 x 44</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT97"><table class="tooltip"><tr><th>Size</th><td>640 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT98"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT99"><table class="tooltip"><tr><th>Size</th><td>1 x 36</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="V1"><table class="tooltip"><tr><th>Value</th><td>     1</br></td></tr></table></div>
+<div class="tooltip" id="V2"><table class="tooltip"><tr><th>Value</th><td>ico</br></td></tr></table></div>
+<div class="tooltip" id="V3"><table class="tooltip"><tr><th>Value</th><td>     0</br></td></tr></table></div>
+</div>
+</div>
+<!-- End Tooltips -->
+
+<div class="south">
+<ul class="ui-tabs-nav">
+<li class="ui-tabs-nav-item ui-tabs-selected"><span class="tab-link" id="summary"><span>Summary</span></span></li>
+<li class="ui-tabs-nav-item"><span class="tab-link" id="messages"><span>All Messages (0)</span></span></li>
+<li class="ui-tabs-nav-item"><span class="tab-link" id="watchlist"><span>Variables</span></span></li>
+<li class="ui-tabs-nav-item hidden"><span class="tab-link" id="watchload"><span>Variables</span></span></li>
+<li class="ui-tabs-nav-item"><span class="tab-link" id="buildlog1"><span>Target Build Log</span></span></li>
+</ul>
+
+<!-- Compilation Summary -->
+<div id="summarybody" class="ui-tabs-panel">
+<table cellpadding="1" cellspacing="4">
+<tr><td>C source code generated on:</td><td>16-Nov-2016 14:14:32</td></tr>
+<tr><td>Coding target:</td><td>C MEX Function</td></tr>
+<tr><td>Number of errors:</td><td><a href="javascript:selectMessagesTab();">0</a></td></tr>
+<tr><td>Number of warnings:</td><td><a href="javascript:selectMessagesTab();">0</a></td></tr>
+<tr><td>Number of notices:</td><td><a href="javascript:selectMessagesTab();">0</a></td></tr>
+</table>
+<p/><p/><table>
+<tr><td><b>Tell Us What You Think</b></td></tr>
+<tr><td>We value your feedback. Please take a few minutes to answer this short questionnaire regarding the Code Generation Report.</td></tr>
+<tr><td><a href="matlab: web('http://www.customersat3.com/TakeSurvey.asp?si=ELu7GTnTYtk%3D','-browser');">&gt;&gt;Provide Feedback</a></td></tr>
+</table>
+</div>
+
+<!-- Message Table -->
+<div id="messagesbody" class="ui-tabs-panel hidden">
+<div>
+<div class="msgsuccess">Code generation successful. Click here to <a href="javaScript:selectSummaryTab();">view summary</a>.</div>
+</div>
+</div>
+<!-- Watchlist Table -->
+<div id="watchlistbody" class="ui-tabs-panel hidden">
+</div>
+<div id="watchloadbody" class="ui-tabs-panel hidden">
+Loading Variables table ...
+</div>
+
+<!-- Target Build Log -->
+<div id="buildlog1body" class="ui-tabs-panel hidden">
+<div class="grayline"></div>
+<table cellpadding="4" cellspacing="1"><tr>
+<td align="left" class="td-linebottomrt-gray" colspan="2">Build Parameters</td>
+</tr>
+<tr><td align="left" valign="top" class="td-linebottomrt">Build directory</td>
+<td align="left" valign="top" class="td-linebottomrt-link"><a href="matlab: cd('C:\Users\ygarg\Dropbox (ASU)\sift3D\Parallel\codegen\mex\Create_Descriptor')">C:\Users\ygarg\Dropbox (ASU)\sift3D\Parallel\codegen\mex\Create_Descriptor</a></td></tr>
+<tr><td align="left" valign="top" class="td-linebottomrt">Make wrapper</td>
+<td align="left" valign="top" class="td-linebottomrt-link">Create_Descriptor_mex.bat</td></tr>
+</table>
+<br/>
+<table border="1" cellpadding="4" cellspacing="1" width="100%">
+<tr><td align="left" class="td-linebottomrt-gray">Build Log</td></tr>
+<tr><td valign="top" class="td-script">
+<pre>
+<span class="td-line-number">    1   </span><span class="td-line-normal">gcc -c -fexceptions -fno-omit-frame-pointer -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE   -DMX_COMPAT_32  -O -DNDEBUG   -I "C:\PROGRA~1\MATLAB\R2015b/simulink/include" -I "C:\PROGRA~1\MATLAB\R2015b/toolbox/shared/simtargets" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel\codegen\mex\Create_Descriptor" -I ".\interface" -I "C:\PROGRA~1\MATLAB\R2015b\extern\include" -I "." "Create_Descriptor_mexutil.c"</span>
+<span class="td-line-number">    2   </span><span class="td-line-normal">gcc -c -fexceptions -fno-omit-frame-pointer -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE   -DMX_COMPAT_32  -O -DNDEBUG   -I "C:\PROGRA~1\MATLAB\R2015b/simulink/include" -I "C:\PROGRA~1\MATLAB\R2015b/toolbox/shared/simtargets" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel\codegen\mex\Create_Descriptor" -I ".\interface" -I "C:\PROGRA~1\MATLAB\R2015b\extern\include" -I "." "Create_Descriptor_data.c"</span>
+<span class="td-line-number">    3   </span><span class="td-line-normal">gcc -c -fexceptions -fno-omit-frame-pointer -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE   -DMX_COMPAT_32  -O -DNDEBUG   -I "C:\PROGRA~1\MATLAB\R2015b/simulink/include" -I "C:\PROGRA~1\MATLAB\R2015b/toolbox/shared/simtargets" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel\codegen\mex\Create_Descriptor" -I ".\interface" -I "C:\PROGRA~1\MATLAB\R2015b\extern\include" -I "." "Create_Descriptor_initialize.c"</span>
+<span class="td-line-number">    4   </span><span class="td-line-normal">gcc -c -fexceptions -fno-omit-frame-pointer -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE   -DMX_COMPAT_32  -O -DNDEBUG   -I "C:\PROGRA~1\MATLAB\R2015b/simulink/include" -I "C:\PROGRA~1\MATLAB\R2015b/toolbox/shared/simtargets" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel\codegen\mex\Create_Descriptor" -I ".\interface" -I "C:\PROGRA~1\MATLAB\R2015b\extern\include" -I "." "Create_Descriptor_terminate.c"</span>
+<span class="td-line-number">    5   </span><span class="td-line-normal">gcc -c -fexceptions -fno-omit-frame-pointer -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE   -DMX_COMPAT_32  -O -DNDEBUG   -I "C:\PROGRA~1\MATLAB\R2015b/simulink/include" -I "C:\PROGRA~1\MATLAB\R2015b/toolbox/shared/simtargets" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel\codegen\mex\Create_Descriptor" -I ".\interface" -I "C:\PROGRA~1\MATLAB\R2015b\extern\include" -I "." "Create_Descriptor.c"</span>
+<span class="td-line-number">    6   </span><span class="td-line-normal">gcc -c -fexceptions -fno-omit-frame-pointer -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE   -DMX_COMPAT_32  -O -DNDEBUG   -I "C:\PROGRA~1\MATLAB\R2015b/simulink/include" -I "C:\PROGRA~1\MATLAB\R2015b/toolbox/shared/simtargets" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel\codegen\mex\Create_Descriptor" -I ".\interface" -I "C:\PROGRA~1\MATLAB\R2015b\extern\include" -I "." "mpower.c"</span>
+<span class="td-line-number">    7   </span><span class="td-line-normal">gcc -c -fexceptions -fno-omit-frame-pointer -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE   -DMX_COMPAT_32  -O -DNDEBUG   -I "C:\PROGRA~1\MATLAB\R2015b/simulink/include" -I "C:\PROGRA~1\MATLAB\R2015b/toolbox/shared/simtargets" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel\codegen\mex\Create_Descriptor" -I ".\interface" -I "C:\PROGRA~1\MATLAB\R2015b\extern\include" -I "." "power.c"</span>
+<span class="td-line-number">    8   </span><span class="td-line-normal">gcc -c -fexceptions -fno-omit-frame-pointer -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE   -DMX_COMPAT_32  -O -DNDEBUG   -I "C:\PROGRA~1\MATLAB\R2015b/simulink/include" -I "C:\PROGRA~1\MATLAB\R2015b/toolbox/shared/simtargets" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel\codegen\mex\Create_Descriptor" -I ".\interface" -I "C:\PROGRA~1\MATLAB\R2015b\extern\include" -I "." "eml_int_forloop_overflow_check.c"</span>
+<span class="td-line-number">    9   </span><span class="td-line-normal">gcc -c -fexceptions -fno-omit-frame-pointer -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE   -DMX_COMPAT_32  -O -DNDEBUG   -I "C:\PROGRA~1\MATLAB\R2015b/simulink/include" -I "C:\PROGRA~1\MATLAB\R2015b/toolbox/shared/simtargets" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel\codegen\mex\Create_Descriptor" -I ".\interface" -I "C:\PROGRA~1\MATLAB\R2015b\extern\include" -I "." "scalexpAlloc.c"</span>
+<span class="td-line-number">   10   </span><span class="td-line-normal">gcc -c -fexceptions -fno-omit-frame-pointer -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE   -DMX_COMPAT_32  -O -DNDEBUG   -I "C:\PROGRA~1\MATLAB\R2015b/simulink/include" -I "C:\PROGRA~1\MATLAB\R2015b/toolbox/shared/simtargets" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel\codegen\mex\Create_Descriptor" -I ".\interface" -I "C:\PROGRA~1\MATLAB\R2015b\extern\include" -I "." "error.c"</span>
+<span class="td-line-number">   11   </span><span class="td-line-normal">gcc -c -fexceptions -fno-omit-frame-pointer -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE   -DMX_COMPAT_32  -O -DNDEBUG   -I "C:\PROGRA~1\MATLAB\R2015b/simulink/include" -I "C:\PROGRA~1\MATLAB\R2015b/toolbox/shared/simtargets" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel\codegen\mex\Create_Descriptor" -I ".\interface" -I "C:\PROGRA~1\MATLAB\R2015b\extern\include" -I "." "sphere_tri.c"</span>
+<span class="td-line-number">   12   </span><span class="td-line-normal">gcc -c -fexceptions -fno-omit-frame-pointer -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE   -DMX_COMPAT_32  -O -DNDEBUG   -I "C:\PROGRA~1\MATLAB\R2015b/simulink/include" -I "C:\PROGRA~1\MATLAB\R2015b/toolbox/shared/simtargets" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel\codegen\mex\Create_Descriptor" -I ".\interface" -I "C:\PROGRA~1\MATLAB\R2015b\extern\include" -I "." "mesh_refine_tri4.c"</span>
+<span class="td-line-number">   13   </span><span class="td-line-normal">gcc -c -fexceptions -fno-omit-frame-pointer -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE   -DMX_COMPAT_32  -O -DNDEBUG   -I "C:\PROGRA~1\MATLAB\R2015b/simulink/include" -I "C:\PROGRA~1\MATLAB\R2015b/toolbox/shared/simtargets" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel\codegen\mex\Create_Descriptor" -I ".\interface" -I "C:\PROGRA~1\MATLAB\R2015b\extern\include" -I "." "fprintf.c"</span>
+<span class="td-line-number">   14   </span><span class="td-line-normal">gcc -c -fexceptions -fno-omit-frame-pointer -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE   -DMX_COMPAT_32  -O -DNDEBUG   -I "C:\PROGRA~1\MATLAB\R2015b/simulink/include" -I "C:\PROGRA~1\MATLAB\R2015b/toolbox/shared/simtargets" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel\codegen\mex\Create_Descriptor" -I ".\interface" -I "C:\PROGRA~1\MATLAB\R2015b\extern\include" -I "." "atan2.c"</span>
+<span class="td-line-number">   15   </span><span class="td-line-normal">gcc -c -fexceptions -fno-omit-frame-pointer -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE   -DMX_COMPAT_32  -O -DNDEBUG   -I "C:\PROGRA~1\MATLAB\R2015b/simulink/include" -I "C:\PROGRA~1\MATLAB\R2015b/toolbox/shared/simtargets" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel\codegen\mex\Create_Descriptor" -I ".\interface" -I "C:\PROGRA~1\MATLAB\R2015b\extern\include" -I "." "sin.c"</span>
+<span class="td-line-number">   16   </span><span class="td-line-normal">gcc -c -fexceptions -fno-omit-frame-pointer -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE   -DMX_COMPAT_32  -O -DNDEBUG   -I "C:\PROGRA~1\MATLAB\R2015b/simulink/include" -I "C:\PROGRA~1\MATLAB\R2015b/toolbox/shared/simtargets" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel\codegen\mex\Create_Descriptor" -I ".\interface" -I "C:\PROGRA~1\MATLAB\R2015b\extern\include" -I "." "cos.c"</span>
+<span class="td-line-number">   17   </span><span class="td-line-normal">gcc -c -fexceptions -fno-omit-frame-pointer -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE   -DMX_COMPAT_32  -O -DNDEBUG   -I "C:\PROGRA~1\MATLAB\R2015b/simulink/include" -I "C:\PROGRA~1\MATLAB\R2015b/toolbox/shared/simtargets" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel\codegen\mex\Create_Descriptor" -I ".\interface" -I "C:\PROGRA~1\MATLAB\R2015b\extern\include" -I "." "dot.c"</span>
+<span class="td-line-number">   18   </span><span class="td-line-normal">gcc -c -fexceptions -fno-omit-frame-pointer -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE   -DMX_COMPAT_32  -O -DNDEBUG   -I "C:\PROGRA~1\MATLAB\R2015b/simulink/include" -I "C:\PROGRA~1\MATLAB\R2015b/toolbox/shared/simtargets" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel\codegen\mex\Create_Descriptor" -I ".\interface" -I "C:\PROGRA~1\MATLAB\R2015b\extern\include" -I "." "buildOriHists.c"</span>
+<span class="td-line-number">   19   </span><span class="td-line-normal">gcc -c -fexceptions -fno-omit-frame-pointer -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE   -DMX_COMPAT_32  -O -DNDEBUG   -I "C:\PROGRA~1\MATLAB\R2015b/simulink/include" -I "C:\PROGRA~1\MATLAB\R2015b/toolbox/shared/simtargets" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel\codegen\mex\Create_Descriptor" -I ".\interface" -I "C:\PROGRA~1\MATLAB\R2015b\extern\include" -I "." "GetGradOri_vector.c"</span>
+<span class="td-line-number">   20   </span><span class="td-line-normal">gcc -c -fexceptions -fno-omit-frame-pointer -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE   -DMX_COMPAT_32  -O -DNDEBUG   -I "C:\PROGRA~1\MATLAB\R2015b/simulink/include" -I "C:\PROGRA~1\MATLAB\R2015b/toolbox/shared/simtargets" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel\codegen\mex\Create_Descriptor" -I ".\interface" -I "C:\PROGRA~1\MATLAB\R2015b\extern\include" -I "." "sort1.c"</span>
+<span class="td-line-number">   21   </span><span class="td-line-normal">gcc -c -fexceptions -fno-omit-frame-pointer -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE   -DMX_COMPAT_32  -O -DNDEBUG   -I "C:\PROGRA~1\MATLAB\R2015b/simulink/include" -I "C:\PROGRA~1\MATLAB\R2015b/toolbox/shared/simtargets" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel\codegen\mex\Create_Descriptor" -I ".\interface" -I "C:\PROGRA~1\MATLAB\R2015b\extern\include" -I "." "sortIdx.c"</span>
+<span class="td-line-number">   22   </span><span class="td-line-normal">gcc -c -fexceptions -fno-omit-frame-pointer -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE   -DMX_COMPAT_32  -O -DNDEBUG   -I "C:\PROGRA~1\MATLAB\R2015b/simulink/include" -I "C:\PROGRA~1\MATLAB\R2015b/toolbox/shared/simtargets" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel\codegen\mex\Create_Descriptor" -I ".\interface" -I "C:\PROGRA~1\MATLAB\R2015b\extern\include" -I "." "MakeKeypoint.c"</span>
+<span class="td-line-number">   23   </span><span class="td-line-normal">gcc -c -fexceptions -fno-omit-frame-pointer -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE   -DMX_COMPAT_32  -O -DNDEBUG   -I "C:\PROGRA~1\MATLAB\R2015b/simulink/include" -I "C:\PROGRA~1\MATLAB\R2015b/toolbox/shared/simtargets" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel\codegen\mex\Create_Descriptor" -I ".\interface" -I "C:\PROGRA~1\MATLAB\R2015b\extern\include" -I "." "PlaceInIndex.c"</span>
+<span class="td-line-number">   24   </span><span class="td-line-normal">gcc -c -fexceptions -fno-omit-frame-pointer -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE   -DMX_COMPAT_32  -O -DNDEBUG   -I "C:\PROGRA~1\MATLAB\R2015b/simulink/include" -I "C:\PROGRA~1\MATLAB\R2015b/toolbox/shared/simtargets" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel\codegen\mex\Create_Descriptor" -I ".\interface" -I "C:\PROGRA~1\MATLAB\R2015b\extern\include" -I "." "NormalizeVec.c"</span>
+<span class="td-line-number">   25   </span><span class="td-line-normal">gcc -c -fexceptions -fno-omit-frame-pointer -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE   -DMX_COMPAT_32  -O -DNDEBUG   -I "C:\PROGRA~1\MATLAB\R2015b/simulink/include" -I "C:\PROGRA~1\MATLAB\R2015b/toolbox/shared/simtargets" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel\codegen\mex\Create_Descriptor" -I ".\interface" -I "C:\PROGRA~1\MATLAB\R2015b\extern\include" -I "." "interface/_coder_Create_Descriptor_info.c"</span>
+<span class="td-line-number">   26   </span><span class="td-line-normal">gcc -c -fexceptions -fno-omit-frame-pointer -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE   -DMX_COMPAT_32  -O -DNDEBUG   -I "C:\PROGRA~1\MATLAB\R2015b/simulink/include" -I "C:\PROGRA~1\MATLAB\R2015b/toolbox/shared/simtargets" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel\codegen\mex\Create_Descriptor" -I ".\interface" -I "C:\PROGRA~1\MATLAB\R2015b\extern\include" -I "." "interface/_coder_Create_Descriptor_api.c"</span>
+<span class="td-line-number">   27   </span><span class="td-line-normal">gcc -c -fexceptions -fno-omit-frame-pointer -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE   -DMX_COMPAT_32  -O -DNDEBUG   -I "C:\PROGRA~1\MATLAB\R2015b/simulink/include" -I "C:\PROGRA~1\MATLAB\R2015b/toolbox/shared/simtargets" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel\codegen\mex\Create_Descriptor" -I ".\interface" -I "C:\PROGRA~1\MATLAB\R2015b\extern\include" -I "." "interface/_coder_Create_Descriptor_mex.c"</span>
+<span class="td-line-number">   28   </span><span class="td-line-normal">gcc -c -fexceptions -fno-omit-frame-pointer -DMATLAB_MEX_FILE  -DMATLAB_MEX_FILE   -DMX_COMPAT_32  -O -DNDEBUG   -I "C:\PROGRA~1\MATLAB\R2015b/simulink/include" -I "C:\PROGRA~1\MATLAB\R2015b/toolbox/shared/simtargets" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel" -I "C:\Users\ygarg\DROPBO~2\sift3D\Parallel\codegen\mex\Create_Descriptor" -I ".\interface" -I "C:\PROGRA~1\MATLAB\R2015b\extern\include" -I "." "Create_Descriptor_emxutil.c"</span>
+<span class="td-line-number">   29   </span><span class="td-line-normal">gcc  -Wl,--version-script,Create_Descriptor_mex_mex.map Create_Descriptor_mexutil.o Create_Descriptor_data.o Create_Descriptor_initialize.o Create_Descriptor_terminate.o Create_Descriptor.o mpower.o power.o eml_int_forloop_overflow_check.o scalexpAlloc.o error.o sphere_tri.o mesh_refine_tri4.o fprintf.o atan2.o sin.o cos.o dot.o buildOriHists.o GetGradOri_vector.o sort1.o sortIdx.o MakeKeypoint.o PlaceInIndex.o NormalizeVec.o _coder_Create_Descriptor_info.o _coder_Create_Descriptor_api.o _coder_Create_Descriptor_mex.o Create_Descriptor_emxutil.o -m64 -Wl,--no-undefined -shared -L"C:\Program Files\MATLAB\R2015b\extern\lib\win64\mingw64" -llibmx -llibmex -llibmat -lm -llibmwlapack -llibmwblas     -o Create_Descriptor_mex.mexw64    -llibemlrt -llibcovrt -llibut -llibmwmathutil -llibmwblas </span>
+</pre>
+</td></tr></table>
+
+</div>
+</div>
+<!-- Begin MATLAB Code Panel -->
+<div class="center">
+<div class="center-title">
+<div class="ui-tabs-nav-item ui-tabs-selected">
+<span class="functiontitle">
+</span>
+<!-- Begin Call Sites -->
+<span id="callsiteselecttable" class="call-sites-tbl">
+<span id="callsiteselectlabel" class="filtered">Calls:</span>
+<select id="callsiteselect" onchange="callSiteChange(event)">
+<option value="callsiteprompt">Select a function call:</option>
+</select>
+</span>
+<!-- End Call Sites -->
+</div>
+</div>
+<div class="ui-tabs-panel">
+<div class="code" onmouseover="mcodeMouseOver(event);" onmouseout="mcodeMouseOut(event);"onclick="mcodeClick(event);">
+</div>
+</div>
+</div>
+<!-- End MATLAB Code Panel -->
+</body>
+</html>
