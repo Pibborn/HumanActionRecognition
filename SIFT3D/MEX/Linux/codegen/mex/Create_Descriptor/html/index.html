@@ -1,0 +1,707 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Code Generation Report</title>
+<link rel="stylesheet" type="text/css" href="resources/eml_report.css" />
+<link rel="stylesheet" type="text/css" href="resources/jQuery/ui.resizable.css" />
+<link rel="stylesheet" type="text/css" href="index.css" />
+<style>
+	pre.code{
+		-moz-tab-size: 4; /* For Firefox */
+		-o-tab-size: 4; /* For Opera 10.6-12.1 */
+		tab-size: 4; /* For Chrome */
+	}
+</style>
+<script type="text/javascript" src="resources/jQuery/jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="resources/jQuery/jquery-ui-1.7.custom.min.js"></script>
+<script type="text/javascript" src="resources/jQuery/jquery.tablesorter.mod.js"></script>
+<script type="text/javascript" src="resources/jQuery/jquery.hotkeys-0.7.8.js"></script>
+<script type="text/javascript" src="resources/eml_report_interactions.js"></script>
+<script type="text/javascript" src="resources/eml_report_layout.js"></script>
+<script type="text/javascript" src="rtwshrink.js"></script>
+<script type="text/javascript">
+var localizedMessages = {
+    callSelectPrompt: "Select a function call:",
+    callSelectSource: "Calls from this function",
+    callSelectTarget: "Calls to this function",
+    infoForExpression: "Information for the selected expression:",
+    infoForVarType: "Information for the selected variable:",
+    infoForVarConst: "Information for the selected compile-time constant:",
+    infoForVarNone: "This variable does not have information associated with it.",
+    infoForFilter: "Matched {0}/{1} functions, {2}/{3} methods",
+    autoExtrinsicCall: "Only supported within the MATLAB environment."
+};
+var keyBindings = {
+        selectMCodeTab: "Ctrl+m",
+    selectCallStackTab: "Ctrl+k",
+        selectCCodeTab: "Ctrl+c",
+       selectReportTab: "Ctrl+r",
+     selectCenterPanel: "Ctrl+w",
+      selectSummaryTab: "Ctrl+s",
+     selectMessagesTab: "Ctrl+a",
+    selectWatchListTab: "Ctrl+v",
+     selectBuildLogTab: "Ctrl+t",
+    clearAllHighlights: "Esc"
+};
+var functionInfoTable = {
+ MATLABcode1: "Create_Descriptor1_mcode.html",
+ fpath1: "/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/Create_Descriptor.m",
+ lines1: [1, 1, 90],
+ watch1: "Create_Descriptor1_watch.html",
+ title1: "Function: <span class='functionname'><a title='/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/Create_Descriptor.m' class='functionlink' href=\"matlab: open('/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/Create_Descriptor.m')\">Create_Descriptor</a></span>",
+ tcall1: [  ],
+ scall1: [ [ "From line 74 to sphere_tri", "357#srcline1" ], [ "From line 75 to buildOriHists", "432#srcline1" ], , [ "From line 87 to MakeKeypoint", "573#srcline2" ] ],
+ MATLABcode195: "mesh_find_vertex195_mcode.html",
+ fpath195: "/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/mesh_refine_tri4.m",
+ lines195: [153, 157, 179],
+ watch195: "mesh_find_vertex195_watch.html",
+ title195: "Function: <span class='functionname'><a title='/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/mesh_refine_tri4.m' class='functionlink' href=\"matlab: open('/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/mesh_refine_tri4.m')\">mesh_refine_tri4 &gt; mesh_find_vertex</a></span>",
+ tcall195: [ [ "From mesh_refine_tri4 line 113", "229#F195N18:B150" ], [ "From mesh_refine_tri4 line 114", "229#F195N18:B159" ], [ "From mesh_refine_tri4 line 115", "229#F195N18:B168" ] ],
+ scall195: [  ],
+ MATLABcode229: "mesh_refine_tri4229_mcode.html",
+ fpath229: "/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/mesh_refine_tri4.m",
+ lines229: [1, 1, 157],
+ watch229: "mesh_refine_tri4229_watch.html",
+ title229: "Function: <span class='functionname'><a title='/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/mesh_refine_tri4.m' class='functionlink' href=\"matlab: open('/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/mesh_refine_tri4.m')\">mesh_refine_tri4</a></span>",
+ tcall229: [ [ "From sphere_tri line 206", "357#F229N17:B504" ] ],
+ scall229: [ [ "From line 113 to mesh_refine_tri4 > mesh_find_vertex", "195#srcline157" ], [ "From line 114 to mesh_refine_tri4 > mesh_find_vertex", "195#srcline157" ], [ "From line 115 to mesh_refine_tri4 > mesh_find_vertex", "195#srcline157" ] ],
+ MATLABcode289: "sphere_project289_mcode.html",
+ fpath289: "/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/sphere_project.m",
+ lines289: [1, 1, 70],
+ watch289: "sphere_project289_watch.html",
+ title289: "Function: <span class='functionname'><a title='/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/sphere_project.m' class='functionlink' href=\"matlab: open('/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/sphere_project.m')\">sphere_project</a></span>",
+ tcall289: [ [ "From sphere_tri line 208", "357#F289N19:B511" ] ],
+ scall289: [  ],
+ MATLABcode357: "sphere_tri357_mcode.html",
+ fpath357: "/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/sphere_tri.m",
+ lines357: [1, 1, 234],
+ watch357: "sphere_tri357_watch.html",
+ title357: "Function: <span class='functionname'><a title='/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/sphere_tri.m' class='functionlink' href=\"matlab: open('/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/sphere_tri.m')\">sphere_tri</a></span>",
+ tcall357: [ [ "From Create_Descriptor line 74", "1#F357N20:B130" ], [ "From KeySample line 45", "529#F357N20:B82" ] ],
+ scall357: [ [ "From line 206 to mesh_refine_tri4", "229#srcline1" ], [ "From line 208 to sphere_project", "289#srcline1" ] ],
+ MATLABcode370: "GetGradOri_vector370_mcode.html",
+ fpath370: "/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/GetGradOri_vector.m",
+ lines370: [1, 1, 64],
+ watch370: "GetGradOri_vector370_watch.html",
+ title370: "Function: <span class='functionname'><a title='/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/GetGradOri_vector.m' class='functionlink' href=\"matlab: open('/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/GetGradOri_vector.m')\">GetGradOri_vector</a></span>",
+ tcall370: [ [ "From buildOriHists line 59", "432#F370N4:B184" ], [ "From AddSample line 52", "528#F370N4:B153" ] ],
+ scall370: [  ],
+ MATLABcode432: "buildOriHists432_mcode.html",
+ fpath432: "/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/buildOriHists.m",
+ lines432: [1, 1, 76],
+ watch432: "buildOriHists432_watch.html",
+ title432: "Function: <span class='functionname'><a title='/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/buildOriHists.m' class='functionlink' href=\"matlab: open('/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/buildOriHists.m')\">buildOriHists</a></span>",
+ tcall432: [ [ "From Create_Descriptor line 75", "1#F432N11:B139" ] ],
+ scall432: [ [ "From line 59 to GetGradOri_vector", "370#srcline1" ] ],
+ MATLABcode527: "PlaceInIndex527_mcode.html",
+ fpath527: "/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/PlaceInIndex.m",
+ lines527: [1, 1, 56],
+ watch527: "PlaceInIndex527_watch.html",
+ title527: "Function: <span class='functionname'><a title='/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/PlaceInIndex.m' class='functionlink' href=\"matlab: open('/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/PlaceInIndex.m')\">PlaceInIndex</a></span>",
+ tcall527: [ [ "From AddSample line 55", "528#F527N10:B168" ] ],
+ scall527: [  ],
+ MATLABcode528: "AddSample528_mcode.html",
+ fpath528: "/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/AddSample.m",
+ lines528: [1, 1, 59],
+ watch528: "AddSample528_watch.html",
+ title528: "Function: <span class='functionname'><a title='/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/AddSample.m' class='functionlink' href=\"matlab: open('/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/AddSample.m')\">AddSample</a></span>",
+ tcall528: [ [ "From KeySample line 102", "529#F528N2:B393" ] ],
+ scall528: [ [ "From line 52 to GetGradOri_vector", "370#srcline1" ], [ "From line 55 to PlaceInIndex", "527#srcline1" ] ],
+ MATLABcode529: "KeySample529_mcode.html",
+ fpath529: "/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/KeySample.m",
+ lines529: [1, 1, 107],
+ watch529: "KeySample529_watch.html",
+ title529: "Function: <span class='functionname'><a title='/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/KeySample.m' class='functionlink' href=\"matlab: open('/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/KeySample.m')\">KeySample</a></span>",
+ tcall529: [ [ "From KeySampleVec line 45", "530#F529N5:B82" ] ],
+ scall529: [ [ "From line 45 to sphere_tri", "357#srcline1" ], , [ "From line 102 to AddSample", "528#srcline1" ] ],
+ MATLABcode530: "KeySampleVec530_mcode.html",
+ fpath530: "/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/KeySampleVec.m",
+ lines530: [1, 1, 72],
+ watch530: "KeySampleVec530_watch.html",
+ title530: "Function: <span class='functionname'><a title='/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/KeySampleVec.m' class='functionlink' href=\"matlab: open('/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/KeySampleVec.m')\">KeySampleVec</a></span>",
+ tcall530: [ [ "From MakeKeypoint > MakeKeypointSample line 109", "572#F530N6:B228" ] ],
+ scall530: [ [ "From line 45 to KeySample", "529#srcline1" ] ],
+ MATLABcode555: "NormalizeVec555_mcode.html",
+ fpath555: "/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/NormalizeVec.m",
+ lines555: [1, 1, 8],
+ watch555: "NormalizeVec555_watch.html",
+ title555: "Function: <span class='functionname'><a title='/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/NormalizeVec.m' class='functionlink' href=\"matlab: open('/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/NormalizeVec.m')\">NormalizeVec</a></span>",
+ tcall555: [ [ "From MakeKeypoint > MakeKeypointSample line 112", "572#F555N9:B241" ], [ "From MakeKeypoint > MakeKeypointSample line 121", "572#F555N9:B276" ] ],
+ scall555: [  ],
+ MATLABcode572: "MakeKeypointSample572_mcode.html",
+ fpath572: "/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/MakeKeypoint.m",
+ lines572: [60, 62, 134],
+ watch572: "MakeKeypointSample572_watch.html",
+ title572: "Function: <span class='functionname'><a title='/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/MakeKeypoint.m' class='functionlink' href=\"matlab: open('/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/MakeKeypoint.m')\">MakeKeypoint &gt; MakeKeypointSample</a></span>",
+ tcall572: [ [ "From MakeKeypoint line 51", "573#F572N8:B136" ] ],
+ scall572: [ [ "From line 109 to KeySampleVec", "530#srcline1" ], [ "From line 112 to NormalizeVec", "555#srcline1" ], [ "From line 121 to NormalizeVec", "555#srcline1" ],  ],
+ MATLABcode573: "MakeKeypoint573_mcode.html",
+ fpath573: "/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/MakeKeypoint.m",
+ lines573: [1, 2, 62],
+ watch573: "MakeKeypoint573_watch.html",
+ title573: "Function: <span class='functionname'><a title='/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/MakeKeypoint.m' class='functionlink' href=\"matlab: open('/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/MakeKeypoint.m')\">MakeKeypoint</a></span>",
+ tcall573: [ [ "From Create_Descriptor line 87", "1#F573N7:B216" ] ],
+ scall573: [ [ "From line 51 to MakeKeypoint > MakeKeypointSample", "572#srcline62" ] ],
+ rootFcnID: "1",
+ firstPage: "1",
+ htmlRoot: "/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/codegen/mex/Create_Descriptor/html/"
+};
+var scriptInfoTable = {
+ fpath1: "/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/Create_Descriptor.m",
+ fpath2: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/isBuiltInNumeric.m",
+ fpath3: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/elmat/ismatrix.m",
+ fpath4: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/scalarEg.m",
+ fpath5: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/fixedpoint/isnumerictype.m",
+ fpath6: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/fixedpoint/isfimath.m",
+ fpath7: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/fixedpoint/isfi.m",
+ fpath8: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/elmat/intmax.m",
+ fpath9: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/elmat/intmin.m",
+ fpath10: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/eml/eml_int_forloop_overflow_check.m",
+ fpath11: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/scalexpAllocNoCheck.m",
+ fpath12: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/scalexpAlloc.m",
+ fpath13: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/ops/power.m",
+ fpath14: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/applyScalarFunction.m",
+ fpath15: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/elmat/isnan.m",
+ fpath16: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/+scalar/floor.m",
+ fpath17: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/applyScalarFunctionInPlace.m",
+ fpath18: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/elfun/floor.m",
+ fpath19: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/error.m",
+ fpath20: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/ops/mpower.m",
+ fpath21: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/toLogicalCheck.m",
+ fpath22: "/usr/local/MATLAB/R2016b/toolbox/shared/coder/coder/+coder/+internal/narginchk.m",
+ fpath23: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/charmax.m",
+ fpath24: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/assertSupportedString.m",
+ fpath25: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/ops/colon.m",
+ fpath26: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/isaUint.m",
+ fpath27: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/unsignedClass.m",
+ fpath28: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/indexPlus.m",
+ fpath29: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/isIntegerClass.m",
+ fpath30: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/charCastCheck.m",
+ fpath31: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/strfun/char.m",
+ fpath32: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/strfun/eml_string_transform.m",
+ fpath33: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/strfun/lower.m",
+ fpath34: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/scalexpCompatible.m",
+ fpath35: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/div.m",
+ fpath36: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/ops/rdivide.m",
+ fpath37: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/assertValidSizeArg.m",
+ fpath38: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/elmat/isinf.m",
+ fpath39: "/usr/local/MATLAB/R2016b/toolbox/shared/coder/coder/+coder/+internal/indexIntRelop.m",
+ fpath40: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/floatModel.m",
+ fpath41: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/minOrMax.m",
+ fpath42: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/datafun/max.m",
+ fpath43: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/elmat/repmat.m",
+ fpath44: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/prodsize.m",
+ fpath45: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/indexShapeCheck.m",
+ fpath46: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/elmat/find.m",
+ fpath47: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/iofun/fprintf.m",
+ fpath48: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/iofun/private/isFileIOExtrinsic.m",
+ fpath49: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/lang/error.m",
+ fpath50: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/cat.m",
+ fpath51: "/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/mesh_refine_tri4.m",
+ fpath52: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/useParforConst.m",
+ fpath53: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/+scalar/atan2.m",
+ fpath54: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/elfun/atan2.m",
+ fpath55: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/isDomainError.m",
+ fpath56: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/+scalar/sqrt.m",
+ fpath57: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/elfun/sqrt.m",
+ fpath58: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/ops/eml_mtimes_helper.m",
+ fpath59: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/+scalar/sin.m",
+ fpath60: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/elfun/sin.m",
+ fpath61: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/+scalar/cos.m",
+ fpath62: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/elfun/cos.m",
+ fpath63: "/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/sphere_project.m",
+ fpath64: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/length.m",
+ fpath65: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/constNonSingletonDim.m",
+ fpath66: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/datafun/private/process_sumprod_inputs.m",
+ fpath67: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/elmat/private/eml_isequal_core.m",
+ fpath68: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/elmat/isequal.m",
+ fpath69: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/datafun/private/combine_vector_elements.m",
+ fpath70: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/ops/mrdivide.p",
+ fpath71: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/datafun/mean.m",
+ fpath72: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/+blas/inline.m",
+ fpath73: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/+blas/use_refblas.m",
+ fpath74: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/+blas/threshold.m",
+ fpath75: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/+blas/xdot.m",
+ fpath76: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/indexMinus.m",
+ fpath77: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/indexTimes.m",
+ fpath78: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/+refblas/xdotx.m",
+ fpath79: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/+refblas/xdot.m",
+ fpath80: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/+blas/BLASApi.m",
+ fpath81: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/+blas/int.m",
+ fpath82: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/+blas/size_ptr.m",
+ fpath83: "/usr/local/MATLAB/R2016b/toolbox/coder/coder/+coder/+internal/c_cast.p",
+ fpath84: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/+blas/xdotc.m",
+ fpath85: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/specfun/dot.m",
+ fpath86: "/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/sphere_tri.m",
+ fpath87: "/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/GetGradOri_vector.m",
+ fpath88: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/+blas/xgemm.m",
+ fpath89: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/+refblas/xgemm.m",
+ fpath90: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/nonSingletonDim.m",
+ fpath91: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/assertValidDim.m",
+ fpath92: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/sortIdx.m",
+ fpath93: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/sort.m",
+ fpath94: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/datafun/sort.m",
+ fpath95: "/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/buildOriHists.m",
+ fpath96: "/usr/local/MATLAB/R2016b/toolbox/shared/coder/coder/+coder/+internal/is64BitInteger.m",
+ fpath97: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/+scalar/exp.m",
+ fpath98: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/elfun/exp.m",
+ fpath99: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/datafun/private/sumprod.m",
+ fpath100: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/datafun/sum.m",
+ fpath101: "/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/PlaceInIndex.m",
+ fpath102: "/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/AddSample.m",
+ fpath103: "/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/KeySample.m",
+ fpath104: "/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/KeySampleVec.m",
+ fpath105: "/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/NormalizeVec.m",
+ fpath106: "/usr/local/MATLAB/R2016b/toolbox/eml/eml/+coder/+internal/relop.m",
+ fpath107: "/usr/local/MATLAB/R2016b/toolbox/eml/lib/matlab/datafun/min.m",
+ fpath108: "/home/emitlab/Downloads/ActionRecognition-master/SIFT3D/MEX/Linux/MakeKeypoint.m"
+};
+</script>
+</head>
+<body>
+
+<div class="west">
+<ul class="ui-tabs-nav">
+<li class="ui-tabs-nav-item ui-tabs-selected"><span class="tab-link" id="MATLABcode"><span>MATLAB code</span></span></li>
+<li class="ui-tabs-nav-item"><span class="tab-link" id="callstack"><span>Call stack</span></span></li>
+<li class="ui-tabs-nav-item"><span class="tab-link" id="ccode"><span>C code</span></span></li>
+</ul>
+<div id="MATLABcodebody" class="ui-tabs-panel">
+<!-- Begin Filter -->
+<div class="grayline methodset" onclick="filterClick(event);">
+<a class="collapsed">Filter</a>
+</div>
+<div id="filterbody" class="hidden">
+<table class="myfunc-filter-tbl">
+<tr>
+<td title="Use this filter to display only functions and methods that contain variables or expressions with the specified attributes." colspan="2" class="checkbox">
+<div class="myfunc-filterby-chk"><input type="checkbox" class="filterenable" />
+<div class="filter-enable-lbl">Filter functions and methods</div></div></td></tr><tr>
+<td class="label"><div class="myfunc-filterby-lbl">Filter by:</div></td>
+<td class="select">
+<div class="filters">
+<select class="myfunc-filterby">
+<option id="size">Size</option>
+<option id="complex">Complexity</option>
+<option id="class">Class</option>
+</select>
+</div>
+</td>
+</tr>
+
+<tr>
+<td class="label"><div class="myfunc-filterstr-lbl">Filter:</div></td>
+<td class="input"><div>
+
+<div class="size">
+<select class="myfunc-filter size">
+<option value="1 195 229 289 357 370 432 527 528 529 530 555 572 573">1 x 1</option>
+<option value="195 229">1 x 1 *</option>
+<option value="229 289 357 370 432 527 528">1 x 3</option>
+<option value="195 229">1 x 3 *</option>
+<option value="1 529 530 572 573">1 x 640</option>
+<option value="1 432">1 x 80</option>
+<option value="357">12 x 3</option>
+<option value="229">12 x 3 *</option>
+<option value="527 528 529 530">2 x 2 x 2 x 80</option>
+<option value="357">20 x 3</option>
+<option value="229">20 x 3 *</option>
+<option value="529">3 x 1</option>
+<option value="530 555 572">640 x 1</option>
+<option value="432 527">80 x 1 *</option>
+<option value="1 229 357 432 527 528 529">80 x 3 *</option>
+<option value="357"><b>:</b>80 x 3</option>
+<option value="195 289"><b>:</b>? x 1</option>
+<option value="1 195 229 289 357 432 527 528 529"><b>:</b>? x 3</option>
+<option value="1 370 432 528 529 530 572 573"><b>:</b>? x <b>:</b>? x <b>:</b>?</option>
+</select>
+</div>
+
+<div class="complex">
+<select class="myfunc-filter complex">
+<option value="">Complex values</option>
+<option value="1 195 229 289 357 370 432 527 528 529 530 555 572 573">Real values</option>
+</select>
+</div>
+<!-- Begin Class Filter -->
+<div class="class">
+<select class="myfunc-filter class">
+<option value="357">char</option>
+<option value="1 195 229 289 357 370 432 527 528 529 530 555 572 573">double</option>
+<option value="1 370 432 527 528 529 572">int16</option>
+<option value="1 357 432 527 528 529 530 572 573">struct</option>
+</select>
+</div>
+<!-- End Class Filter -->
+</div>
+</td>
+</tr>
+</table>
+<div class="myfunc-count"></div>
+</div>
+<!-- End Filter -->
+<div class="grayline methodset" onmouseover="callTreeMouseOver(event);" onmouseout="callTreeMouseOut(event);" onclick="functionSetClick(event);">
+<a class="expanded">Functions</a>
+</div>
+<!-- Begin Function Tree -->
+<div id="functiontreebody">
+<div class="functionwrapper" onmouseover="callTreeMouseOver(event);" onmouseout="callTreeMouseOut(event);" onclick="functionTreeClick(event);">
+<ol class="tree">
+<!-- Begin Function Tree Roots -->
+<li class="leaf  passed"><a href="#" class="fcn  " id="F528N2:F1">AddSample</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F1N3:F2">Create_Descriptor</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F370N4:F3">GetGradOri_vector</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F529N5:F4">KeySample</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F530N6:F5">KeySampleVec</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F573N7:F6">MakeKeypoint</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F572N8:F7">MakeKeypoint &gt; MakeKeypointSample</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F555N9:F8">NormalizeVec</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F527N10:F9">PlaceInIndex</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F432N11:F10">buildOriHists</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F229N17:F11">mesh_refine_tri4</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F195N18:F12">mesh_refine_tri4 &gt; mesh_find_vertex</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F289N19:F13">sphere_project</a></li>
+<li class="leaf  passed"><a href="#" class="fcn  " id="F357N20:F14">sphere_tri</a></li>
+<!-- End Function Tree Roots -->
+</ol>
+<!-- Function Tree Nodes -->
+<div class="functiontreenodes hidden">
+</div>
+<!-- End Function Tree Nodes -->
+</div>
+</div>
+<!-- End Function Tree -->
+<!-- Begin Class Tree -->
+<div class="grayline methodset" onmouseover="callTreeMouseOver(event);" onmouseout="callTreeMouseOut(event);" onclick="methodSetClick(event);">
+<a class="expanded">Classes</a>
+</div>
+<div id="classlistbody">
+<div class="classwrapper" onmouseover="callTreeMouseOver(event);" onmouseout="callTreeMouseOut(event);" onclick="classTreeClick(event);">
+<ol class="tree">
+<!-- Begin Class Tree Roots -->
+<!-- End Class Tree Roots -->
+</ol>
+<!-- Class Tree Nodes -->
+<div class="classlistnodes hidden">
+</div>
+</div>
+</div>
+<!-- End Class Tree -->
+</div>
+<!-- Begin Call Tree -->
+<div id="callstackbody" class="ui-tabs-panel hidden">
+<div class="treewrapper" onmouseover="callTreeMouseOver(event);" onmouseout="callTreeMouseOut(event);" onclick="callTreeClick(event);">
+<ol class="tree">
+<!-- Call Tree Root -->
+<li class="node collapsed passed"><a href="#" class="fcn " id="F1N3:L1">Create_Descriptor</a>
+<ul>
+<li class="node collapsed passed"><a href="#" class="fcn " id="F357N20:L2">sphere_tri</a></li>
+<li class="node collapsed passed"><a href="#" class="fcn " id="F432N11:L3">buildOriHists</a></li>
+<li class="node collapsed passed"><a href="#" class="fcn " id="F573N7:L4">MakeKeypoint</a></li>
+</ul>
+</li>
+</ol>
+<!-- Call Tree Nodes -->
+<div class="callstacknodes hidden">
+<ol class="callstacknode" id="callstacknode1">
+
+<li class="node collapsed passed"><a href="#" class="fcn " id="F1N3:l1">Create_Descriptor</a>
+<ul>
+<li class="node collapsed passed"><a href="#" class="fcn " id="F357N20:l2">sphere_tri</a></li>
+<li class="node collapsed passed"><a href="#" class="fcn " id="F432N11:l3">buildOriHists</a></li>
+<li class="node collapsed passed"><a href="#" class="fcn " id="F573N7:l4">MakeKeypoint</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode195">
+
+<li class="leaf passed"><a href="#" class="fcn " id="F195N18:l5">mesh_refine_tri4 &gt; mesh_find_vertex</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode229">
+
+<li class="node collapsed passed"><a href="#" class="fcn " id="F229N17:l6">mesh_refine_tri4</a>
+<ul>
+<li class="leaf passed"><a href="#" class="fcn " id="F195N18:l7">mesh_refine_tri4 &gt; mesh_find_vertex</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode289">
+
+<li class="leaf passed"><a href="#" class="fcn " id="F289N19:l8">sphere_project</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode357">
+
+<li class="node collapsed passed"><a href="#" class="fcn " id="F357N20:l9">sphere_tri</a>
+<ul>
+<li class="node collapsed passed"><a href="#" class="fcn " id="F229N17:l10">mesh_refine_tri4</a></li>
+<li class="leaf passed"><a href="#" class="fcn " id="F289N19:l11">sphere_project</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode370">
+
+<li class="leaf passed"><a href="#" class="fcn " id="F370N4:l12">GetGradOri_vector</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode432">
+
+<li class="node collapsed passed"><a href="#" class="fcn " id="F432N11:l13">buildOriHists</a>
+<ul>
+<li class="leaf passed"><a href="#" class="fcn " id="F370N4:l14">GetGradOri_vector</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode527">
+
+<li class="leaf passed"><a href="#" class="fcn " id="F527N10:l15">PlaceInIndex</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode528">
+
+<li class="node collapsed passed"><a href="#" class="fcn " id="F528N2:l16">AddSample</a>
+<ul>
+<li class="leaf passed"><a href="#" class="fcn " id="F370N4:l17">GetGradOri_vector</a></li>
+<li class="leaf passed"><a href="#" class="fcn " id="F527N10:l18">PlaceInIndex</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode529">
+
+<li class="node collapsed passed"><a href="#" class="fcn " id="F529N5:l19">KeySample</a>
+<ul>
+<li class="node collapsed passed"><a href="#" class="fcn " id="F357N20:l20">sphere_tri</a></li>
+<li class="node collapsed passed"><a href="#" class="fcn " id="F528N2:l21">AddSample</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode530">
+
+<li class="node collapsed passed"><a href="#" class="fcn " id="F530N6:l22">KeySampleVec</a>
+<ul>
+<li class="node collapsed passed"><a href="#" class="fcn " id="F529N5:l23">KeySample</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode555">
+
+<li class="leaf passed"><a href="#" class="fcn " id="F555N9:l24">NormalizeVec</a>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode572">
+
+<li class="node collapsed passed"><a href="#" class="fcn " id="F572N8:l25">MakeKeypoint &gt; MakeKeypointSample</a>
+<ul>
+<li class="node collapsed passed"><a href="#" class="fcn " id="F530N6:l26">KeySampleVec</a></li>
+<li class="leaf passed"><a href="#" class="fcn " id="F555N9:l27">NormalizeVec</a></li>
+</ul>
+</li>
+</ol>
+<ol class="callstacknode" id="callstacknode573">
+
+<li class="node collapsed passed"><a href="#" class="fcn " id="F573N7:l28">MakeKeypoint</a>
+<ul>
+<li class="node collapsed passed"><a href="#" class="fcn " id="F572N8:l29">MakeKeypoint &gt; MakeKeypointSample</a></li>
+</ul>
+</li>
+</ol>
+
+</div>
+</div>
+</div>
+<!-- End Call Tree -->
+<!-- Begin C Code -->
+<div id="ccodebody" class="ui-tabs-panel hidden">
+<p>No C/C++ source files were generated because JIT compilation was used.</p></div>
+<!-- End C Code -->
+</div>
+<!-- Tooltips -->
+<div class="aux hidden">
+<div class="tooltips">
+<div class="tooltip" id="TT1"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>struct</td></tr></table></div>
+<div class="tooltip" id="TT2"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT3"><table class="tooltip"><tr><th>Size</th><td>1 x 640</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT4"><table class="tooltip"><tr><th>Size</th><td><b>:</b>? x <b>:</b>? x <b>:</b>?</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT5"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>int16</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT6"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>struct</td></tr></table></div>
+<div class="tooltip" id="TT7"><table class="tooltip"><tr><th>Size</th><td><b>:</b>? x 3</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT8"><table class="tooltip"><tr><th>Size</th><td>80 x 3 *</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT9"><table class="tooltip"><tr><th>Size</th><td>1 x 80</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT10"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>logical</td></tr></table></div>
+<div class="tooltip" id="TT11"><table class="tooltip"><tr><th>Size</th><td>1 x 3 *</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT12"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT13"><table class="tooltip"><tr><th>Size</th><td>3 x 1 *</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT14"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>mxArray</td></tr></table></div>
+<div class="tooltip" id="TT15"><table class="tooltip"><tr><th>Size</th><td>1 x 82</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT16"><table class="tooltip"><tr><th>Size</th><td>1 x 2</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT17"><table class="tooltip"><tr><th>Size</th><td>1 x 23</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT18"><table class="tooltip"><tr><th>Size</th><td>1 x 5</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT19"><table class="tooltip"><tr><th>Size</th><td>1 x 6</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT20"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT21"><table class="tooltip"><tr><th>Size</th><td>1 x 14</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT22"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT23"><table class="tooltip"><tr><th>Size</th><td>1 x 0</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT24"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT25"><table class="tooltip"><tr><th>Size</th><td>1 x 31</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT26"><table class="tooltip"><tr><th>Size</th><td>1 x 19</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT27"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>int8</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT28"><table class="tooltip"><tr><th>Size</th><td>1 x 4</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT29"><table class="tooltip"><tr><th>Size</th><td>1 x 3</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT30"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT31"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>uint8</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT32"><table class="tooltip"><tr><th>Size</th><td>1 x 128</td></tr><tr><th>Class</th><td>int8</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT33"><table class="tooltip"><tr><th>Size</th><td>128 x 1</td></tr><tr><th>Class</th><td>int8</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT34"><table class="tooltip"><tr><th>Size</th><td>1 x 128</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT35"><table class="tooltip"><tr><th>Size</th><td>1 x <b>:</b>?</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT36"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>int32</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT37"><table class="tooltip"><tr><th>Size</th><td>1 x 2</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT38"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT39"><table class="tooltip"><tr><th>Size</th><td>1 x 3</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT40"><table class="tooltip"><tr><th>Size</th><td><b>:</b>? x 1</td></tr><tr><th>Class</th><td>logical</td></tr></table></div>
+<div class="tooltip" id="TT41"><table class="tooltip"><tr><th>Size</th><td>1 x 2</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT42"><table class="tooltip"><tr><th>Size</th><td>1 x 15</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT43"><table class="tooltip"><tr><th>Size</th><td>2 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT44"><table class="tooltip"><tr><th>Size</th><td>1 x 7</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT45"><table class="tooltip"><tr><th>Size</th><td>0 x 1</td></tr><tr><th>Class</th><td>logical</td></tr></table></div>
+<div class="tooltip" id="TT46"><table class="tooltip"><tr><th>Size</th><td>0 x 0</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT47"><table class="tooltip"><tr><th>Size</th><td>0 x 0</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT48"><table class="tooltip"><tr><th>Size</th><td>0 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT49"><table class="tooltip"><tr><th>Size</th><td>1 x 0</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT50"><table class="tooltip"><tr><th>Size</th><td><b>:</b>? x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT51"><table class="tooltip"><tr><th>Size</th><td>1 x <b>:</b>?</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT52"><table class="tooltip"><tr><th>Size</th><td><b>:</b>? x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT53"><table class="tooltip"><tr><th>Size</th><td>1 x 0</td></tr><tr><th>Class</th><td>struct</td></tr></table></div>
+<div class="tooltip" id="TT54"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>struct</td></tr></table></div>
+<div class="tooltip" id="TT55"><table class="tooltip"><tr><th>Size</th><td>1 x 3</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT56"><table class="tooltip"><tr><th>Size</th><td>0 x 0</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT57"><table class="tooltip"><tr><th>Size</th><td>1 x 20</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT58"><table class="tooltip"><tr><th>Size</th><td><b>:</b>? x <b>:</b>?</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT59"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT60"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT61"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT62"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT63"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT64"><table class="tooltip"><tr><th>Size</th><td>2 x 1</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT65"><table class="tooltip"><tr><th>Size</th><td>2 x 1</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT66"><table class="tooltip"><tr><th>Size</th><td>1 x 1 *</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT67"><table class="tooltip"><tr><th>Size</th><td>1 x 3</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT68"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT69"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT70"><table class="tooltip"><tr><th>Size</th><td>2 x 1</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT71"><table class="tooltip"><tr><th>Size</th><td>3 x 1</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT72"><table class="tooltip"><tr><th>Size</th><td>2 x 1</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT73"><table class="tooltip"><tr><th>Size</th><td>3 x 1</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT74"><table class="tooltip"><tr><th>Size</th><td>2 x 1</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT75"><table class="tooltip"><tr><th>Size</th><td>3 x 1</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT76"><table class="tooltip"><tr><th>Size</th><td>12 x 3 *</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT77"><table class="tooltip"><tr><th>Size</th><td>20 x 3 *</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT78"><table class="tooltip"><tr><th>Size</th><td>60 x 3 *</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT79"><table class="tooltip"><tr><th>Size</th><td>3 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT80"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT81"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT82"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT83"><table class="tooltip"><tr><th>Size</th><td>1 x 30</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT84"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT85"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT86"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT87"><table class="tooltip"><tr><th>Size</th><td>2 x 1</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT88"><table class="tooltip"><tr><th>Size</th><td>3 x 1</td></tr><tr><th>Class</th><td>cell</td></tr></table></div>
+<div class="tooltip" id="TT89"><table class="tooltip"><tr><th>Size</th><td>3 x 3 *</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT90"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT91"><table class="tooltip"><tr><th>Size</th><td>1 x 2</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT92"><table class="tooltip"><tr><th>Size</th><td>1 x 9</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT93"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>coder.opaque</td></tr></table></div>
+<div class="tooltip" id="TT94"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>struct</td></tr></table></div>
+<div class="tooltip" id="TT95"><table class="tooltip"><tr><th>Size</th><td>12 x 3</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT96"><table class="tooltip"><tr><th>Size</th><td>20 x 3</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT97"><table class="tooltip"><tr><th>Size</th><td><b>:</b>80 x 3</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT98"><table class="tooltip"><tr><th>Size</th><td>3 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT99"><table class="tooltip"><tr><th>Size</th><td>80 x 1 *</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT100"><table class="tooltip"><tr><th>Size</th><td><b>:</b>80 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT101"><table class="tooltip"><tr><th>Size</th><td><b>:</b>80 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT102"><table class="tooltip"><tr><th>Size</th><td>4 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT103"><table class="tooltip"><tr><th>Size</th><td>4 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT104"><table class="tooltip"><tr><th>Size</th><td><b>:</b>1 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT105"><table class="tooltip"><tr><th>Size</th><td><b>:</b>1 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT106"><table class="tooltip"><tr><th>Size</th><td>256 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT107"><table class="tooltip"><tr><th>Size</th><td>256 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT108"><table class="tooltip"><tr><th>Size</th><td>80 x 1 *</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT109"><table class="tooltip"><tr><th>Size</th><td>80 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT110"><table class="tooltip"><tr><th>Size</th><td>80 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT111"><table class="tooltip"><tr><th>Size</th><td>1 x 80</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT112"><table class="tooltip"><tr><th>Size</th><td>1 x 1</td></tr><tr><th>Class</th><td>function_handle</td></tr></table></div>
+<div class="tooltip" id="TT113"><table class="tooltip"><tr><th>Size</th><td>2 x 2 x 2 x 80</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT114"><table class="tooltip"><tr><th>Size</th><td>1 x 44</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="TT115"><table class="tooltip"><tr><th>Size</th><td>640 x 1</td></tr><tr><th>Class</th><td>double</td></tr><tr><th>Complex</th><td>No</td></tr></table></div>
+<div class="tooltip" id="TT116"><table class="tooltip"><tr><th>Size</th><td>1 x 36</td></tr><tr><th>Class</th><td>char</td></tr></table></div>
+<div class="tooltip" id="V1"><table class="tooltip"><tr><th>Value</th><td>     1</br></td></tr></table></div>
+<div class="tooltip" id="V2"><table class="tooltip"><tr><th>Value</th><td>ico</br></td></tr></table></div>
+<div class="tooltip" id="V3"><table class="tooltip"><tr><th>Value</th><td>     0</br></td></tr></table></div>
+</div>
+</div>
+<!-- End Tooltips -->
+
+<div class="south">
+<ul class="ui-tabs-nav">
+<li class="ui-tabs-nav-item ui-tabs-selected"><span class="tab-link" id="summary"><span>Summary</span></span></li>
+<li class="ui-tabs-nav-item"><span class="tab-link" id="messages"><span>All Messages (0)</span></span></li>
+<li class="ui-tabs-nav-item"><span class="tab-link" id="watchlist"><span>Variables</span></span></li>
+<li class="ui-tabs-nav-item hidden"><span class="tab-link" id="watchload"><span>Variables</span></span></li>
+</ul>
+
+<!-- Compilation Summary -->
+<div id="summarybody" class="ui-tabs-panel">
+<table cellpadding="1" cellspacing="4">
+<tr><td>C source code generated on:</td><td>18-Nov-2016 16:31:55</td></tr>
+<tr><td>Coding target:</td><td>MEX Function</td></tr>
+<tr><td>Number of errors:</td><td><a href="javascript:selectMessagesTab();">0</a></td></tr>
+<tr><td>Number of warnings:</td><td><a href="javascript:selectMessagesTab();">0</a></td></tr>
+<tr><td>Number of notices:</td><td><a href="javascript:selectMessagesTab();">0</a></td></tr>
+</table>
+<p/><p/><table>
+<tr><td><b>Tell Us What You Think</b></td></tr>
+<tr><td>We value your feedback. Please take a few minutes to answer this short questionnaire regarding the Code Generation Report.</td></tr>
+<tr><td><a href="matlab: emlcprivate('launchReportSurvey');">&gt;&gt;Provide Feedback</a></td></tr>
+</table>
+</div>
+
+<!-- Message Table -->
+<div id="messagesbody" class="ui-tabs-panel hidden">
+<div>
+<div class="msgsuccess">Code generation successful. Click here to <a href="javaScript:selectSummaryTab();">view summary</a>.</div>
+</div>
+</div>
+<!-- Watchlist Table -->
+<div id="watchlistbody" class="ui-tabs-panel hidden">
+</div>
+<div id="watchloadbody" class="ui-tabs-panel hidden">
+Loading Variables table ...
+</div>
+
+</div>
+<!-- Begin MATLAB Code Panel -->
+<div class="center">
+<div class="center-title">
+<div class="ui-tabs-nav-item ui-tabs-selected">
+<span class="functiontitle">
+</span>
+<!-- Begin Call Sites -->
+<span id="callsiteselecttable" class="call-sites-tbl">
+<span id="callsiteselectlabel" class="filtered">Calls:</span>
+<select id="callsiteselect" onchange="callSiteChange(event)">
+<option value="callsiteprompt">Select a function call:</option>
+</select>
+</span>
+<!-- End Call Sites -->
+</div>
+</div>
+<div class="ui-tabs-panel">
+<div class="code" onmouseover="mcodeMouseOver(event);" onmouseout="mcodeMouseOut(event);"onclick="mcodeClick(event);">
+</div>
+</div>
+</div>
+<!-- End MATLAB Code Panel -->
+</body>
+</html>
