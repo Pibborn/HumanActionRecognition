@@ -28,8 +28,7 @@ end
 inputFeatures = [allFeatures(:,1:5) allDescriptors];
 % inputFeatures = allDescriptors;
 
-%wordSizes = [50, 100, 250, 500, 750, 1000, 1250, 1500];
-wordSizes = [50];
+wordSizes = [50, 100, 250, 500, 750, 1000, 1250, 1500];
 
 for word = 1 : length(wordSizes)
     fprintf('Vocabulary size - %d\n',wordSizes(word));
