@@ -33,7 +33,8 @@ wordSizes = [50, 100, 250, 500, 750, 1000, 1250, 1500];
 for word = 1 : length(wordSizes)
     fprintf('Vocabulary size - %d\n',wordSizes(word));
     tic;
-    [idx, C] = kmedoids(inputFeatures, wordSizes(word), 'Distance', 'mahalanobis');
+    options = statset('UseParallel',true);
+    [idx, C] = kmedoids(inputFeatures, wordSizes(word), 'Distance', 'mahalanobis', 'Options', options);
     fprintf('Clustering is done.')
     
     vidSignature = zeros(nFiles, wordSizes(word));
