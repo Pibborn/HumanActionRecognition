@@ -39,3 +39,10 @@ end
 
 keypoint = MakeKeypoint(pix, xyScale, tScale, x, y, z);
 
+if any(keypoint.ivec) == 0
+    disp('Found a null keypoint (a descriptor made of 0s only) : Returning with reRun flag set.');
+    keypoint = 0;
+    reRun = 1;
+    return;
+end
+
