@@ -38,7 +38,9 @@ diffStep = 10;
 %    videoDiff(:,:,frame) = video(:,:,frame) - video(:,:,frame+diffStep);
 %end
 
-[feature, descriptor, gss, dogss] = sift3D(video);
+%[feature, descriptor, gss, dogss] = sift3D(video);
+sift3D_random(video, height, width, time);
+
 
 %frame  = videoDiff(:,:,1);frame = uint8(abs(frame));imshow(frame);
 

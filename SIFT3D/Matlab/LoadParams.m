@@ -1,5 +1,5 @@
 TwoPeak_Flag = 1;  % Allow 3DSIFT to throw out points, Default: 1
-IndexSize = 3;  % Min: 1  Default: 2 
+IndexSize = 2;  % Min: 1  Default: 2 
 
 Display_flag = 0;  % Display a sphere which can be rotated (Rotate 3D button) to view gradient directions
 Tessellation_flag = 1;  % Keep this as 1
@@ -23,9 +23,8 @@ else
     OriSigma = 1.0;
 end
 
-NumProcessors = 12;
-NumMaxFeatures = 200; % maximum number of features for a video
-NumProcessors = 12; % number of processors available on your machine
+NumMaxFeatures = 1; % maximum number of features for a video
+NumProcessors = 2; % number of processors available on your machine
 
 %% Various path parameters. Change as needed to run on your machine.
 % global videoName variable, setup from start.m arguments. This should not
@@ -33,7 +32,7 @@ NumProcessors = 12; % number of processors available on your machine
 % below.
 global videoName;
 
-baseDataPath = '/home/cerrato/ActionRecognition/SIFT3D/data/';
+baseDataPath = '~/Documents/uni/tesi/ActionRecognition/SIFT3D/data/';
 
 % Relevant to scriptVocabGenerator.m
 % the .csv files containing descriptors. all .csvs in this folder will be
@@ -48,10 +47,10 @@ vocabPath = strcat(baseDataPath, 'results/');
 
 % Relevant to sift3D.m
 % videoName is set from arguments in start.m
-outFeaturesPath = strcat(baseDataPath, 'features/',videoName,'_finalFeatures.csv');
-outDescriptorsPath = strcat(baseDataPath, 'descriptors/', videoName, '_finalDescriptors.csv');
+outFeaturesPath = strcat(baseDataPath, 'features/random/',videoName,'_randomFeatures.csv');
+outDescriptorsPath = strcat(baseDataPath, 'descriptors/random/', videoName, '_randomDescriptors.csv');
 outRefinedFeaturesPath = strcat(baseDataPath, 'features/',videoName,'_refinedFeatures.csv');
 
 % Relevant to start_parallel.m
 % Path of the videos you desire to extract features from
-videoPath = strcat(baseDataPath, 'videos/kth-again/');
+videoPath = strcat(baseDataPath, 'videos/weissman-full/');
