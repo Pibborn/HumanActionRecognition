@@ -36,3 +36,4 @@ def infer_label(file_name):
     if "wave2" in file_name:
         return Constants.WEISSMAN_WAVE2_LABEL
     return -1
+

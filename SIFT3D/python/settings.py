@@ -22,7 +22,7 @@ class Constants:
     HANDCLAPPING_LABEL = 4
     HANDWAVING_LABEL = 5
     SHOW_PLOTS = False
-    TAKE_TOP_200 = True
+    TAKE_TOP_200 = False
     WEISSMAN_DATASET_DIR = DESCRIPTORS_DIR + "weissman-yash/"
     WEISSMAN_WAVE1_LABEL = 0
     WEISSMAN_WAVE2_LABEL = 1
@@ -34,3 +34,4 @@ class Constants:
     PJUMP_LABEL = 7
     JACK_LABEL = 8
     BEND_LABEL = 9
+    WEISSMAN_LABEL_NUM = 10
