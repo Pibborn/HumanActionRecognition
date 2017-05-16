@@ -1,14 +1,9 @@
-import glob
+import logging
 
 import numpy as np
 from scipy.spatial.distance import cosine
-from sklearn import preprocessing
 from sklearn.cluster import KMeans
-import SIFT3D.python.utils as utils
-from SIFT3D.python import matching_experiments as match
-from SIFT3D.python.utils import Constants, infer_label
-import logging
-import csv
+
 
 class TFIDF_Evaluator:
 

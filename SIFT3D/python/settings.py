@@ -24,6 +24,7 @@ class Constants:
     SHOW_PLOTS = False
     TAKE_TOP_200 = False
     WEISSMAN_DATASET_DIR = DESCRIPTORS_DIR + "weissman-yash/"
+    BBRISTER_DATASET_DIR = DESCRIPTORS_DIR + "bbrister/"
     WEISSMAN_WAVE1_LABEL = 0
     WEISSMAN_WAVE2_LABEL = 1
     WEISSMAN_WALK_LABEL = 2
@@ -35,3 +36,5 @@ class Constants:
     JACK_LABEL = 8
     BEND_LABEL = 9
     WEISSMAN_LABEL_NUM = 10
+    DATASETS = ['kth', 'weissman', 'bbrister']
+    DATASETS_DIRS = [KTH_DATASET_DIR, WEISSMAN_DATASET_DIR, BBRISTER_DATASET_DIR]
