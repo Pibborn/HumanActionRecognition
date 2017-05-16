@@ -8,7 +8,7 @@ from sklearn.svm import SVC
 
 from SIFT3D.python.settings import Constants
 from SIFT3D.python.utils import infer_label
-from SIFT3D.python.videoDescription import vocab_creation, descriptor_evaluation
+from SIFT3D.python.videodescription import vocab_creation, descriptor_evaluation
 import logging
 logging.basicConfig(level=Constants.LOGGING_LEVEL)
 def warn(*args, **kwargs):
