@@ -8,7 +8,7 @@ from sklearn.svm import SVC
 
 from SIFT3D.python.settings import Constants
 from SIFT3D.python.utils import infer_label
-from SIFT3D.python.videoDescription import vocabCreation, descriptorEvaluation
+from SIFT3D.python.videoDescription import vocab_creation, descriptor_evaluation
 import logging
 logging.basicConfig(level=Constants.LOGGING_LEVEL)
 def warn(*args, **kwargs):
@@ -306,8 +306,8 @@ def kth_experiment_multiple(times):
 def vocab_experiment(size, c=0.001):
     #dicts, y = vocabCreation.generate_vocabulary(Constants.DATA_DIR + '/descriptors/weissman-yash/', size)
 
-    dicts, y = vocabCreation.load_vocab(Constants.DATA_DIR + 'vocabs/bbrister-2grams-window/',
-                                        Constants.WEISSMAN_DATASET_DIR, size)
+    dicts, y = vocab_creation.load_vocab(Constants.DATA_DIR + 'vocabs/bbrister-2grams-window/',
+                                         Constants.WEISSMAN_DATASET_DIR, size)
 
     #train_videos, test_videos = split_train_test_videos(Constants.DESCRIPTORS_DIR + '/bbrister/', 10)
     #X_train, y_train = load_descriptors(train_videos)
@@ -362,7 +362,7 @@ def vocab_experiment_multiple(times, size=250, c=0.001):
 
 def random_experiment(size):
     random_dataset_dir = Constants.DATA_DIR + '/weizmann/random/'
-    dicts, y = vocabCreation.generate_vocabulary_with_pruning(random_dataset_dir, size, model=None)
+    dicts, y = vocab_creation.generate_vocabulary_with_pruning(random_dataset_dir, size, model=None)
     X_train, X_test, y_train, y_test = train_test_split(dicts, y, test_size=0.1, random_state=42)
 
     model = svm.LinearSVC(C=0.001)
@@ -416,7 +416,7 @@ if __name__ == "__main__":
     for size in sizes:
         #dicts, y = vocabCreation.generate_ngram_vocab(Constants.DATA_DIR + '/descriptors/bbrister-kth/',
         #                                             Constants.DATA_DIR + '/features/bbrister-kth/', size, n=2, ngram_strategy='window')
-        dicts, y = vocabCreation.generate_vocabulary(Constants.DATA_DIR + '/descriptors/bbrister-kth/', size=size)
+        dicts, y = vocab_creation.generate_vocabulary(Constants.DATA_DIR + '/descriptors/bbrister-kth/', size=size)
     #    print(dicts)
 
     # # tfidf experiments
