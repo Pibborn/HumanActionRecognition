@@ -118,7 +118,7 @@ def train_descriptor_prediction_model(X, y, **kwargs):
     else:
         model.fit(X_train, y_train)
         train_accuracy = model.score(X_train, y_train)
-        test_accuracy = model.evaluate(X_test, y_test)
+        test_accuracy = model.score(X_test, y_test)
     logging.info("Achieved " + str(train_accuracy) + " accuracy on the training set")
     logging.info("Achieved " + str(test_accuracy) + " accuracy on the test set")
     return model
