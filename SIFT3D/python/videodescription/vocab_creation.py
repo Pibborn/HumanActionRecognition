@@ -305,10 +305,16 @@ def generate_vocabulary_2d(dataset_path, features_path, size_words, size_angles,
 def load_vocab(vocabs_path, dataset_path, size):
     # get the vocab depending on the size string
     basename = '*-' + str(size) + '*.csv'
-
     # there should only be a single hit
-    vocab_file_list = glob.glob(vocabs_path + '/' + basename)
-    assert len(vocab_file_list) == 1
+    vocab_file_list = glob.glob(str(vocabs_path) + '/' + basename)
+    try:
+        assert len(vocab_file_list) == 1
+    except AssertionError:
+        logging.error('Something is wrong. The dataset paths are probably wrong, or the basename in '
+                      'load_vocab does not match any vocab .csv file.')
+        logging.error('basename: ' + str(vocabs_path) + str(basename))
+        logging.error('vocab_file_list: ' + str(vocab_file_list))
+        exit()
     vocab_file = open(vocab_file_list[0], 'r')
     reader = csv.reader(vocab_file, delimiter=',')
 
@@ -350,5 +356,5 @@ def load_signatures(signature_path, label_path):
     return X, y
 
 if __name__ == '__main__':
-    generate_vocabulary_2d(Constants.DESCRIPTORS_DIR + 'weissman-angles/', Constants.DATA_DIR + 'features/weissman-angles/',
+    generate_vocabulary_2d(Constants.DESCRIPTORS_DIR + '/weissman-angles/', Constants.DATA_DIR + '/features/weissman-angles/',
                          250, 10)

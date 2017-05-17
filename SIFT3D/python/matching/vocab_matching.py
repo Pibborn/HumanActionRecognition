@@ -5,6 +5,7 @@ logging.basicConfig(level=Constants.LOGGING_LEVEL)
 from sklearn import svm, neighbors
 from sklearn.model_selection import train_test_split
 from sklearn import preprocessing
+import os
 
 def vocab_experiment(dicts, y, model, preprocess=True, estimate_parameters=False):
     logging.info("Started a vocabulary matching experiment.")
@@ -53,9 +54,9 @@ if __name__ == "__main__":
     model = svm.LinearSVC(C=1e-3)
     # model = svm.SVC()
     # model = neighbors.KNeighborsClassifier(n_neighbors=15)
-    dicts, y = vocab_creation.load_vocab(Constants.DATA_DIR + 'vocabs/bbrister-2grams-window/',
+    dicts, y = vocab_creation.load_vocab(os.path.join(Constants.DATA_DIR, 'vocabs', 'bbrister-2grams-window'),
                                          Constants.WEISSMAN_DATASET_DIR, 50)
     vocab_experiment(dicts, y, model)
-    vocab_experiment_multiple_sizes(model, Constants.DATA_DIR + 'vocabs/bbrister-2/',
+    vocab_experiment_multiple_sizes(model, os.path.join(Constants.DATA_DIR, 'vocabs', 'bbrister-2'),
                                     Constants.WEISSMAN_DATASET_DIR, [250, 500, 1000])
     vocab_experiment_multiple_times(dicts, y, model, 5)
