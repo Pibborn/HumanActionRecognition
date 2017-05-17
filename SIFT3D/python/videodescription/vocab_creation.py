@@ -7,9 +7,8 @@ import operator
 import numpy as np
 from sklearn.cluster import KMeans
 
-import SIFT3D.python.utils as utils
 from SIFT3D.python.matching import matching_experiments as match
-from SIFT3D.python.utils import Constants, infer_label
+from SIFT3D.python.utils.utils import Constants, infer_label
 
 DUMP_TO_FILE = True
 
