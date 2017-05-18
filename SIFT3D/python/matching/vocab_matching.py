@@ -32,6 +32,30 @@ def vocab_experiment(dicts, y, model, preprocess=True, estimate_parameters=False
     logging.info("Achieved " + str(accuracy) + " accuracy on the test set")
     return accuracy
 
+def vocab_experiment_folds(X_train, y_train, X_test, y_test, model, preprocess=True, estimate_parameters=False):
+    logging.info("Started a vocabulary matching experiment.")
+
+    if preprocess == True:
+        logging.info("Preprocessing data...")
+        scaler = preprocessing.StandardScaler().fit(X_train)
+        scaler.transform(X_train)
+        scaler.transform(X_test)
+
+    if estimate_parameters == True:
+        logging.info("Estimating hyperparameters...")
+        X_test, X_dev, y_test, y_dev = train_test_split(X_test, y_test, test_size=0.5, stratify=y_test)
+        # TODO: reimplement this
+        pass
+
+    logging.info("Fitting the model...")
+    model.fit(X_train, y_train)
+    logging.info("Done fitting.")
+    accuracy = model.score(X_train, y_train)
+    logging.info("Achieved " + str(accuracy) + " accuracy on the training set")
+    accuracy = model.score(X_test, y_test)
+    logging.info("Achieved " + str(accuracy) + " accuracy on the test set")
+    return accuracy
+
 def vocab_experiment_multiple_sizes(model, vocab_path, dataset_path, size_arr):
     accuracies = []
     for size in size_arr:
