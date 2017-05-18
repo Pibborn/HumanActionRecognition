@@ -1,9 +1,10 @@
 import os.path
 import logging
+from SIFT3D.python.secrets import Secrets
 
 class Constants:
     # these values should be changed as you find useful
-    ROOT_DIR = os.path.join(os.sep, 'Users', 'mattia', 'Documents', 'uni', 'tesi', 'ActionRecognition')
+    ROOT_DIR = Secrets.ROOT_DIR
     MATLAB_CODE_DIR = os.path.join(ROOT_DIR, 'SIFT3D', 'Matlab')
     PYTHON_CODE_DIR = os.path.join(ROOT_DIR, 'SIFT3D', 'python')
     DATA_DIR = os.path.join(ROOT_DIR, 'SIFT3D', 'data')

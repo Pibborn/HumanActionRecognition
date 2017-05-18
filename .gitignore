@@ -15,3 +15,6 @@
 
 # IDE settings folder
 *.idea/
+
+# python secrets file. you have to set it yourself!
+SIFT3D/python/secrets.py
