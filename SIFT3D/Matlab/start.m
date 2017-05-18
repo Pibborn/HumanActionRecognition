@@ -42,12 +42,11 @@ diffStep = 10;
 %sift3D_random(video, height, width, time); % uncomment to extract random keypoints
 [feature, descriptor] = sift3D_bbrister(video); % uncomment to use bbrister's SIFT3D library
 
-
 %frame  = videoDiff(:,:,1);frame = uint8(abs(frame));imshow(frame);
 
 %frame = videoDiff(:,:,12);frame(85,60) = 255;imshow(uint8(frame));
 
-clear;
-close all;
+%clear;
+%close all;
 
 success = 1;

@@ -24,7 +24,7 @@ else
 end
 
 NumMaxFeatures = 1; % maximum number of features for a video
-NumProcessors = 2; % number of processors available on your machine
+NumProcessors = 4; % number of processors available on your machine
 
 %% Various path parameters. Change as needed to run on your machine.
 % global videoName variable, setup from start.m arguments. This should not
@@ -48,13 +48,13 @@ vocabPath = strcat(baseDataPath, 'results/');
 
 % Relevant to sift3D.m
 % videoName is set from arguments in start.m
-outFeaturesPath = strcat(baseDataPath, 'features/test/',videoName,'_testfeatures.csv');
-outDescriptorsPath = strcat(baseDataPath, 'descriptors/test/', videoName, '_testdescriptors.csv');
+outFeaturesPath = strcat(baseDataPath, 'features/weissman-angles/',videoName,'_features.csv');
+outDescriptorsPath = strcat(baseDataPath, 'descriptors/weissman-angles/', videoName, '_descriptors.csv');
 outRefinedFeaturesPath = strcat(baseDataPath, 'features/',videoName,'_refinedFeatures.csv');
 
 % Relevant to start_parallel.m
 % Path of the videos you desire to extract features from
-videoPath = strcat(baseDataPath, 'videos/test-daria/');
+videoPath = strcat(baseDataPath, 'videos/weissman-full/');
 
 % External library folders path
 % bbrister-SIFT3D
