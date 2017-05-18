@@ -8,7 +8,7 @@ import numpy as np
 from sklearn.cluster import KMeans
 
 from SIFT3D.python.matching import matching_experiments as match
-from SIFT3D.python.utils.utils import Constants, infer_label
+from SIFT3D.python.utils.utils import Constants, infer_label, load_samples_from_file, load_descriptors_and_features
 
 DUMP_TO_FILE = True
 
@@ -28,9 +28,9 @@ def generate_vocabulary(dataset_path, size, model=None):
     _ = []
     for descriptor_file in descriptor_file_list:
         prev_X_len = len(X)
-        X, _ = match.load_samples_from_file(descriptor_file, X, _)
+        X, _ = load_samples_from_file(descriptor_file, X, _)
 
-        yi = utils.infer_label(descriptor_file)
+        yi = infer_label(descriptor_file)
         y.append(yi)
 
         num_des_list.append(len(X) - prev_X_len)
@@ -85,9 +85,9 @@ def generate_ngram_vocab(dataset_path, feature_path, size, model=None, n=2, ngra
     for descriptor_file in descriptor_file_list:
         feature_file = feature_file_list[i]
         prev_X_len = len(X)
-        X_temp, F_temp, _ = match.load_descriptors_and_features(descriptor_file, feature_file, X_temp, F_temp, _)
+        X_temp, F_temp, _ = load_descriptors_and_features(descriptor_file, feature_file, X_temp, F_temp, _)
 
-        yi = utils.infer_label(descriptor_file)
+        yi = infer_label(descriptor_file)
         y.append(yi)
 
         for j in range(0, len(X_temp)):
@@ -202,9 +202,9 @@ def generate_vocabulary_with_pruning(dataset_path, size, model=None):
         feature_file = feature_file_list[i]
         prev_X_len = len(X)
         #X, _ = match.load_samples_from_file_same_dim(descriptor_file, feature_file, X, _, 1, 1)
-        X, _ = match.load_samples_from_file(descriptor_file, X, _)
+        X, _ = load_samples_from_file(descriptor_file, X, _)
 
-        yi = utils.infer_label(descriptor_file)
+        yi = infer_label(descriptor_file)
         y.append(yi)
 
         num_des_list.append(len(X) - prev_X_len)
@@ -234,6 +234,69 @@ def generate_vocabulary_with_pruning(dataset_path, size, model=None):
         j += 1
 
     return video_dicts, y
+
+def generate_vocabulary_2d(dataset_path, features_path, size_words, size_angles, model=None, vocabs_path=None):
+    feature_file_list = glob.glob(features_path + '*features.csv')
+    descriptor_file_list = glob.glob(dataset_path + '*descriptors.csv')
+    logging.info('Loaded ' + str(len(descriptor_file_list)) + ' descriptors files for vocabulary generation.')
+
+    i = 0
+    F = []
+    X = []
+    y = []
+    num_des_list = []
+
+    # load descriptors, features and true video labels
+    for feature_file in feature_file_list:
+        prev_X_len = len(X)
+        descriptor_file = descriptor_file_list[i]
+        X, F, y  = load_descriptors_and_features(descriptor_file, feature_file, X, F, y)
+        yi = infer_label(descriptor_file)
+        y.append(yi)
+        # only take the angles' values
+        #F.append(F_temp[3:])
+        #X.append(X_temp)
+        num_des_list.append(len(X) - prev_X_len)
+        i += 1
+
+    assert len(X) == len(F)
+
+    # perform clustering on descriptors
+    logging.info('Clustering descriptors...')
+    if model == None:
+        model = KMeans(n_clusters=size_words)
+    word_labels = model.fit_predict(X)
+
+    # perform clustering on angles
+    logging.info('Clustering angles...')
+    F = np.array(F)
+    model = KMeans(n_clusters=size_angles)
+    angle_labels = model.fit_predict(F[:, 3:])
+
+    logging.info('Building 2d signatures...')
+    video_2d_dict = np.zeros((size_words, size_angles), dtype=np.int)
+    video_dicts = []
+    f = open(Constants.DATA_DIR + '/vocabs/bbrister-angles/bbrister-angles-' +
+            str(size_angles) + '-size-' + str(size_words) + '.csv',
+             'w')
+    writer = csv.writer(f)
+    j = 0
+    k = 0
+    for i in range(0, len(word_labels)):
+        video_2d_dict[word_labels[i]][angle_labels[i]] += 1
+
+        if j == num_des_list[k] - 1:
+            j = 0
+            k += 1
+            video_dicts.append(video_2d_dict)
+            if DUMP_TO_FILE == True:
+                writer.writerow(video_2d_dict.flatten())
+            video_2d_dict = np.zeros((size_words, size_angles), dtype=np.int)
+        else:
+            j += 1
+
+    return video_dicts, y
+
 
 
 # load a vocabulary from a file. also infers labels from dataset_path.
@@ -287,4 +350,5 @@ def load_signatures(signature_path, label_path):
     return X, y
 
 if __name__ == '__main__':
-    generate_vocabulary(Constants.WEISSMAN_DATASET_DIR, 50)
+    generate_vocabulary_2d(Constants.DESCRIPTORS_DIR + 'weissman-angles/', Constants.DATA_DIR + 'features/weissman-angles/',
+                         250, 10)
