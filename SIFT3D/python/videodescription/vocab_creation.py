@@ -239,6 +239,7 @@ def generate_vocabulary_2d(dataset_path, features_path, size_words, size_angles,
     feature_file_list = glob.glob(features_path + '*features.csv')
     descriptor_file_list = glob.glob(dataset_path + '*descriptors.csv')
     logging.info('Loaded ' + str(len(descriptor_file_list)) + ' descriptors files for vocabulary generation.')
+    logging.info('Loaded ' + str(len(feature_file_list)) + ' features files for vocabulary generation.')
 
     i = 0
     F = []
@@ -253,9 +254,6 @@ def generate_vocabulary_2d(dataset_path, features_path, size_words, size_angles,
         X, F, y  = load_descriptors_and_features(descriptor_file, feature_file, X, F, y)
         yi = infer_label(descriptor_file)
         y.append(yi)
-        # only take the angles' values
-        #F.append(F_temp[3:])
-        #X.append(X_temp)
         num_des_list.append(len(X) - prev_X_len)
         i += 1
 
@@ -271,6 +269,7 @@ def generate_vocabulary_2d(dataset_path, features_path, size_words, size_angles,
     logging.info('Clustering angles...')
     F = np.array(F)
     model = KMeans(n_clusters=size_angles)
+    # only take the angles' values
     angle_labels = model.fit_predict(F[:, 3:])
 
     logging.info('Building 2d signatures...')
