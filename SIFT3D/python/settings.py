@@ -5,16 +5,16 @@ from SIFT3D.python.secrets import Secrets
 class Constants:
     # these values should be changed as you find useful
     ROOT_DIR = Secrets.ROOT_DIR
-    MATLAB_CODE_DIR = os.path.join(ROOT_DIR, 'SIFT3D', 'Matlab')
-    PYTHON_CODE_DIR = os.path.join(ROOT_DIR, 'SIFT3D', 'python')
-    DATA_DIR = os.path.join(ROOT_DIR, 'SIFT3D', 'data')
-    VIDEO_DIR = os.path.join(DATA_DIR, 'videos')
-    CSV_DIR = os.path.join(DATA_DIR, 'csv')
-    FEATURES_DIR = os.path.join(DATA_DIR, 'features')
-    DESCRIPTORS_DIR = os.path.join(DATA_DIR, 'descriptors')
-    RESULT_DIR = os.path.join(DATA_DIR, 'results')
+    MATLAB_CODE_DIR = os.path.join(ROOT_DIR, 'SIFT3D', 'Matlab', '')
+    PYTHON_CODE_DIR = os.path.join(ROOT_DIR, 'SIFT3D', 'python', '')
+    DATA_DIR = os.path.join(ROOT_DIR, 'SIFT3D', 'data', '')
+    VIDEO_DIR = os.path.join(DATA_DIR, 'videos', '')
+    CSV_DIR = os.path.join(DATA_DIR, 'csv', '')
+    FEATURES_DIR = os.path.join(DATA_DIR, 'features', '')
+    DESCRIPTORS_DIR = os.path.join(DATA_DIR, 'descriptors', '')
+    RESULT_DIR = os.path.join(DATA_DIR, 'results', '')
     LOGGING_LEVEL = logging.INFO
-    KTH_DATASET_DIR = os.path.join(DESCRIPTORS_DIR, 'kth-yash')
+    KTH_DATASET_DIR = os.path.join(DESCRIPTORS_DIR, 'kth-yash', '')
     BOXING_LABEL = 0
     RUNNING_LABEL = 1
     JOGGING_LABEL = 2
@@ -23,8 +23,8 @@ class Constants:
     HANDWAVING_LABEL = 5
     SHOW_PLOTS = False
     TAKE_TOP_200 = False
-    WEISSMAN_DATASET_DIR = os.path.join(DESCRIPTORS_DIR, 'weissman-yash')
-    BBRISTER_DATASET_DIR = os.path.join(DESCRIPTORS_DIR, 'bbrister')
+    WEISSMAN_DATASET_DIR = os.path.join(DESCRIPTORS_DIR, 'weissman-yash', '')
+    BBRISTER_DATASET_DIR = os.path.join(DESCRIPTORS_DIR, 'bbrister', '')
     WEISSMAN_WAVE1_LABEL = 0
     WEISSMAN_WAVE2_LABEL = 1
     WEISSMAN_WALK_LABEL = 2
