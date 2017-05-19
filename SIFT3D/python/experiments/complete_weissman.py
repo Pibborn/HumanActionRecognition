@@ -16,8 +16,8 @@ if __name__ == '__main__':
     vocab_2d_path = os.path.join(Constants.DATA_DIR, 'vocabs', 'bbrister-angles')
 
     model = LinearSVC()
-    dicts, y = vocab_creation.load_vocab(os.path.join(Constants.DATA_DIR, 'vocabs', 'bbrister-angles', ''),
-                                         Constants.WEISSMAN_DATASET_DIR, 250)
+    dicts, y = vocab_creation.load_vocab_from_size(os.path.join(Constants.DATA_DIR, 'vocabs', 'bbrister-angles', ''),
+                                                   Constants.WEISSMAN_DATASET_DIR, 250)
 
     accuracies = []
     for i in range(0, len(dicts)):

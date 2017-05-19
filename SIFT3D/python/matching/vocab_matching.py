@@ -59,7 +59,7 @@ def vocab_experiment_folds(X_train, y_train, X_test, y_test, model, preprocess=T
 def vocab_experiment_multiple_sizes(model, vocab_path, dataset_path, size_arr):
     accuracies = []
     for size in size_arr:
-        dicts, y = vocab_creation.load_vocab(vocab_path, dataset_path, size)
+        dicts, y = vocab_creation.load_vocab_from_size(vocab_path, dataset_path, size)
         logging.info('Trying size '+ str(size) + ':')
         accuracy = vocab_experiment(dicts, y, model)
         accuracies.append(accuracy)
@@ -78,8 +78,8 @@ if __name__ == "__main__":
     model = svm.LinearSVC(C=1e-3)
     # model = svm.SVC()
     # model = neighbors.KNeighborsClassifier(n_neighbors=15)
-    dicts, y = vocab_creation.load_vocab(os.path.join(Constants.DATA_DIR, 'vocabs', 'bbrister-2grams-window'),
-                                         Constants.WEISSMAN_DATASET_DIR, 50)
+    dicts, y = vocab_creation.load_vocab_from_size(os.path.join(Constants.DATA_DIR, 'vocabs', 'bbrister-2grams-window'),
+                                                   Constants.WEISSMAN_DATASET_DIR, 50)
     vocab_experiment(dicts, y, model)
     vocab_experiment_multiple_sizes(model, os.path.join(Constants.DATA_DIR, 'vocabs', 'bbrister-2'),
                                     Constants.WEISSMAN_DATASET_DIR, [250, 500, 1000])

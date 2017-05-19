@@ -13,7 +13,7 @@ class Constants:
     FEATURES_DIR = os.path.join(DATA_DIR, 'features', '')
     DESCRIPTORS_DIR = os.path.join(DATA_DIR, 'descriptors', '')
     RESULT_DIR = os.path.join(DATA_DIR, 'results', '')
-    LOGGING_LEVEL = logging.INFO
+    LOGGING_LEVEL = logging.CRITICAL
     KTH_DATASET_DIR = os.path.join(DESCRIPTORS_DIR, 'kth-yash', '')
     BOXING_LABEL = 0
     RUNNING_LABEL = 1

@@ -36,8 +36,8 @@ def weissman_experiment_multiple(times):
 def vocab_experiment(size, c=0.001):
     #dicts, y = vocabCreation.generate_vocabulary(Constants.DATA_DIR + '/descriptors/weissman-yash/', size)
 
-    dicts, y = vocab_creation.load_vocab(Constants.DATA_DIR + 'vocabs/bbrister-2grams-window/',
-                                         Constants.WEISSMAN_DATASET_DIR, size)
+    dicts, y = vocab_creation.load_vocab_from_size(Constants.DATA_DIR + 'vocabs/bbrister-2grams-window/',
+                                                   Constants.WEISSMAN_DATASET_DIR, size)
 
     #train_videos, test_videos = split_train_test_videos(Constants.DESCRIPTORS_DIR + '/bbrister/', 10)
     #X_train, y_train = load_descriptors(train_videos)

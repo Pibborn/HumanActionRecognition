@@ -301,7 +301,7 @@ def generate_vocabulary_2d(dataset_path, features_path, size_words, size_angles,
 # load a vocabulary from a file. also infers labels from dataset_path.
 # the assumption is that video signatures appear in vocab files in the same
 # order as the files appear in dataset_path.
-def load_vocab(vocabs_path, dataset_path, size):
+def load_vocab_from_size(vocabs_path, dataset_path, size):
     # get the vocab depending on the size string
     basename = '*-' + str(size) + '*.csv'
     # there should only be a single hit
@@ -310,8 +310,40 @@ def load_vocab(vocabs_path, dataset_path, size):
         assert len(vocab_file_list) == 1
     except AssertionError:
         logging.error('Something is wrong. The dataset paths are probably wrong, or the basename in '
-                      'load_vocab does not match any vocab .csv file.')
+                      'load_vocab_from_size does not match any vocab .csv file.')
         logging.error('basename: ' + str(vocabs_path) + str(basename))
+        logging.error('vocab_file_list: ' + str(vocab_file_list))
+        exit()
+    vocab_file = open(vocab_file_list[0], 'r')
+    reader = csv.reader(vocab_file, delimiter=',')
+
+    des_file_list = glob.glob(dataset_path + '/*descriptors.csv')
+    # i will iterate on the files in des_file_list
+    i = 0
+    y = []
+    X = []
+
+    for xi in reader:
+        xi = list(map(lambda x: float(x), xi))
+        X.append(xi)
+        y.append(float(infer_label(des_file_list[i])))
+        #print(des_file_list[i])
+        i += 1
+        #print(xi)
+        #print(infer_label(des_file_list[i]))
+
+    #print(y)
+    return X, y
+
+def load_vocab_from_path(vocabs_file, dataset_path):
+    # there should only be a single hit
+    vocab_file_list = glob.glob(str(vocabs_file))
+    try:
+        assert len(vocab_file_list) == 1
+    except AssertionError:
+        logging.error('Something is wrong. The dataset paths are probably wrong, or the basename in '
+                      'load_vocab_from_path does not match any vocab .csv file.')
+        logging.error('basename: ' + str(vocabs_file))
         logging.error('vocab_file_list: ' + str(vocab_file_list))
         exit()
     vocab_file = open(vocab_file_list[0], 'r')
