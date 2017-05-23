@@ -9,7 +9,6 @@ import csv
 import numpy as np
 import logging
 logging.basicConfig(level=Constants.LOGGING_LEVEL)
-import matplotlib as plt
 
 def load_samples_from_file(file_name, X, y):
     csvReader = csv.reader(open(file_name, "r"))
@@ -87,17 +86,6 @@ def load_samples_from_file_same_dim(file_name, feature_file_name, X, F, y, octav
     for i in range(0, times):
         y.append(yi)
     return X, F, y
-
-def pca_plot(X, y):
-    pca = PCA(n_components=2)
-    logging.info("pca_plot: Computing PCA.")
-    X_pca = pca.fit_transform(X, y=y)
-    print(X.shape)
-    print(X_pca.shape)
-    # use y to infer the color/labels
-    colors = [int(i % 7) for i in y]
-    plt.scatter(X_pca[:,0], X_pca[:,1], c=colors)
-    plt.show()
 
 def split_train_test_videos(folder, num_testing_videos):
     test_videos = []

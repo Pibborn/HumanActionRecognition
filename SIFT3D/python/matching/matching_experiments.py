@@ -1,23 +1,10 @@
-import glob
-import os
-import csv
-import numpy as np
-import collections
-
-from sklearn.svm import SVC
-
 from SIFT3D.python.settings import Constants
 from SIFT3D.python.videodescription import vocab_creation, descriptor_evaluation
 import logging
 logging.basicConfig(level=Constants.LOGGING_LEVEL)
 from sklearn import svm, neighbors
 from sklearn.model_selection import train_test_split
-from sklearn.decomposition import PCA
-from sklearn.model_selection import GridSearchCV
 from sklearn import preprocessing
-import matplotlib.pyplot as plt
-import random
-import xgboost as xgb
 
 
 
