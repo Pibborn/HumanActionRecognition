@@ -47,14 +47,15 @@ def vocab_experiment_folds(X_train, y_train, X_test, y_test, model, preprocess=T
         # TODO: reimplement this
         pass
 
-    logging.info("Fitting the model...")
+    logging.debug("Fitting the model...")
     model.fit(X_train, y_train)
     logging.debug("Done fitting.")
     accuracy = model.score(X_train, y_train)
     logging.debug("Achieved " + str(accuracy) + " accuracy on the training set")
     accuracy = model.score(X_test, y_test)
     logging.info("Achieved " + str(accuracy) + " accuracy on the test set")
-    return accuracy
+    y_pred = model.predict(X_test)
+    return accuracy, y_test, y_pred
 
 def vocab_experiment_multiple_sizes(model, vocab_path, dataset_path, size_arr):
     accuracies = []
