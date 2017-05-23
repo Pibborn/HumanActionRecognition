@@ -58,7 +58,7 @@ def load_descriptors_and_features(des_file_name, feature_file_name, X, F, y):
         y.append(yi)
     return X, F, y
 
-def load_samples_from_file_same_dim(file_name, feature_file_name, X, y, octave, scale):
+def load_samples_from_file_same_dim(file_name, feature_file_name, X, F, y, octave, scale, matchScale = False):
     descriptor_reader = csv.reader(open(file_name, "r"))
     xi = list(descriptor_reader)
     feature_reader = csv.reader(open(feature_file_name, "r"))
@@ -68,8 +68,14 @@ def load_samples_from_file_same_dim(file_name, feature_file_name, X, y, octave, 
     for i in range(0, len(xi)):
         f = fi[i]
         # checking that the descriptor was extracted in a certain point in the scale space
-        if int(f[0]) == octave and int(f[1]) == scale:
-            X.append(xi[i])
+        if matchScale:
+            if int(f[6]) == octave and float(f[7]) == scale:
+                X.append(xi[i])
+                F.append(fi[i])
+        else:
+            if int(f[6]) == octave:
+                X.append(xi[i])
+                F.append(fi[i])
     yi = infer_label(file_name)
     if Constants.TAKE_TOP_200 == True:
         # if we want to only take the top 200 descriptors, we also must take care not to get out of bounds
@@ -80,7 +86,7 @@ def load_samples_from_file_same_dim(file_name, feature_file_name, X, y, octave, 
         times = len(xi)
     for i in range(0, times):
         y.append(yi)
-    return X, y
+    return X, F, y
 
 def pca_plot(X, y):
     pca = PCA(n_components=2)

@@ -22,7 +22,7 @@ import pylab
 
 if __name__ == '__main__':
     bbrister_path = os.path.join(Constants.DESCRIPTORS_DIR, 'weissman-angles', '')
-    vocab_2d_path = os.path.join(Constants.DATA_DIR, 'vocabs', 'bbrister-angles', '')
+    vocab_2d_path = os.path.join(Constants.DATA_DIR, 'vocabs', 'bbrister-samedim', '')
 
     vocab_file_list = glob.glob(vocab_2d_path + '*.csv')
     model = LinearSVC()
@@ -125,7 +125,7 @@ if __name__ == '__main__':
         ax.set_aspect(1)
         img = ax.imshow(np.array(norm_confusion_matrix), cmap=cm.jet,
                         interpolation='nearest')
-        plt.show()
+        #plt.show()
 
         # put absolute values in the cells
         width, height = confusion_matrix.shape

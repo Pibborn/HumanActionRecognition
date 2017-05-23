@@ -8,7 +8,8 @@ import numpy as np
 from sklearn.cluster import KMeans
 
 from SIFT3D.python.matching import matching_experiments as match
-from SIFT3D.python.utils.utils import Constants, infer_label, load_samples_from_file, load_descriptors_and_features
+from SIFT3D.python.utils.utils import Constants, infer_label, load_samples_from_file, load_descriptors_and_features, \
+    load_samples_from_file_same_dim
 
 DUMP_TO_FILE = True
 
@@ -182,7 +183,8 @@ def init_ngram_dict(n_clusters, ngram_length):
     return ngram_dict
 
 
-def generate_vocabulary_with_pruning(dataset_path, size, model=None):
+def generate_vocabulary_with_pruning(dataset_path, features_path, size, model=None,
+                                     scale=1.6, octave=0, same_scale=False):
     # set up output variables
     y = []
     X = list()
@@ -192,21 +194,21 @@ def generate_vocabulary_with_pruning(dataset_path, size, model=None):
     if (model == None):
         model = KMeans(n_clusters=size, tol=1e-2)
 
-    descriptor_file_list = glob.glob(dataset_path + '*Descriptors.csv')
+    descriptor_file_list = glob.glob(dataset_path + '*descriptors.csv')
+    feature_file_list = glob.glob(features_path + '*features.csv')
     logging.info('Loaded ' + str(len(descriptor_file_list)) + ' descriptors files for vocabulary generation.')
-    feature_file_list = glob.glob(dataset_path + '*Features.csv')
+    logging.info('Loaded ' + str(len(feature_file_list)) + ' features files for vocabulary generation.')
 
-    _ = []
     i = 0
+    F = []
+    X = []
+    y = []
     for descriptor_file in descriptor_file_list:
         feature_file = feature_file_list[i]
         prev_X_len = len(X)
-        #X, _ = match.load_samples_from_file_same_dim(descriptor_file, feature_file, X, _, 1, 1)
-        X, _ = load_samples_from_file(descriptor_file, X, _)
-
+        X, F, y = load_samples_from_file_same_dim(descriptor_file, feature_file, X, F, y, octave, scale)
         yi = infer_label(descriptor_file)
         y.append(yi)
-
         num_des_list.append(len(X) - prev_X_len)
         i += 1
 
@@ -223,15 +225,22 @@ def generate_vocabulary_with_pruning(dataset_path, size, model=None):
     k = 0 # iterates on the number of videos
     j = 0 # iterates on the number of descriptors
 
+    fi = open(Constants.DATA_DIR + '/vocabs/bbrister-samedim/bbrister-samedim-octave' +
+             str(octave) + '-size-' + str(size) + '.csv',
+             'w')
+    writer = csv.writer(fi)
+
     for i in range(0, len(labels)):
         video_dicts[k][labels[i]] += 1
 
-        if j == num_des_list[k]:
+        if j == num_des_list[k] - 1:
             j = 0
             k += 1
             video_dicts.append([0 for _ in range(0, num_labels)])
-
-        j += 1
+            if DUMP_TO_FILE:
+                writer.writerow(video_dicts[k-1])
+        else:
+            j += 1
 
     return video_dicts, y
 
