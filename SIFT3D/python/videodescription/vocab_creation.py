@@ -279,7 +279,7 @@ def generate_vocabulary_2d(dataset_path, features_path, size_words, size_angles,
     F = np.array(F)
     model = KMeans(n_clusters=size_angles)
     # only take the angles' values
-    angle_labels = model.fit_predict(F[:, 3:])
+    angle_labels = model.fit_predict(F[:, 3:6])
 
     logging.info('Building 2d signatures...')
     video_2d_dict = np.zeros((size_words, size_angles), dtype=np.int)
