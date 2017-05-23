@@ -15,18 +15,20 @@ save('keypoint-file.m', 'keys');
 % Extract descriptors
 [descriptors, features] = extractSift3D(keys);
 
-% Obtain euler angles for each keypoint
-phi_mat = [];
+% Obtain euler angles and scale information for each keypoint
+additional_info_mat = [];
 for i = 1 : size(keys)
     phi_x = atan2(keys(i).ori(3, 2), keys(i).ori(3, 3));
     phi_y = atan2(-keys(i).ori(3, 1), sqrt(keys(i).ori(3, 2) * keys(i).ori(3, 2) + keys(i).ori(3, 3) * keys(i).ori(3, 3)));
     phi_z = atan2(keys(i).ori(2, 1), keys(i).ori(1, 1));
-    phi_mat = [phi_mat; phi_x phi_y phi_z];
+    o = keys(i).octave;
+    s = keys(i).scale;
+    additional_info_mat = [additional_info_mat; phi_x phi_y phi_z o s];
 end
 
-% "Append" the euler angles matrix to the feature matrix, changing the
+% "Append" the extra info matrix to the feature matrix, changing the
 % number of columns
-features = [features phi_mat];
+features = [features additional_info_mat];
 
 csvwrite(outFeaturesPath,features);
 csvwrite(outDescriptorsPath,descriptors);
