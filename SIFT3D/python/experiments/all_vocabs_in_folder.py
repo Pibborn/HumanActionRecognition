@@ -22,7 +22,7 @@ import pylab
 
 if __name__ == '__main__':
     bbrister_path = os.path.join(Constants.DESCRIPTORS_DIR, 'weissman-angles', '')
-    vocab_2d_path = os.path.join(Constants.DATA_DIR, 'vocabs', 'bbrister-samedim', '')
+    vocab_2d_path = os.path.join(Constants.DATA_DIR, 'vocabs', 'bbrister-angles', '')
 
     vocab_file_list = glob.glob(vocab_2d_path + '*.csv')
     model = LinearSVC()
@@ -42,8 +42,8 @@ if __name__ == '__main__':
         # the regex means: look for numbers after hyphens (i.e. '-')
         numbers_in_path = re.findall('(?<=-)\d+', str(filename))
 
-        word_size = 0
-        angle_size = 0
+        word_size = -1
+        angle_size = -1
         # in this case, the signatures are 1d, word clusters only
         if len(numbers_in_path) == 1:
             word_size = int(numbers_in_path[0])
@@ -81,17 +81,19 @@ if __name__ == '__main__':
         word_sizes.append(word_size)
         angle_sizes.append(angle_size)
 
+    print(angle_sizes)
+    print(word_sizes)
     # plot the accuracies depending on the signature parameters
     fig, ax = plt.subplots()
 
     # 1d signatures: a line plot is fine
-    if angle_sizes[0] == 0:
+    if angle_sizes[0] == -1:
         mean_accuracies = [x for y, x in sorted(zip(word_sizes, mean_accuracies))]
         word_sizes.sort()
         plt.plot(word_sizes, mean_accuracies, linestyle='--', marker='o', color='b')
         plt.xticks(word_sizes)
         plt.grid()
-        plt.show()
+        #plt.show()
     # 2d signatures: checkerboard-like plot
     else:
         mean_accuracy_matrix = np.zeros((len(set(word_sizes)), len(set(angle_sizes))))
@@ -104,7 +106,7 @@ if __name__ == '__main__':
         plt.xticks(range(len(angle_idx_list)), angle_idx_list, fontsize=14)
         plt.yticks(range(len(word_idx_list)), word_idx_list, fontsize=14)
         fig.colorbar(img)
-        pylab.savefig(os.path.join('.', ))
+        #pylab.savefig(os.path.join('.', 'octave-accuracies'))
         #plt.show()
 
     # plot the confusion matrices
