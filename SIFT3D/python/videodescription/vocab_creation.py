@@ -5,6 +5,7 @@ import logging
 import operator
 
 import numpy as np
+import sys
 from sklearn.cluster import KMeans
 
 from SIFT3D.python.matching import matching_experiments as match
@@ -287,6 +288,129 @@ def generate_vocabulary_2d(dataset_path, features_path, size_words, size_angles,
     f = open(Constants.DATA_DIR + '/vocabs/bbrister-angles/bbrister-angles-' +
             str(size_angles) + '-size-' + str(size_words) + '.csv',
              'w')
+    writer = csv.writer(f)
+    j = 0
+    k = 0
+    for i in range(0, len(word_labels)):
+        video_2d_dict[word_labels[i]][angle_labels[i]] += 1
+
+        if j == num_des_list[k] - 1:
+            j = 0
+            k += 1
+            video_dicts.append(video_2d_dict)
+            if DUMP_TO_FILE == True:
+                writer.writerow(video_2d_dict.flatten())
+            video_2d_dict = np.zeros((size_words, size_angles), dtype=np.int)
+        else:
+            j += 1
+
+    return video_dicts, y
+
+
+def get_angle_quadrant_label(x, y, z, size_angles, quadrant):
+    angle_label = []
+    if size_angles == 2:
+        if quadrant == 'x':
+            if x > 0:
+                angle_label = 0
+            else:
+                angle_label = 1
+        if quadrant == 'y':
+            if y > 0:
+                angle_label = 0
+            else:
+                angle_label = 1
+        if quadrant == 'z':
+            if z > 0:
+                angle_label = 0
+            else:
+                angle_label = 1
+    else:
+        if size_angles == 8:
+            if x > 0 and y > 0 and z > 0:
+                angle_label = 0
+            if x < 0 and y > 0 and z > 0:
+                angle_label = 1
+            if x > 0 and y < 0 and z > 0:
+                angle_label = 2
+            if x > 0 and y > 0 and z < 0:
+                angle_label = 3
+            if x < 0 and y < 0 and z > 0:
+                angle_label = 4
+            if x > 0 and y < 0 and z < 0:
+                angle_label = 5
+            if x < 0 and y > 0 and z < 0:
+                angle_label = 6
+            if x < 0 and y < 0 and z < 0:
+                angle_label = 7
+        else:
+            logging.error('Unsupported size_angles parameter')
+            sys.exit()
+    return angle_label
+
+
+
+
+def generate_vocabulary_2d_quadrants(dataset_path, features_path, size_words, size_angles,
+                                     model=None, vocabs_path=None, quadrant='x'):
+    # input checking
+    if size_angles != 2 and size_angles != 8:
+        logging.error('Unsupported number of quadrants')
+        sys.exit()
+    if size_angles == 2 and quadrant != 'x' and quadrant != 'y' and quadrant != 'z':
+        logging.error('2 quadrants case: unsupported \'quadrant\' parameter')
+        sys.exit()
+
+    feature_file_list = glob.glob(features_path + '*features.csv')
+    descriptor_file_list = glob.glob(dataset_path + '*descriptors.csv')
+    logging.info('Loaded ' + str(len(descriptor_file_list)) + ' descriptors files for vocabulary generation.')
+    logging.info('Loaded ' + str(len(feature_file_list)) + ' features files for vocabulary generation.')
+
+    i = 0
+    F = []
+    X = []
+    y = []
+    num_des_list = []
+
+    # load descriptors, features and true video labels
+    for feature_file in feature_file_list:
+        prev_X_len = len(X)
+        descriptor_file = descriptor_file_list[i]
+        X, F, y = load_descriptors_and_features(descriptor_file, feature_file, X, F, y)
+        yi = infer_label(descriptor_file)
+        y.append(yi)
+        num_des_list.append(len(X) - prev_X_len)
+        i += 1
+
+    assert len(X) == len(F)
+
+    # perform clustering on descriptors
+    logging.info('Clustering descriptors...')
+    if model == None:
+        model = KMeans(n_clusters=size_words)
+    word_labels = model.fit_predict(X)
+
+    # perform quadrant checking on angles
+    logging.info('Clustering angles...')
+    F = np.array(F)[:, 3:6]
+    angle_labels = []
+    for angle_list in F:
+        x = float(angle_list[0])
+        y = float(angle_list[1])
+        z = float(angle_list[2])
+        angle_labels.append(get_angle_quadrant_label(x, y, z, size_angles, quadrant))
+
+    logging.info('Building 2d signatures...')
+    video_2d_dict = np.zeros((size_words, size_angles), dtype=np.int)
+    video_dicts = []
+    if size_angles == 2:
+        f = open(Constants.DATA_DIR + '/vocabs/bbrister-quadrants/bbrister-quadrants-'
+                 + str(quadrant) + '-' + str(size_angles) + '-size-' + str(size_words) + '.csv',
+                 'w')
+    if size_angles == 8:
+        f = open(Constants.DATA_DIR + '/vocabs/bbrister-quadrants/bbrister-quadrants-'
+                 + str(size_angles) + '-size-' + str(size_words) + '.csv',
+                 'w')
     writer = csv.writer(f)
     j = 0
     k = 0
